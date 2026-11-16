@@ -1,18 +1,20 @@
 {
   "expo": {
-    "name": "app",
-    "slug": "app",
-    "version": "1.0.0",
+    "name": "Grzybodex",
+    "slug": "grzybodex",
+    "version": "0.1.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "app",
+    "scheme": "grzybodex",
     "userInterfaceStyle": "automatic",
     "ios": {
-      "icon": "./assets/expo.icon"
+      "icon": "./assets/expo.icon",
+      "bundleIdentifier": "com.grzybodex.app"
     },
     "android": {
+      "package": "com.grzybodex.app",
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
+        "backgroundColor": "#FBF5E6",
         "foregroundImage": "./assets/images/android-icon-foreground.png",
         "backgroundImage": "./assets/images/android-icon-background.png",
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
@@ -28,11 +30,43 @@
       [
         "expo-splash-screen",
         {
-          "backgroundColor": "#208AEF",
+          "backgroundColor": "#FBF5E6",
           "image": "./assets/images/splash-icon.png",
           "imageWidth": 76
         }
-      ]
+      ],
+      "onnxruntime-react-native",
+      "expo-asset",
+      "expo-sqlite",
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Grzybodex potrzebuje aparatu, żeby zrobić zdjęcia grzyba do rozpoznania.",
+          "recordAudioAndroid": false,
+          "barcodeScannerEnabled": false
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Grzybodex potrzebuje dostępu do zdjęć, żeby rozpoznać grzyba z galerii."
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "Grzybodex zapisuje Twoje miejscówki tylko na tym telefonie.",
+          "isAndroidForegroundServiceEnabled": true
+        }
+      ],
+      [
+        "./plugins/with-cmake-version",
+        {
+          "version": "3.31.6"
+        }
+      ],
+      "@maplibre/maplibre-react-native",
+      "expo-mail-composer"
     ],
     "experiments": {
       "typedRoutes": true,
