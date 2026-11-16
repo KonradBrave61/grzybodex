@@ -1,0 +1,62 @@
+[
+ {
+  "id": "pieprznik",
+  "file": "pieprznik.jpg",
+  "latin": "Cantharellus cibarius",
+  "pl": "Pieprznik jadalny",
+  "author": "Puchatech K.",
+  "license": "cc-by-sa-3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Cantharellus_cibarius_(1).jpg",
+  "attribution": "Puchatech K., CC BY-SA 3.0, via Wikimedia Commons (https://commons.wikimedia.org/wiki/File:Cantharellus_cibarius_(1).jpg)"
+ },
+ {
+  "id": "muchomor-zielonawy",
+  "file": "muchomor-zielonawy.jpg",
+  "latin": "Amanita phalloides",
+  "pl": "Muchomor zielonawy",
+  "author": "Thomas Pruß",
+  "license": "cc-by-sa-3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Amanita_phalloides_(2).JPG",
+  "attribution": "Thomas Pruß, CC BY-SA 3.0, via Wikimedia Commons (https://commons.wikimedia.org/wiki/File:Amanita_phalloides_(2).JPG)"
+ },
+ {
+  "id": "muchomor-czerwony",
+  "file": "muchomor-czerwony.jpg",
+  "latin": "Amanita muscaria",
+  "pl": "Muchomor czerwony",
+  "author": "Dr. Hans-Günter Wagner",
+  "license": "cc-by-sa-2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Amanita_muscaria_(49126992421).jpg",
+  "attribution": "Dr. Hans-Günter Wagner, CC BY-SA 2.0, via Wikimedia Commons (https://commons.wikimedia.org/wiki/File:Amanita_muscaria_(49126992421).jpg)"
+ },
+ {
+  "id": "helmowka",
+  "file": "helmowka.jpg",
+  "latin": "Galerina marginata",
+  "pl": "hełmówka jadowita",
+  "author": "Adrien BENOIT à la GUILLAUME",
+  "license": "cc-by-sa-4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Galerina_marginata_(Haute-Loire,_France)_01.jpg",
+  "attribution": "Adrien BENOIT à la GUILLAUME, CC BY-SA 4.0, via Wikimedia Commons (https://commons.wikimedia.org/wiki/File:Galerina_marginata_(Haute-Loire,_France)_01.jpg)"
+ },
+ {
+  "id": "borowik-usiatkowany",
+  "file": "borowik-usiatkowany.jpg",
+  "latin": "Boletus reticulatus",
+  "pl": "borowik usiatkowany",
+  "author": "Cactusleroydlapatee",
+  "license": "cc-by-sa-3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Aestivalis.jpg",
+  "attribution": "Cactusleroydlapatee, CC BY-SA 3.0, via Wikimedia Commons (https://commons.wikimedia.org/wiki/File:Aestivalis.jpg)"
+ },
+ {
+  "id": "dzwonkowka",
+  "file": "dzwonkowka.jpg",
+  "latin": "Entoloma sinuatum",
+  "pl": "Dzwonkówka trująca",
+  "author": "Svencapoeira",
+  "license": "cc-by-sa-4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Hiid-punalehik.jpg",
+  "attribution": "Svencapoeira, CC BY-SA 4.0, via Wikimedia Commons (https://commons.wikimedia.org/wiki/File:Hiid-punalehik.jpg)"
+ }
+]

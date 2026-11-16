@@ -1,0 +1,648 @@
+{
+  "wersja": "2026-11-02",
+  "zrodlo_listy_mz": {
+    "akt": "Dz.U. 2026 poz. 258",
+    "tytul": "Obwieszczenie Ministra Zdrowia z dnia 13 lutego 2026 r. w sprawie ogłoszenia jednolitego tekstu rozporządzenia Ministra Zdrowia w sprawie grzybów dopuszczonych do obrotu lub produkcji przetworów grzybowych, środków spożywczych zawierających grzyby oraz uprawnień klasyfikatora grzybów i grzyboznawcy",
+    "url": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU20260000258",
+    "pdf": "https://api.sejm.gov.pl/eli/acts/DU/2026/258/text.pdf",
+    "pdf_sha256": "69b1e01152b0624e38be5d286a13b1181bf5500ab582959393a14a28e404746c",
+    "fragment": "Załącznik nr 1 do rozporządzenia, s. 5–7 PDF",
+    "stan_na": "2026-11-02: wg API ELI Sejmu akt obowiązujący; ostatni akt zmieniający Dz.U. 2025 poz. 1797 (w życiu od 18.01.2026), późniejszych zmian brak"
+  },
+  "przepisy": [
+    {
+      "id": "rydze-w-masle-cwierczakiewiczowa-1871",
+      "tytul": "Rydze w maśle",
+      "ksiazka": {
+        "autor": "Lucyna Ćwierczakiewiczowa",
+        "autor_zm": 1901,
+        "autor_zm_zrodla": [
+          "https://pl.wikipedia.org/wiki/Lucyna_%C4%86wierczakiewiczowa",
+          "https://data.bn.org.pl/api/institutions/authorities.json?id=2807452"
+        ],
+        "tytul": "365 obiadów za 5 złotych",
+        "wydanie_rok": "1871",
+        "miejsce": "Warszawa",
+        "wydawca": "nakładem autorki; Drukarnia Aleksandra Pajewskiego",
+        "strona": "209 (przepis nr 36 w dziale jarzyn)",
+        "url": "https://pl.wikisource.org/wiki/Strona:Lucyna_Ćwierczakiewiczowa_-_365_obiadów_za_5_złotych.djvu/272",
+        "url_skan": "https://commons.wikimedia.org/w/index.php?title=File:Lucyna_Ćwierczakiewiczowa_-_365_obiadów_za_5_złotych.djvu&page=272"
+      },
+      "oryginal": "Włożyć w rondel pół funta dobrego masła, do pół garnca rydzów, rydze opłókać kilka razy w zimnéj wodzie, włożyć w masło, postawić na węglach lub wolnym ogniu i zaraz posolić. Gdy sos z siebie puszczą, wrzucić usiekanéj drobno cébuli, grubéj pietruszki, selerów: wszystkiego dwie garści, przykryć i niech się duszą na wolnym ogniu, często rondlem potrząsając, żeby się nie przypaliły, aż się wysadzą do czystego masła, wtedy wsypać trochę pieprzu i garść tartéj bułki, wymięszać, zagrzać chwilkę i podać na stół. Ta wyborna potrawa może być w czasie zimy jak świeża podana; patrz Jedyne praktyczne przepisy, gdzie opisany sposób zachowania takich rydzów.",
+      "transkrypcja": "Wikiźródła (strona zatwierdzona, poziom 4), porównana ze skanem przez Grzybodex; 2 poprawki wg skanu: „wymięszać” (Wikiźródła: „wymieszać”) i brak przecinka po „węglach”.",
+      "na_dzis": {
+        "skladniki": [
+          "ok. 2 l świeżych rydzów (w oryginale „pół garnca” – dawna miara objętości)",
+          "ok. 200 g masła (w oryginale „pół funta”)",
+          "sól",
+          "drobno posiekana cebula, korzeń pietruszki i seler – razem ok. 2 garści",
+          "pieprz",
+          "garść bułki tartej"
+        ],
+        "kroki": [
+          "Rydze opłucz kilka razy w zimnej wodzie.",
+          "W rondlu roztop masło, włóż rydze, postaw na małym ogniu i od razu posól.",
+          "Gdy grzyby puszczą sok, dodaj posiekaną cebulę, pietruszkę i seler.",
+          "Przykryj i duś na małym ogniu, często potrząsając rondlem, żeby nic nie przywarło, aż sok odparuje i zostanie samo klarowne masło.",
+          "Dopraw pieprzem, wsyp garść bułki tartej, wymieszaj, podgrzej chwilę i podawaj."
+        ],
+        "opracowanie": "Grzybodex"
+      },
+      "gatunki": [
+        {
+          "nazwa_w_przepisie": "rydze",
+          "scientificName": "Lactarius deliciosus",
+          "nazwa_pl": "mleczaj rydz",
+          "mapowanie_zrodlo": "Wikipedia PL, hasło „Mleczaj rydz” (wersja 78793886, sekcja o nazwach): „Przez grzybiarzy nazywany jest po prostu rydzem” – https://pl.wikipedia.org/w/index.php?oldid=78793886; strona ujednoznaczniająca „Rydz” (wersja 78316252): „rydz – grzyb jadalny”.",
+          "mz_wpis": "30) mleczaj rydz – Lactarius deliciosus (L.) Gray;",
+          "uwagi_bezpieczenstwa": [
+            {"tekst": "[ogólne, wszystkie grzyby] „Nie należy spożywać grzybów na surowo – może to wywoływać zaburzenia żołądkowo-jelitowe. Należy spożywać wyłącznie grzyby jadalne poddane obróbce termicznej, takiej jak smażenie lub gotowanie.” (Państwowa Inspekcja Sanitarna, PSSE w Opocznie, 11.10.2024)", "zrodlo_url": "https://www.gov.pl/web/psse-opoczno/bezpieczne-grzybobranie"},
+            {"tekst": "[ogólne, wszystkie grzyby] „Grzybów powinny unikać: kobiety w ciąży i karmiące, dzieci, osoby starsze, osoby z zaburzeniami pracy przewodu pokarmowego.” (Główny Inspektorat Sanitarny, 23.09.2022)", "zrodlo_url": "https://www.gov.pl/web/gis/bezpieczne-grzybobranie"},
+            {"tekst": "[ogólne, wszystkie grzyby] „Nie należy przechowywać świeżych grzybów ani potraw z grzybów zbyt długo.” (Państwowa Inspekcja Sanitarna, PSSE w Opocznie, 11.10.2024)", "zrodlo_url": "https://www.gov.pl/web/psse-opoczno/bezpieczne-grzybobranie"}
+          ]
+        }
+      ],
+      "sezon": "sierpień–listopad (mleczaj rydz w Polsce; Wikipedia PL, hasło „Mleczaj rydz”)"
+    },
+    {
+      "id": "rydze-smazone-zawadzka-1913",
+      "tytul": "Rydze smażone",
+      "ksiazka": {
+        "autor": "Wincenta (Wincentyna) Zawadzka",
+        "autor_zm": 1894,
+        "autor_zm_zrodla": [
+          "https://pl.wikipedia.org/wiki/Wincenta_Zawadzka",
+          "https://data.bn.org.pl/api/institutions/authorities.json?id=1140111"
+        ],
+        "tytul": "Kucharka litewska (wyd. 11)",
+        "wydanie_rok": "1913",
+        "miejsce": "Wilno",
+        "wydawca": "Księgarnia Józefa Zawadzkiego",
+        "strona": "74 (przepis nr 61, dział IV „Jarzyny”)",
+        "url": "https://pl.wikisource.org/wiki/Strona:Kucharka_litewska_(1913).djvu/98",
+        "url_skan": "https://commons.wikimedia.org/w/index.php?title=File:Kucharka_litewska_(1913).djvu&page=98"
+      },
+      "oryginal": "Proporcja: 1 talerz grzybów, 1—2 łyżek masła, soli. Można dodać 1 cebulę.\nMłode rydze wytrzeć z piasku i posolić. Roztopić łyżkę masła na patelni, ułożyć rydze jeden przy drugim, podsmażyć, a skoro sok puszczą i za przerznięciem nie będą czerwone we środku, natenczas gotowe.",
+      "transkrypcja": "Wikiźródła (strona nieskorygowana, poziom 1) – porównana słowo w słowo ze skanem przez Grzybodex; zgodna.",
+      "na_dzis": {
+        "skladniki": [
+          "1 talerz młodych rydzów",
+          "1–2 łyżki masła",
+          "sól",
+          "opcjonalnie 1 cebula (oryginał nie mówi, kiedy ją dodać)"
+        ],
+        "kroki": [
+          "Młode rydze dokładnie oczyść z piasku (przetrzyj) i posól.",
+          "Na patelni roztop łyżkę masła i ułóż rydze jeden obok drugiego.",
+          "Smaż, aż puszczą sok, a po przekrojeniu nie będą czerwone w środku – wtedy są gotowe."
+        ],
+        "opracowanie": "Grzybodex"
+      },
+      "gatunki": [
+        {
+          "nazwa_w_przepisie": "rydze",
+          "scientificName": "Lactarius deliciosus",
+          "nazwa_pl": "mleczaj rydz",
+          "mapowanie_zrodlo": "Wikipedia PL, hasło „Mleczaj rydz” (wersja 78793886): „Przez grzybiarzy nazywany jest po prostu rydzem” – https://pl.wikipedia.org/w/index.php?oldid=78793886; strona ujednoznaczniająca „Rydz” (wersja 78316252).",
+          "mz_wpis": "30) mleczaj rydz – Lactarius deliciosus (L.) Gray;",
+          "uwagi_bezpieczenstwa": [
+            {"tekst": "[ogólne, wszystkie grzyby] „Nie należy spożywać grzybów na surowo – może to wywoływać zaburzenia żołądkowo-jelitowe. Należy spożywać wyłącznie grzyby jadalne poddane obróbce termicznej, takiej jak smażenie lub gotowanie.” (Państwowa Inspekcja Sanitarna, PSSE w Opocznie, 11.10.2024)", "zrodlo_url": "https://www.gov.pl/web/psse-opoczno/bezpieczne-grzybobranie"},
+            {"tekst": "[ogólne, wszystkie grzyby] „Grzybów powinny unikać: kobiety w ciąży i karmiące, dzieci, osoby starsze, osoby z zaburzeniami pracy przewodu pokarmowego.” (Główny Inspektorat Sanitarny, 23.09.2022)", "zrodlo_url": "https://www.gov.pl/web/gis/bezpieczne-grzybobranie"}
+          ]
+        }
+      ],
+      "sezon": "sierpień–listopad (mleczaj rydz w Polsce; Wikipedia PL, hasło „Mleczaj rydz”)"
+    },
+    {
+      "id": "borowiki-tuszone-zawadzka-1913",
+      "tytul": "Borowiki tuszone",
+      "ksiazka": {
+        "autor": "Wincenta (Wincentyna) Zawadzka",
+        "autor_zm": 1894,
+        "autor_zm_zrodla": [
+          "https://pl.wikipedia.org/wiki/Wincenta_Zawadzka",
+          "https://data.bn.org.pl/api/institutions/authorities.json?id=1140111"
+        ],
+        "tytul": "Kucharka litewska (wyd. 11)",
+        "wydanie_rok": "1913",
+        "miejsce": "Wilno",
+        "wydawca": "Księgarnia Józefa Zawadzkiego",
+        "strona": "74 (przepis nr 60, dział IV „Jarzyny”)",
+        "url": "https://pl.wikisource.org/wiki/Strona:Kucharka_litewska_(1913).djvu/98",
+        "url_skan": "https://commons.wikimedia.org/w/index.php?title=File:Kucharka_litewska_(1913).djvu&page=98"
+      },
+      "oryginal": "Proporcja: 1 głęboki talerz oczyszcz. borowików, ¼ f. masła, 3 cebule, soli i pieprzu, 2—3 łyżek śmietany.\nMłode i zdrowe borowiki pokrajać w paski; oparzyć wrzątkiem, odcedzić i włożyć do rondla. Podsmażyć drobno usiekaną i wyciśniętą cebulę w maśle, zmieszać z grzybami, posolić, popieprzyć, niech się tuszą; potem włożyć parę łyżek śmietany, pomieszać i wysadzić z nią grzyby tak, aby śmietana w masło się zamieniła.\nMożna borowiki smażyć wprost w maśle nie oparzając, lecz należy je bardzo starannie oczyścić i wytrzeć z piasku.",
+      "transkrypcja": "Wikiźródła (strona nieskorygowana, poziom 1) – porównana słowo w słowo ze skanem przez Grzybodex; zgodna.",
+      "na_dzis": {
+        "skladniki": [
+          "1 głęboki talerz oczyszczonych młodych borowików (prawdziwków)",
+          "ok. 100 g masła (w oryginale „¼ f.”, czyli ćwierć funta)",
+          "3 cebule",
+          "sól, pieprz",
+          "2–3 łyżki śmietany"
+        ],
+        "kroki": [
+          "Młode, zdrowe borowiki pokrój w paski, sparz wrzątkiem, odcedź i przełóż do rondla.",
+          "Cebulę drobno posiekaj, odciśnij i podsmaż na maśle.",
+          "Połącz cebulę z grzybami, posól, popieprz i duś.",
+          "Dodaj 2–3 łyżki śmietany, wymieszaj i duś dalej, aż śmietana „zamieni się w masło” (odparuje do tłuszczu).",
+          "Wariant z oryginału: borowiki można smażyć na maśle bez parzenia, ale trzeba je wtedy bardzo starannie oczyścić z piasku."
+        ],
+        "opracowanie": "Grzybodex"
+      },
+      "gatunki": [
+        {
+          "nazwa_w_przepisie": "borowiki",
+          "scientificName": "Boletus edulis",
+          "nazwa_pl": "borowik szlachetny (prawdziwek)",
+          "mapowanie_zrodlo": "Wikipedia PL, hasło „Borowik szlachetny” (wersja 80674304), sekcja „Nazwy zwyczajowe”: „Dawniej w języku polskim używano wielu określeń: borowik, […] grzyb prawdziwy […]” – https://pl.wikipedia.org/w/index.php?oldid=80674304; E. Kiewnarska, Potrawy i konserwy z grzybów, [1927], s. 9: „Borowikami nazywają na kresach grzyby prawdziwe.” – https://pl.wikisource.org/wiki/Strona:Potrawy_i_konserwy_z_grzybów.pdf/9",
+          "mz_wpis": "8) borowik szlachetny (prawdziwek – wszystkie odmiany) – Boletus edulis Bull.;",
+          "uwagi_bezpieczenstwa": [
+            {"tekst": "[ogólne, wszystkie grzyby] „Nie należy spożywać grzybów na surowo – może to wywoływać zaburzenia żołądkowo-jelitowe. Należy spożywać wyłącznie grzyby jadalne poddane obróbce termicznej, takiej jak smażenie lub gotowanie.” (Państwowa Inspekcja Sanitarna, PSSE w Opocznie, 11.10.2024)", "zrodlo_url": "https://www.gov.pl/web/psse-opoczno/bezpieczne-grzybobranie"},
+            {"tekst": "[ogólne, wszystkie grzyby] „Grzybów powinny unikać: kobiety w ciąży i karmiące, dzieci, osoby starsze, osoby z zaburzeniami pracy przewodu pokarmowego.” (Główny Inspektorat Sanitarny, 23.09.2022)", "zrodlo_url": "https://www.gov.pl/web/gis/bezpieczne-grzybobranie"}
+          ]
+        }
+      ],
+      "sezon": "maj–listopad (borowik szlachetny; Wikipedia PL, hasło „Borowik szlachetny”)"
+    },
+    {
+      "id": "zupa-rydzowa-kiewnarska-1927",
+      "tytul": "Zupa rydzowa",
+      "ksiazka": {
+        "autor": "Elżbieta Kiewnarska (ps. „Pani Elżbieta”)",
+        "autor_zm": 1944,
+        "autor_zm_zrodla": [
+          "https://pl.wikipedia.org/wiki/El%C5%BCbieta_Kiewnarska",
+          "https://data.bn.org.pl/api/institutions/authorities.json?id=1141241"
+        ],
+        "tytul": "Potrawy i konserwy z grzybów (seria „Życie Praktyczne”)",
+        "wydanie_rok": "[1927]",
+        "miejsce": "Warszawa",
+        "wydawca": "Towarzystwo Wydawnicze „Bluszcz”",
+        "strona": "18",
+        "url": "https://pl.wikisource.org/wiki/Strona:Potrawy_i_konserwy_z_grzybów.pdf/18",
+        "url_skan": "https://commons.wikimedia.org/w/index.php?title=File:Potrawy_i_konserwy_z_grzybów.pdf&page=18"
+      },
+      "oryginal": "(przepis wiedeński). Jeśli używamy większej ilości kurcząt, lub młodych kur na pieczyste, zupa ta najlepiej się nam uda. Łapki, szyjki, główki, i żołądki kurze ugotować z marchewką, pietruszką i koperkiem na lekki rosół. Pół kilo grubych borowych rydzów pokrajać w plastry, udusić w rondelku z dużą łyżką masła, nie wysuszając ich nadto. Wlać w to półtora litra rosołu wraz z kawałkami dróbek kurzych, zagotować raz tylko, poczem dolać dwie szklanki dobrego mleka, lub lepiej słodkiej śmietanki, i zagotować powtórnie. Ma kolor zupy rakowej i jest wyborna w smaku.\nChcąc ją mieć bardziej zawiesistą, podprawić łyżką mąki pszennej.",
+      "transkrypcja": "Wikiźródła (strona zatwierdzona, poziom 4) – porównana ze skanem przez Grzybodex; zgodna.",
+      "na_dzis": {
+        "skladniki": [
+          "drobne części kurczaka na rosół (w oryginale: łapki, szyjki, główki i żołądki)",
+          "marchew, pietruszka, koperek",
+          "500 g dużych rydzów spod sosen",
+          "1 duża łyżka masła",
+          "1,5 l lekkiego rosołu",
+          "2 szklanki mleka albo – lepiej – słodkiej śmietanki",
+          "opcjonalnie 1 łyżka mąki pszennej"
+        ],
+        "kroki": [
+          "Z części kurczaka, marchewki, pietruszki i koperku ugotuj lekki rosół.",
+          "Rydze pokrój w plastry i poduś w rondelku na dużej łyżce masła, nie wysuszając ich za bardzo.",
+          "Wlej 1,5 l rosołu razem z kawałkami mięsa i zagotuj tylko raz.",
+          "Dolej 2 szklanki mleka lub słodkiej śmietanki i zagotuj ponownie.",
+          "Jeśli zupa ma być gęstsza, zagęść ją łyżką mąki pszennej."
+        ],
+        "opracowanie": "Grzybodex"
+      },
+      "gatunki": [
+        {
+          "nazwa_w_przepisie": "borowe rydze",
+          "scientificName": "Lactarius deliciosus",
+          "nazwa_pl": "mleczaj rydz",
+          "mapowanie_zrodlo": "Autorka sama definiuje nazwę: „Rydze — (borowe i jodłowe)” (s. 6, https://pl.wikisource.org/wiki/Strona:Potrawy_i_konserwy_z_grzybów.pdf/6); rydz „borowy” = spod sosen: Wikipedia PL, hasło „Mleczaj rydz” (wersja 78793886): „Tworzy ektomykoryzę z sosnami” oraz „Przez grzybiarzy nazywany jest po prostu rydzem” – https://pl.wikipedia.org/w/index.php?oldid=78793886",
+          "mz_wpis": "30) mleczaj rydz – Lactarius deliciosus (L.) Gray;",
+          "uwagi_bezpieczenstwa": [
+            {"tekst": "[ogólne, wszystkie grzyby] „Nie należy spożywać grzybów na surowo – może to wywoływać zaburzenia żołądkowo-jelitowe. Należy spożywać wyłącznie grzyby jadalne poddane obróbce termicznej, takiej jak smażenie lub gotowanie.” (Państwowa Inspekcja Sanitarna, PSSE w Opocznie, 11.10.2024)", "zrodlo_url": "https://www.gov.pl/web/psse-opoczno/bezpieczne-grzybobranie"},
+            {"tekst": "[ogólne, wszystkie grzyby] „Grzybów powinny unikać: kobiety w ciąży i karmiące, dzieci, osoby starsze, osoby z zaburzeniami pracy przewodu pokarmowego.” (Główny Inspektorat Sanitarny, 23.09.2022)", "zrodlo_url": "https://www.gov.pl/web/gis/bezpieczne-grzybobranie"}
+          ]
+        }
+      ],
+      "sezon": "sierpień–listopad (mleczaj rydz w Polsce; Wikipedia PL, hasło „Mleczaj rydz”)"
+    },
+    {
+      "id": "rydze-w-smietanie-kiewnarska-1927",
+      "tytul": "Rydze w śmietanie",
+      "ksiazka": {
+        "autor": "Elżbieta Kiewnarska (ps. „Pani Elżbieta”)",
+        "autor_zm": 1944,
+        "autor_zm_zrodla": [
+          "https://pl.wikipedia.org/wiki/El%C5%BCbieta_Kiewnarska",
+          "https://data.bn.org.pl/api/institutions/authorities.json?id=1141241"
+        ],
+        "tytul": "Potrawy i konserwy z grzybów (seria „Życie Praktyczne”)",
+        "wydanie_rok": "[1927]",
+        "miejsce": "Warszawa",
+        "wydawca": "Towarzystwo Wydawnicze „Bluszcz”",
+        "strona": "18",
+        "url": "https://pl.wikisource.org/wiki/Strona:Potrawy_i_konserwy_z_grzybów.pdf/18",
+        "url_skan": "https://commons.wikimedia.org/w/index.php?title=File:Potrawy_i_konserwy_z_grzybów.pdf&page=18"
+      },
+      "oryginal": "Rydze, oczyszczone na sucho, osolić na godzin parę na miseczce, poczem ułożyć w nelsonkę, przekładając plasterkami cebuli, osolić, popieprzyć i zalać gęstą śmietaną. Przykryć pokrywą i dusić na wolnym ogniu, aż śmietana się zmieni w masło, a rydze się usmażą. Podawać w tem samem naczyniu.",
+      "transkrypcja": "Wikiźródła (strona zatwierdzona, poziom 4) – porównana ze skanem przez Grzybodex; zgodna.",
+      "na_dzis": {
+        "skladniki": [
+          "rydze",
+          "sól, pieprz",
+          "cebula pokrojona w plasterki",
+          "gęsta śmietana (tyle, by zakryła grzyby)"
+        ],
+        "kroki": [
+          "Rydze oczyść na sucho (ściereczką, bez moczenia), posól i odstaw na parę godzin.",
+          "Ułóż je w płaskim naczyniu z pokrywką (dawna „nelsonka”), przekładając plasterkami cebuli.",
+          "Posól, popieprz i zalej gęstą śmietaną.",
+          "Przykryj i duś na małym ogniu, aż śmietana „zamieni się w masło”, a rydze się usmażą.",
+          "Podawaj w tym samym naczyniu."
+        ],
+        "opracowanie": "Grzybodex"
+      },
+      "gatunki": [
+        {
+          "nazwa_w_przepisie": "rydze (u autorki: „borowe i jodłowe”) – rydz borowy",
+          "scientificName": "Lactarius deliciosus",
+          "nazwa_pl": "mleczaj rydz",
+          "mapowanie_zrodlo": "Definicja autorki w tej samej książce: „Rydze — (borowe i jodłowe)” (s. 6, https://pl.wikisource.org/wiki/Strona:Potrawy_i_konserwy_z_grzybów.pdf/6); Wikipedia PL, hasło „Mleczaj rydz” (wersja 78793886): rośnie pod sosnami, „przez grzybiarzy nazywany jest po prostu rydzem” – https://pl.wikipedia.org/w/index.php?oldid=78793886",
+          "mz_wpis": "30) mleczaj rydz – Lactarius deliciosus (L.) Gray;",
+          "uwagi_bezpieczenstwa": [
+            {"tekst": "[ogólne, wszystkie grzyby] „Nie należy spożywać grzybów na surowo – może to wywoływać zaburzenia żołądkowo-jelitowe. Należy spożywać wyłącznie grzyby jadalne poddane obróbce termicznej, takiej jak smażenie lub gotowanie.” (Państwowa Inspekcja Sanitarna, PSSE w Opocznie, 11.10.2024)", "zrodlo_url": "https://www.gov.pl/web/psse-opoczno/bezpieczne-grzybobranie"},
+            {"tekst": "[ogólne, wszystkie grzyby] „Grzybów powinny unikać: kobiety w ciąży i karmiące, dzieci, osoby starsze, osoby z zaburzeniami pracy przewodu pokarmowego.” (Główny Inspektorat Sanitarny, 23.09.2022)", "zrodlo_url": "https://www.gov.pl/web/gis/bezpieczne-grzybobranie"}
+          ]
+        },
+        {
+          "nazwa_w_przepisie": "rydze (u autorki: „borowe i jodłowe”) – rydz jodłowy",
+          "scientificName": "Lactarius salmonicolor",
+          "nazwa_pl": "mleczaj późnojesienny (jodłowy)",
+          "mapowanie_zrodlo": "Definicja autorki: „Rydze — (borowe i jodłowe)” (s. 6, link j.w.); „mleczaj jodłowy (L. salmonicolor), występujący pod jodłami” – Wikipedia PL, hasło „Mleczaj rydz” (wersja 78793886), sekcja o gatunkach podobnych; nazwa „(jodłowy)” w samym wpisie listy MZ.",
+          "mz_wpis": "29) mleczaj późnojesienny (jodłowy) – Lactarius salmonicolor R. Heim et Leclair;",
+          "uwagi_bezpieczenstwa": [
+            {"tekst": "[ogólne, wszystkie grzyby] „Nie należy spożywać grzybów na surowo – może to wywoływać zaburzenia żołądkowo-jelitowe. Należy spożywać wyłącznie grzyby jadalne poddane obróbce termicznej, takiej jak smażenie lub gotowanie.” (Państwowa Inspekcja Sanitarna, PSSE w Opocznie, 11.10.2024)", "zrodlo_url": "https://www.gov.pl/web/psse-opoczno/bezpieczne-grzybobranie"},
+            {"tekst": "[ogólne, wszystkie grzyby] „Grzybów powinny unikać: kobiety w ciąży i karmiące, dzieci, osoby starsze, osoby z zaburzeniami pracy przewodu pokarmowego.” (Główny Inspektorat Sanitarny, 23.09.2022)", "zrodlo_url": "https://www.gov.pl/web/gis/bezpieczne-grzybobranie"}
+          ]
+        }
+      ],
+      "sezon": "sierpień–listopad (mleczaj rydz w Polsce; Wikipedia PL, hasło „Mleczaj rydz”)"
+    },
+    {
+      "id": "grzyby-prawdziwe-z-rusztu-kiewnarska-1927",
+      "tytul": "Grzyby prawdziwe z rusztu",
+      "ksiazka": {
+        "autor": "Elżbieta Kiewnarska (ps. „Pani Elżbieta”)",
+        "autor_zm": 1944,
+        "autor_zm_zrodla": [
+          "https://pl.wikipedia.org/wiki/El%C5%BCbieta_Kiewnarska",
+          "https://data.bn.org.pl/api/institutions/authorities.json?id=1141241"
+        ],
+        "tytul": "Potrawy i konserwy z grzybów (seria „Życie Praktyczne”)",
+        "wydanie_rok": "[1927]",
+        "miejsce": "Warszawa",
+        "wydawca": "Towarzystwo Wydawnicze „Bluszcz”",
+        "strona": "13",
+        "url": "https://pl.wikisource.org/wiki/Strona:Potrawy_i_konserwy_z_grzybów.pdf/13",
+        "url_skan": "https://commons.wikimedia.org/w/index.php?title=File:Potrawy_i_konserwy_z_grzybów.pdf&page=13"
+      },
+      "oryginal": "Czapeczki z najładniejszych grzybów obetrzeć na sucho ściereczką, osolić na miseczce; trzymać tak parę godzin. Ułożyć na ruszcie, na każdym położyć kawalątko masła, rozmiaru laskowego orzecha, zrumienić grzyby na węglach; kiedy już wykipi sok, który w obfitości z siebie puszczą, przełożyć na półmisek i natychmiast gorące podawać. Do nich—kulki zimnego, śmietankowego masła.",
+      "transkrypcja": "Wikiźródła (strona zatwierdzona, poziom 4) – porównana ze skanem przez Grzybodex; zgodna (myślnik bez spacji jak w druku).",
+      "na_dzis": {
+        "skladniki": [
+          "kapelusze najładniejszych borowików (prawdziwków)",
+          "sól",
+          "masło – kawałek wielkości orzecha laskowego na każdy kapelusz",
+          "kulki zimnego masła do podania"
+        ],
+        "kroki": [
+          "Kapelusze oczyść na sucho ściereczką, posól w misce i odstaw na parę godzin.",
+          "Ułóż je na ruszcie, na każdym połóż kawałek masła wielkości orzecha laskowego.",
+          "Opiekaj nad żarem, aż się zrumienią, a obficie puszczony sok odparuje.",
+          "Przełóż na półmisek i od razu podawaj gorące z kulkami zimnego masła."
+        ],
+        "opracowanie": "Grzybodex"
+      },
+      "gatunki": [
+        {
+          "nazwa_w_przepisie": "grzyby prawdziwe",
+          "scientificName": "Boletus edulis",
+          "nazwa_pl": "borowik szlachetny (prawdziwek)",
+          "mapowanie_zrodlo": "Definicja autorki w tej samej książce: „GRZYB PRAWDZIWY, (borowik, prawdziwik)” (s. 6, https://pl.wikisource.org/wiki/Strona:Potrawy_i_konserwy_z_grzybów.pdf/6); Wikipedia PL, hasło „Borowik szlachetny” (wersja 80674304), „Nazwy zwyczajowe”: dawne określenia m.in. „grzyb prawdziwy” – https://pl.wikipedia.org/w/index.php?oldid=80674304",
+          "mz_wpis": "8) borowik szlachetny (prawdziwek – wszystkie odmiany) – Boletus edulis Bull.;",
+          "uwagi_bezpieczenstwa": [
+            {"tekst": "[ogólne, wszystkie grzyby] „Nie należy spożywać grzybów na surowo – może to wywoływać zaburzenia żołądkowo-jelitowe. Należy spożywać wyłącznie grzyby jadalne poddane obróbce termicznej, takiej jak smażenie lub gotowanie.” (Państwowa Inspekcja Sanitarna, PSSE w Opocznie, 11.10.2024)", "zrodlo_url": "https://www.gov.pl/web/psse-opoczno/bezpieczne-grzybobranie"},
+            {"tekst": "[ogólne, wszystkie grzyby] „Grzybów powinny unikać: kobiety w ciąży i karmiące, dzieci, osoby starsze, osoby z zaburzeniami pracy przewodu pokarmowego.” (Główny Inspektorat Sanitarny, 23.09.2022)", "zrodlo_url": "https://www.gov.pl/web/gis/bezpieczne-grzybobranie"}
+          ]
+        }
+      ],
+      "sezon": "maj–listopad (borowik szlachetny; Wikipedia PL, hasło „Borowik szlachetny”)"
+    },
+    {
+      "id": "rydze-z-ryzem-kiewnarska-1927",
+      "tytul": "Rydze z ryżem",
+      "ksiazka": {
+        "autor": "Elżbieta Kiewnarska (ps. „Pani Elżbieta”)",
+        "autor_zm": 1944,
+        "autor_zm_zrodla": [
+          "https://pl.wikipedia.org/wiki/El%C5%BCbieta_Kiewnarska",
+          "https://data.bn.org.pl/api/institutions/authorities.json?id=1141241"
+        ],
+        "tytul": "100 postnych i jarskich dań (seria „Życie Praktyczne”)",
+        "wydanie_rok": "1927",
+        "miejsce": "Warszawa",
+        "wydawca": "Towarzystwo Wydawnicze „Bluszcz”",
+        "strona": "29 (przepis nr 99)",
+        "url": "https://pl.wikisource.org/wiki/Strona:100_postnych_i_jarskich_dań.djvu/31",
+        "url_skan": "https://commons.wikimedia.org/w/index.php?title=File:100_postnych_i_jarskich_dań.djvu&page=31"
+      },
+      "oryginal": "Dwadzieścia deka ryżu ugotować na sypko, najlepiej dusząc go najpierw w maśle, jak do risotto. Kilo rydzów oczyszczonych na sucho, aby nie traciły aromatu, usmażyć na rumiano w łyżce masła. Oddzielnie usmażyć pokrajaną w paski cebulę. W nelsonce, lub na półmisku, zmieszać ryż z rydzami i cebulą, osypać grubo ostrym serem i wstawić na kwadrans do pieca.",
+      "transkrypcja": "Wikiźródła (strona zatwierdzona, poziom 4) – porównana ze skanem przez Grzybodex; zgodna.",
+      "na_dzis": {
+        "skladniki": [
+          "200 g ryżu",
+          "masło do podsmażenia ryżu",
+          "1 kg rydzów",
+          "1 łyżka masła do grzybów",
+          "cebula pokrojona w paski",
+          "ostry ser do posypania (tarty)"
+        ],
+        "kroki": [
+          "Ryż najpierw podsmaż na maśle (jak do risotto), potem ugotuj na sypko.",
+          "Rydze oczyść na sucho, bez mycia, żeby nie straciły aromatu, i usmaż na rumiano na łyżce masła.",
+          "Osobno usmaż cebulę pokrojoną w paski.",
+          "W naczyniu żaroodpornym wymieszaj ryż z rydzami i cebulą, grubo posyp ostrym serem.",
+          "Zapiekaj ok. 15 minut w gorącym piekarniku (oryginał nie podaje temperatury)."
+        ],
+        "opracowanie": "Grzybodex"
+      },
+      "gatunki": [
+        {
+          "nazwa_w_przepisie": "rydze",
+          "scientificName": "Lactarius deliciosus",
+          "nazwa_pl": "mleczaj rydz",
+          "mapowanie_zrodlo": "Wikipedia PL, hasło „Mleczaj rydz” (wersja 78793886): „Przez grzybiarzy nazywany jest po prostu rydzem” – https://pl.wikipedia.org/w/index.php?oldid=78793886; ta sama autorka w „Potrawach i konserwach z grzybów” (s. 6) definiuje rydze jako „borowe i jodłowe” – zob. wątpliwości w ZRODLA.md.",
+          "mz_wpis": "30) mleczaj rydz – Lactarius deliciosus (L.) Gray;",
+          "uwagi_bezpieczenstwa": [
+            {"tekst": "[ogólne, wszystkie grzyby] „Nie należy spożywać grzybów na surowo – może to wywoływać zaburzenia żołądkowo-jelitowe. Należy spożywać wyłącznie grzyby jadalne poddane obróbce termicznej, takiej jak smażenie lub gotowanie.” (Państwowa Inspekcja Sanitarna, PSSE w Opocznie, 11.10.2024)", "zrodlo_url": "https://www.gov.pl/web/psse-opoczno/bezpieczne-grzybobranie"},
+            {"tekst": "[ogólne, wszystkie grzyby] „Grzybów powinny unikać: kobiety w ciąży i karmiące, dzieci, osoby starsze, osoby z zaburzeniami pracy przewodu pokarmowego.” (Główny Inspektorat Sanitarny, 23.09.2022)", "zrodlo_url": "https://www.gov.pl/web/gis/bezpieczne-grzybobranie"}
+          ]
+        }
+      ],
+      "sezon": "sierpień–listopad (mleczaj rydz w Polsce; Wikipedia PL, hasło „Mleczaj rydz”)"
+    },
+    {
+      "id": "omlet-z-grzybami-kiewnarska-1928",
+      "tytul": "Omlet z grzybami",
+      "ksiazka": {
+        "autor": "Elżbieta Kiewnarska (ps. „Pani Elżbieta”)",
+        "autor_zm": 1944,
+        "autor_zm_zrodla": [
+          "https://pl.wikipedia.org/wiki/El%C5%BCbieta_Kiewnarska",
+          "https://data.bn.org.pl/api/institutions/authorities.json?id=1141241"
+        ],
+        "tytul": "100 potraw z jaj („Życie Praktyczne” nr 32)",
+        "wydanie_rok": "1928",
+        "miejsce": "Warszawa",
+        "wydawca": "Towarzystwo Wydawnicze „Bluszcz”",
+        "strona": "20 (przepis nr 69)",
+        "url": "https://pl.wikisource.org/wiki/Strona:100_potraw_z_jaj.djvu/22",
+        "url_skan": "https://commons.wikimedia.org/w/index.php?title=File:100_potraw_z_jaj.djvu&page=22"
+      },
+      "oryginal": "Na omlet z sześciu jaj udusić ćwierć kilo grzybów prawdziwych w maśle z cebulką, zaprawić łyżeczką mąki, paru łyżkami śmietany, uważając, aby sos był gęsty i nie było go za dużo. Gdy omlet już upieczony, położyć na jedną połowę grzyby, przykryć drugą połową i natychmiast podawać.",
+      "transkrypcja": "Wikiźródła (strona zatwierdzona, poziom 4) – porównana ze skanem przez Grzybodex; zgodna.",
+      "na_dzis": {
+        "skladniki": [
+          "6 jaj (na omlet)",
+          "250 g borowików (prawdziwków)",
+          "masło",
+          "cebulka",
+          "1 łyżeczka mąki",
+          "2–3 łyżki śmietany"
+        ],
+        "kroki": [
+          "Borowiki poduś na maśle z cebulką.",
+          "Zagęść łyżeczką mąki i kilkoma łyżkami śmietany – sos ma być gęsty i niezbyt obfity.",
+          "Usmaż omlet z 6 jaj (sposób przygotowania samego omletu autorka opisuje w osobnym przepisie tej książki).",
+          "Na połowę gotowego omletu połóż grzyby, przykryj drugą połową i od razu podawaj."
+        ],
+        "opracowanie": "Grzybodex"
+      },
+      "gatunki": [
+        {
+          "nazwa_w_przepisie": "grzyby prawdziwe",
+          "scientificName": "Boletus edulis",
+          "nazwa_pl": "borowik szlachetny (prawdziwek)",
+          "mapowanie_zrodlo": "Wikipedia PL, hasło „Borowik szlachetny” (wersja 80674304), „Nazwy zwyczajowe”: dawne określenia m.in. „grzyb prawdziwy” – https://pl.wikipedia.org/w/index.php?oldid=80674304; ta sama autorka: „GRZYB PRAWDZIWY, (borowik, prawdziwik)” – Potrawy i konserwy z grzybów, s. 6, https://pl.wikisource.org/wiki/Strona:Potrawy_i_konserwy_z_grzybów.pdf/6",
+          "mz_wpis": "8) borowik szlachetny (prawdziwek – wszystkie odmiany) – Boletus edulis Bull.;",
+          "uwagi_bezpieczenstwa": [
+            {"tekst": "[ogólne, wszystkie grzyby] „Nie należy spożywać grzybów na surowo – może to wywoływać zaburzenia żołądkowo-jelitowe. Należy spożywać wyłącznie grzyby jadalne poddane obróbce termicznej, takiej jak smażenie lub gotowanie.” (Państwowa Inspekcja Sanitarna, PSSE w Opocznie, 11.10.2024)", "zrodlo_url": "https://www.gov.pl/web/psse-opoczno/bezpieczne-grzybobranie"},
+            {"tekst": "[ogólne, wszystkie grzyby] „Grzybów powinny unikać: kobiety w ciąży i karmiące, dzieci, osoby starsze, osoby z zaburzeniami pracy przewodu pokarmowego.” (Główny Inspektorat Sanitarny, 23.09.2022)", "zrodlo_url": "https://www.gov.pl/web/gis/bezpieczne-grzybobranie"}
+          ]
+        }
+      ],
+      "sezon": "maj–listopad (borowik szlachetny; Wikipedia PL, hasło „Borowik szlachetny”)"
+    },
+    {
+      "id": "rydze-duszone-norkowska-1903",
+      "tytul": "Rydze duszone",
+      "ksiazka": {
+        "autor": "Marta Norkowska",
+        "autor_zm": 1930,
+        "autor_zm_zrodla": [
+          "https://pl.wikipedia.org/wiki/Marta_Norkowska",
+          "https://data.bn.org.pl/api/institutions/authorities.json?id=1139346"
+        ],
+        "tytul": "Najnowsza kuchnia wytworna i gospodarska",
+        "wydanie_rok": "1903",
+        "miejsce": "Warszawa – Kraków",
+        "wydawca": "Gebethner i Wolff; G. Gebethner i Spółka",
+        "strona": "222 (rozdz. XII „Jarzyny”, przepis nr 54)",
+        "url": "https://pl.wikisource.org/wiki/Strona:Najnowsza_kuchnia_wytworna_i_gospodarska.djvu/226",
+        "url_skan": "https://commons.wikimedia.org/w/index.php?title=File:Najnowsza_kuchnia_wytworna_i_gospodarska.djvu&page=226"
+      },
+      "oryginal": "Rydze, jeżeli drobne, można dusić w całości, większe poszatkować. Włożyć dużo masła w rondelek, wkroić cebulę, którą przesmażyć; włożyć rydze dobrze wypłukane, posolić, popieprzyć i dusić pod pokrywą na wolnym ogniu aż będą miękkie. Duszone rydze wyborne są do pieczonej baraniny.",
+      "transkrypcja": "Wikiźródła (strona nieskorygowana, poziom 1) – porównana słowo w słowo ze skanem przez Grzybodex; zgodna.",
+      "na_dzis": {
+        "skladniki": [
+          "rydze",
+          "dużo masła",
+          "cebula",
+          "sól, pieprz"
+        ],
+        "kroki": [
+          "Drobne rydze zostaw w całości, większe pokrój; dobrze je wypłucz.",
+          "W rondelku roztop dużo masła i podsmaż na nim pokrojoną cebulę.",
+          "Dodaj rydze, posól, popieprz i duś pod przykryciem na małym ogniu, aż będą miękkie.",
+          "Podawaj np. do pieczonej baraniny."
+        ],
+        "opracowanie": "Grzybodex"
+      },
+      "gatunki": [
+        {
+          "nazwa_w_przepisie": "rydze",
+          "scientificName": "Lactarius deliciosus",
+          "nazwa_pl": "mleczaj rydz",
+          "mapowanie_zrodlo": "Wikipedia PL, hasło „Mleczaj rydz” (wersja 78793886): „Przez grzybiarzy nazywany jest po prostu rydzem” – https://pl.wikipedia.org/w/index.php?oldid=78793886; strona ujednoznaczniająca „Rydz” (wersja 78316252).",
+          "mz_wpis": "30) mleczaj rydz – Lactarius deliciosus (L.) Gray;",
+          "uwagi_bezpieczenstwa": [
+            {"tekst": "[ogólne, wszystkie grzyby] „Nie należy spożywać grzybów na surowo – może to wywoływać zaburzenia żołądkowo-jelitowe. Należy spożywać wyłącznie grzyby jadalne poddane obróbce termicznej, takiej jak smażenie lub gotowanie.” (Państwowa Inspekcja Sanitarna, PSSE w Opocznie, 11.10.2024)", "zrodlo_url": "https://www.gov.pl/web/psse-opoczno/bezpieczne-grzybobranie"},
+            {"tekst": "[ogólne, wszystkie grzyby] „Grzybów powinny unikać: kobiety w ciąży i karmiące, dzieci, osoby starsze, osoby z zaburzeniami pracy przewodu pokarmowego.” (Główny Inspektorat Sanitarny, 23.09.2022)", "zrodlo_url": "https://www.gov.pl/web/gis/bezpieczne-grzybobranie"}
+          ]
+        }
+      ],
+      "sezon": "sierpień–listopad (mleczaj rydz w Polsce; Wikipedia PL, hasło „Mleczaj rydz”)"
+    }
+  ],
+  "odrzucone": [
+    {
+      "tytul": "Gąski duszone (rozdz. „Gąski żółte”)",
+      "ksiazka": {"autor": "Elżbieta Kiewnarska", "tytul": "Potrawy i konserwy z grzybów", "wydanie_rok": "[1927]", "strona": "34", "url": "https://pl.wikisource.org/wiki/Strona:Potrawy_i_konserwy_z_grzybów.pdf/34"},
+      "powod": "„Gąski żółte (kózki)” to wg Wikipedii PL („Gąska zielonka”: inne nazwy „bedłka zielonka, gąska żółta”) Tricholoma equestre. Gatunek wciąż figuruje na liście MZ (poz. 11), ale reguła projektu Grzybodex go wyklucza (doniesienia o rabdomiolizie). Dodatkowo autorka używa słowa „zielonki” dla dwóch różnych grzybów (s. 7 „bedłki zielone”, s. 14 „zajączki”) – nazwa wieloznaczna."
+    },
+    {
+      "tytul": "Krówki (olszówki) solone",
+      "ksiazka": {"autor": "Elżbieta Kiewnarska", "tytul": "Potrawy i konserwy z grzybów", "wydanie_rok": "[1927]", "strona": "36", "url": "https://pl.wikisource.org/wiki/Strona:Potrawy_i_konserwy_z_grzybów.pdf/36"},
+      "powod": "Olszówka = krowiak podwinięty (Paxillus involutus): nie ma go na liście MZ, a rodzaj Paxillus jest wykluczony regułą projektu."
+    },
+    {
+      "tytul": "Rydze końskie (wełnianki) solone",
+      "ksiazka": {"autor": "Elżbieta Kiewnarska", "tytul": "Potrawy i konserwy z grzybów", "wydanie_rok": "[1927]", "strona": "37", "url": "https://pl.wikisource.org/wiki/Strona:Potrawy_i_konserwy_z_grzybów.pdf/37"},
+      "powod": "Mleczaj wełnianka (Lactarius torminosus) nie występuje na liście MZ. Wikipedia PL („Mleczaj rydz”, gatunki podobne): „w większości krajów Europy uważany jest za grzyb trujący”. Sama autorka pisze, że „u nas jest uważany za zupełnie niejadalny”."
+    },
+    {
+      "tytul": "Smardze duszone",
+      "ksiazka": {"autor": "Elżbieta Kiewnarska", "tytul": "Potrawy i konserwy z grzybów", "wydanie_rok": "[1927]", "strona": "24", "url": "https://pl.wikisource.org/wiki/Strona:Potrawy_i_konserwy_z_grzybów.pdf/24"},
+      "powod": "Nazwa rodzajowa: autorka wymienia smardze „ściczaste, dzwonkowate, okrągłe i krzaczaste” (s. 6) i utożsamia „babie uszy (smardz, piestrzanka)” (s. 6) – możliwe pomylenie z piestrzenicą (Gyromitra, rodzaj wykluczony). Lista MZ obejmuje tylko Morchella esculenta i M. conica, i to wyłącznie z ogrodów, upraw, szkółek, terenów zielonych lub spoza Polski."
+    },
+    {
+      "tytul": "Surojadki duszone",
+      "ksiazka": {"autor": "Elżbieta Kiewnarska", "tytul": "Potrawy i konserwy z grzybów", "wydanie_rok": "[1927]", "strona": "28", "url": "https://pl.wikisource.org/wiki/Strona:Potrawy_i_konserwy_z_grzybów.pdf/28"},
+      "powod": "Surojadki/gołąbki (Russula) – nazwa rodzajowa i żaden gatunek tego rodzaju nie jest na liście MZ."
+    },
+    {
+      "tytul": "Kaczka z gruzdami",
+      "ksiazka": {"autor": "Elżbieta Kiewnarska", "tytul": "Potrawy i konserwy z grzybów", "wydanie_rok": "[1927]", "strona": "30", "url": "https://pl.wikisource.org/wiki/Strona:Potrawy_i_konserwy_z_grzybów.pdf/30"},
+      "powod": "„Chrząszcze — (gruzdy, podlipki, biele, pieprzniki)” (s. 6) to zbiorcza nazwa kilku mleczajów, a żadnego z nich nie ma na liście MZ."
+    },
+    {
+      "tytul": "Opieńki smażone",
+      "ksiazka": {"autor": "Elżbieta Kiewnarska", "tytul": "Potrawy i konserwy z grzybów", "wydanie_rok": "[1927]", "strona": "32", "url": "https://pl.wikisource.org/wiki/Strona:Potrawy_i_konserwy_z_grzybów.pdf/32"},
+      "powod": "„Opieńki” to nazwa rodzajowa (Armillaria, kilka gatunków); lista MZ obejmuje tylko Armillaria mellea, a autorka pisze „jadalne tylko brzozowe” – nie da się jednoznacznie przypisać gatunku."
+    },
+    {
+      "tytul": "Pieczarki po francusku",
+      "ksiazka": {"autor": "Elżbieta Kiewnarska", "tytul": "Potrawy i konserwy z grzybów", "wydanie_rok": "[1927]", "strona": "15", "url": "https://pl.wikisource.org/wiki/Strona:Potrawy_i_konserwy_z_grzybów.pdf/15"},
+      "powod": "„Pieczarki” to nazwa rodzajowa (Agaricus). Lista MZ obejmuje 7 gatunków (nie ma na niej np. pieczarki karbolowej ani pieczarki białawej) i wyklucza zbyt młode okazy ze stanu naturalnego. Autorka zaleca „wszystkie: leśne, łąkowe i inspektowe” (s. 3)."
+    },
+    {
+      "tytul": "Maślaki smażone",
+      "ksiazka": {"autor": "Elżbieta Kiewnarska", "tytul": "Potrawy i konserwy z grzybów", "wydanie_rok": "[1927]", "strona": "22", "url": "https://pl.wikisource.org/wiki/Strona:Potrawy_i_konserwy_z_grzybów.pdf/22"},
+      "powod": "Autorka definiuje „Maślaki — (koźlaki, maślaki, pępki)” (s. 7): to kilka rodzajów, nazwa jest wieloznaczna. Lista MZ obejmuje tylko 5 gatunków Suillus."
+    },
+    {
+      "tytul": "Trufle na grzankach",
+      "ksiazka": {"autor": "Elżbieta Kiewnarska", "tytul": "Potrawy i konserwy z grzybów", "wydanie_rok": "[1927]", "strona": "26", "url": "https://pl.wikisource.org/wiki/Strona:Potrawy_i_konserwy_z_grzybów.pdf/26"},
+      "powod": "„Trufle — (czarne, prawdziwe, piestrzaki, i białe, polskie)” (s. 7) – nazwa wieloznaczna. „Trufla biała, polska” nie jest rodzajem Tuber, a sama autorka ostrzega przed jej pomyleniem z purchawką (s. 6)."
+    },
+    {
+      "tytul": "Kurki (liski, lisiczki)",
+      "ksiazka": {"autor": "Elżbieta Kiewnarska", "tytul": "Potrawy i konserwy z grzybów", "wydanie_rok": "[1927]", "strona": "35", "url": "https://pl.wikisource.org/wiki/Strona:Potrawy_i_konserwy_z_grzybów.pdf/35"},
+      "powod": "Gatunek byłby dopuszczalny (pieprznik jadalny, lista MZ poz. 44), ale w książce nie ma osobnego przepisu – są tylko ogólne wskazówki („przyrządzane we wszystkie te same sposoby, co grzyby prawdziwe”). Nie spełnia warunku „przepis”. W innych książkach z Wikiźródeł nie znalazłem samodzielnego przepisu na kurki."
+    },
+    {
+      "tytul": "Rydze solone (podawane „na surowo”)",
+      "ksiazka": {"autor": "Elżbieta Kiewnarska", "tytul": "Potrawy i konserwy z grzybów", "wydanie_rok": "[1927]", "strona": "19", "url": "https://pl.wikisource.org/wiki/Strona:Potrawy_i_konserwy_z_grzybów.pdf/19"},
+      "powod": "Przepis każe jeść solone rydze „na surowo” ze śmietaną, co jest sprzeczne z zaleceniem PIS: „Nie należy spożywać grzybów na surowo” (https://www.gov.pl/web/psse-opoczno/bezpieczne-grzybobranie)."
+    },
+    {
+      "tytul": "Rydze w oliwie",
+      "ksiazka": {"autor": "Elżbieta Kiewnarska", "tytul": "Potrawy i konserwy z grzybów", "wydanie_rok": "[1927]", "strona": "21", "url": "https://pl.wikisource.org/wiki/Strona:Potrawy_i_konserwy_z_grzybów.pdf/21"},
+      "powod": "Pierwszy sposób to surowe rydze zalane oliwą, bez obróbki termicznej – sprzeczne z zaleceniem PIS (j.w.). To przepis na konserwę, a nie potrawę."
+    },
+    {
+      "tytul": "Zupa ze świeżych rydzów lub pieczarek",
+      "ksiazka": {"autor": "Lucyna Ćwierczakiewiczowa", "tytul": "365 obiadów za 5 złotych", "wydanie_rok": "1871", "strona": "18 (wg spisu treści; djvu 081–082)", "url": "https://pl.wikisource.org/wiki/Strona:Lucyna_Ćwierczakiewiczowa_-_365_obiadów_za_5_złotych.djvu/081"},
+      "powod": "Przepis zawiera „pieczarki” – nazwę rodzajową (Agaricus) bez gatunku (zob. „Pieczarki po francusku”)."
+    },
+    {
+      "tytul": "Omlet z pieczarkami",
+      "ksiazka": {"autor": "Lucyna Ćwierczakiewiczowa", "tytul": "365 obiadów za 5 złotych", "wydanie_rok": "1871", "strona": "djvu 296", "url": "https://pl.wikisource.org/wiki/Strona:Lucyna_Ćwierczakiewiczowa_-_365_obiadów_za_5_złotych.djvu/296"},
+      "powod": "„świeże pieczarki lub grzyby młode bardzo” – nazwa rodzajowa oraz „grzyby” bez gatunku."
+    },
+    {
+      "tytul": "Rydze w maśle",
+      "ksiazka": {"autor": "Franciszek Chocieszyński (zm. 1899)", "tytul": "Praktyczna Kucharka", "wydanie_rok": "1884", "strona": "83 (nr 21)", "url": "https://pl.wikisource.org/wiki/Strona:Praktycznakucharka82.JPG"},
+      "powod": "Niemal dosłowna kopia przepisu Ćwierczakiewiczowej z 1871 r. (ten sam tekst, dopisek „na 8 osób”) – duplikat. Transkrypcja na Wikiźródłach jest nieskorygowana i nie porównywałem jej ze skanem."
+    },
+    {
+      "tytul": "Rydze z rusztu",
+      "ksiazka": {"autor": "Marta Norkowska", "tytul": "Najnowsza kuchnia wytworna i gospodarska", "wydanie_rok": "1903", "strona": "221 (nr 53)", "url": "https://pl.wikisource.org/wiki/Strona:Najnowsza_kuchnia_wytworna_i_gospodarska.djvu/225"},
+      "powod": "Ostatnie zdanie poleca „w taki sam sposób” piec „świeże pieczarki” (nazwa rodzajowa). Zamiast skracać przepis, z tej samej książki wybrano „Rydze duszone”."
+    },
+    {
+      "tytul": "Rydze i grzyby marynowane na prędce",
+      "ksiazka": {"autor": "Marta Norkowska", "tytul": "Najnowsza kuchnia wytworna i gospodarska", "wydanie_rok": "1903", "strona": "222 (nr 55)", "url": "https://pl.wikisource.org/wiki/Strona:Najnowsza_kuchnia_wytworna_i_gospodarska.djvu/226"},
+      "powod": "„grzyby” bez gatunku."
+    },
+    {
+      "tytul": "Grzyby duszone w maśle; Rydze smażone (konserwy sterylizowane)",
+      "ksiazka": {"autor": "Marta Norkowska", "tytul": "Śpiżarnia i zapasy zimowe", "wydanie_rok": "1925", "strona": "djvu 128 (nr 13–14)", "url": "https://pl.wikisource.org/wiki/Strona:Śpiżarnia_i_zapasy_zimowe.djvu/128"},
+      "powod": "Poza zakresem: to przepisy na domowe konserwy słoikowe sterylizowane według parametrów z 1925 r. Nie mam urzędowego źródła, które pozwoliłoby ocenić ich bezpieczeństwo, więc ich nie włączam."
+    },
+    {
+      "tytul": "Rydze (nr 236)",
+      "ksiazka": {"autor": "Rebekka Wolf (przekł. „H. S. K.”)", "tytul": "Kuchnia koszerna", "wydanie_rok": "1904", "strona": "101", "url": "https://pl.wikisource.org/wiki/Strona:Kuchnia_koszerna_1904.djvu/103"},
+      "powod": "Nie potwierdziłem roku śmierci autorki – kartoteka wzorcowa BN (id 3322619) nie podaje dat, więc status domeny publicznej jest niezweryfikowany. Ta sama książka (s. 100, https://pl.wikisource.org/wiki/Strona:Kuchnia_koszerna_1904.djvu/102) podaje „test cebuli” na grzyby trujące, a PIS wymienia go wśród błędnych metod: „Należy unikać błędnych metod rozpoznawania gatunków trujących (zabarwienie cebuli podczas gotowania, ciemnienie srebrnej łyżeczki…)” (https://www.gov.pl/web/psse-opoczno/bezpieczne-grzybobranie)."
+    }
+  ],
+  "polka": [
+    {
+      "typ": "przewodnik naukowy (klucz do oznaczania)",
+      "tytul": "Grzyby i ich oznaczanie",
+      "autor": "Barbara Gumińska, Władysław Wojewoda",
+      "wydawca": "Państwowe Wydawnictwo Rolnicze i Leśne, Warszawa",
+      "rok": "1988 (wyd. 4)",
+      "isbn": "8309007140",
+      "weryfikacja": "Katalog Biblioteki Narodowej, rekord id 1082333 (data.bn.org.pl)"
+    },
+    {
+      "typ": "atlas",
+      "tytul": "Grzyby (seria „Spotkania z Przyrodą”)",
+      "autor": "Marek Snowarski",
+      "wydawca": "Multico Oficyna Wydawnicza, Warszawa",
+      "rok": "2023",
+      "isbn": "9788377636787",
+      "weryfikacja": "Katalog Biblioteki Narodowej, rekord id 1000003070496 (data.bn.org.pl)"
+    },
+    {
+      "typ": "opracowanie naukowe (gatunki chronione)",
+      "tytul": "Grzyby chronione Polski: rozmieszczenie, zagrożenia, rekomendacje ochronne",
+      "autor": "Izabela Kałucka, Anna Kujawa, Małgorzata Ruszkiewicz-Michalska",
+      "wydawca": "Instytut Środowiska Rolniczego i Leśnego PAN, Poznań",
+      "rok": "2020",
+      "isbn": "9788393837984",
+      "weryfikacja": "Katalog Biblioteki Narodowej, rekord id 1000000965433 (data.bn.org.pl)"
+    },
+    {
+      "typ": "materiał urzędowy",
+      "tytul": "Bezpieczne grzybobranie",
+      "autor": "Główny Inspektorat Sanitarny",
+      "wydawca": "gov.pl",
+      "rok": "2022 (opublikowano 23.09.2022)",
+      "isbn": null,
+      "url": "https://www.gov.pl/web/gis/bezpieczne-grzybobranie"
+    },
+    {
+      "typ": "materiał urzędowy",
+      "tytul": "Bezpieczne grzybobranie",
+      "autor": "Państwowa Inspekcja Sanitarna – Powiatowa Stacja Sanitarno-Epidemiologiczna w Opocznie",
+      "wydawca": "gov.pl",
+      "rok": "2024 (opublikowano 11.10.2024)",
+      "isbn": null,
+      "url": "https://www.gov.pl/web/psse-opoczno/bezpieczne-grzybobranie"
+    },
+    {
+      "typ": "akt prawny",
+      "tytul": "Rozporządzenie Ministra Zdrowia w sprawie grzybów dopuszczonych do obrotu lub produkcji przetworów grzybowych… (tekst jednolity)",
+      "autor": "Minister Zdrowia",
+      "wydawca": "Dziennik Ustaw",
+      "rok": "2026 (Dz.U. 2026 poz. 258)",
+      "isbn": null,
+      "url": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU20260000258"
+    }
+  ]
+}

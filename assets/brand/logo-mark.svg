@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="264" height="240" viewBox="-12 0 264 240">
+  <!-- Grzybodex simplified mark (small sizes, e.g. favicon): same shapes and colours as src/ui/logo.tsx (keep both in sync). -->
+  <path d="M18 118 L36 50 Q38 42 46 42 L194 42 Q202 42 204 50 L222 118 Z" fill="#E0AE62" stroke="#2E2A24" stroke-width="12" stroke-linejoin="round"/>
+  <path d="M18 122 L36 190 Q38 198 46 198 L194 198 Q202 198 204 190 L222 122 Z" fill="#E0AE62" stroke="#2E2A24" stroke-width="12" stroke-linejoin="round"/>
+  <rect x="8" y="104" width="224" height="32" rx="8" fill="#6B3F1D" stroke="#2E2A24" stroke-width="12"/>
+  <path d="M80 122 C 82 88, 158 88, 160 122 Z" fill="#8B4A22" stroke="#2E2A24" stroke-width="10" stroke-linejoin="round"/>
+</svg>

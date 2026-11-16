@@ -1,0 +1,258 @@
+{
+  "zrodlo": "English translation of data/przepisy.json (Grzybodex, 2026-11-07), keyed by recipe id. Book references (author, Polish title, year, place) stay in przepisy.json unchanged; only notes in brackets are translated here.",
+  "przepisy": {
+    "rydze-w-masle-cwierczakiewiczowa-1871": {
+      "tytul": "Saffron milk caps in butter",
+      "oryginal": "Put half a pound of good butter into a saucepan for half a garniec of saffron milk caps; rinse the milk caps several times in cold water, put them into the butter, set them on the coals or over a low fire and salt them at once. When they release their juice, add finely chopped onion, parsley root and celery: two handfuls of it all, cover and let them stew over a low fire, often shaking the saucepan so that they do not burn, until they cook down to clear butter; then sprinkle in a little pepper and a handful of breadcrumbs, mix, heat for a moment and serve. This excellent dish can be served in winter as if fresh; see Jedyne praktyczne przepisy, where the way of preserving such milk caps is described.",
+      "strona": "209 (recipe no. 36 in the vegetables section)",
+      "sezon": "August–November (saffron milk cap in Poland; Polish Wikipedia, article „Mleczaj rydz”)",
+      "na_dzis": {
+        "skladniki": [
+          "approx. 2 l fresh saffron milk caps (the original says „pół garnca”, half a garniec – an old measure of volume)",
+          "approx. 200 g butter (the original says „pół funta”, half a pound)",
+          "salt",
+          "finely chopped onion, parsley root and celery – about 2 handfuls in total",
+          "pepper",
+          "a handful of breadcrumbs"
+        ],
+        "kroki": [
+          "Rinse the saffron milk caps several times in cold water.",
+          "Melt the butter in a saucepan, add the mushrooms, put them on a low heat and salt them straight away.",
+          "When the mushrooms release their juice, add the chopped onion, parsley root and celery.",
+          "Cover and stew on a low heat, often shaking the saucepan so that nothing sticks, until the juice has evaporated and only clear butter remains.",
+          "Season with pepper, add a handful of breadcrumbs, stir, heat for a moment and serve."
+        ]
+      },
+      "gatunki": {
+        "Lactarius deliciosus": { "nazwa_w_przepisie": "rydze (saffron milk caps)", "nazwa": "saffron milk cap" }
+      }
+    },
+    "rydze-smazone-zawadzka-1913": {
+      "tytul": "Fried saffron milk caps",
+      "oryginal": "Proportions: 1 plate of mushrooms, 1–2 spoonfuls of butter, salt. 1 onion may be added.\nWipe young saffron milk caps clean of sand and salt them. Melt a spoonful of butter in a frying pan, lay the milk caps one next to another and fry them, and as soon as they release their juice and are no longer red inside when cut through, they are done.",
+      "strona": "74 (recipe no. 61, section IV „Jarzyny” [Vegetables])",
+      "sezon": "August–November (saffron milk cap in Poland; Polish Wikipedia, article „Mleczaj rydz”)",
+      "na_dzis": {
+        "skladniki": [
+          "1 plate of young saffron milk caps",
+          "1–2 tablespoons butter",
+          "salt",
+          "optionally 1 onion (the original does not say when to add it)"
+        ],
+        "kroki": [
+          "Clean the young saffron milk caps thoroughly of sand (wipe them) and salt them.",
+          "Melt a tablespoon of butter in a frying pan and lay the mushrooms one next to another.",
+          "Fry until they release their juice and are no longer red inside when cut through – then they are done."
+        ]
+      },
+      "gatunki": {
+        "Lactarius deliciosus": { "nazwa_w_przepisie": "rydze (saffron milk caps)", "nazwa": "saffron milk cap" }
+      }
+    },
+    "borowiki-tuszone-zawadzka-1913": {
+      "tytul": "Braised porcini",
+      "oryginal": "Proportions: 1 deep plate of cleaned porcini, ¼ lb. of butter, 3 onions, salt and pepper, 2–3 spoonfuls of sour cream.\nCut young and sound porcini into strips; scald them with boiling water, drain and put them into a saucepan. Fry finely chopped and squeezed-out onion in butter, mix it with the mushrooms, salt, pepper and let them braise; then add a few spoonfuls of sour cream, stir and cook the mushrooms down with it so that the sour cream turns into butter.\nThe porcini can also be fried directly in butter without scalding, but they must be cleaned very carefully and wiped free of sand.",
+      "strona": "74 (recipe no. 60, section IV „Jarzyny” [Vegetables])",
+      "sezon": "May–November (penny bun; Polish Wikipedia, article „Borowik szlachetny”)",
+      "na_dzis": {
+        "skladniki": [
+          "1 deep plate of cleaned young porcini (penny buns)",
+          "approx. 100 g butter (the original says „¼ f.”, a quarter of a pound)",
+          "3 onions",
+          "salt, pepper",
+          "2–3 tablespoons sour cream"
+        ],
+        "kroki": [
+          "Cut young, sound porcini into strips, scald them with boiling water, drain and transfer to a saucepan.",
+          "Finely chop the onion, squeeze it out and fry it in butter.",
+          "Combine the onion with the mushrooms, season with salt and pepper and braise.",
+          "Add 2–3 tablespoons of sour cream, stir and keep braising until the sour cream „turns into butter” (cooks down to fat).",
+          "Variant from the original: the porcini can be fried in butter without scalding, but then they must be cleaned of sand very carefully."
+        ]
+      },
+      "gatunki": {
+        "Boletus edulis": { "nazwa_w_przepisie": "borowiki (porcini)", "nazwa": "penny bun (porcini)" }
+      }
+    },
+    "zupa-rydzowa-kiewnarska-1927": {
+      "tytul": "Saffron milk cap soup",
+      "oryginal": "(Viennese recipe). If we use a larger number of chickens or young hens for roasting, this soup will turn out best for us. Boil chicken feet, necks, heads and gizzards with carrot, parsley and dill into a light broth. Cut half a kilo of large pine saffron milk caps into slices and stew them in a small saucepan with a large spoonful of butter, without drying them out too much. Pour in one and a half litres of the broth together with the pieces of chicken giblets, bring to the boil once only, then add two glasses of good milk, or better, sweet cream, and bring to the boil again. It has the colour of crayfish soup and tastes excellent.\nIf you want it thicker, thicken it with a spoonful of wheat flour.",
+      "strona": "18",
+      "sezon": "August–November (saffron milk cap in Poland; Polish Wikipedia, article „Mleczaj rydz”)",
+      "na_dzis": {
+        "skladniki": [
+          "small chicken parts for broth (in the original: feet, necks, heads and gizzards)",
+          "carrot, parsley, dill",
+          "500 g large saffron milk caps from under pine trees",
+          "1 large tablespoon butter",
+          "1.5 l light broth",
+          "2 glasses of milk or – better – sweet cream",
+          "optionally 1 tablespoon wheat flour"
+        ],
+        "kroki": [
+          "Make a light broth from the chicken parts, carrot, parsley and dill.",
+          "Slice the saffron milk caps and stew them in a small saucepan with a large tablespoon of butter, without drying them out too much.",
+          "Pour in 1.5 l of broth together with the pieces of meat and bring to the boil just once.",
+          "Add 2 glasses of milk or sweet cream and bring to the boil again.",
+          "If you want the soup thicker, thicken it with a tablespoon of wheat flour."
+        ]
+      },
+      "gatunki": {
+        "Lactarius deliciosus": { "nazwa_w_przepisie": "borowe rydze (pine saffron milk caps)", "nazwa": "saffron milk cap" }
+      }
+    },
+    "rydze-w-smietanie-kiewnarska-1927": {
+      "tytul": "Saffron milk caps in sour cream",
+      "oryginal": "Clean the saffron milk caps dry, salt them in a small bowl for a few hours, then arrange them in a nelsonka, layering them with slices of onion, salt, pepper and pour thick sour cream over them. Cover with a lid and stew over a low fire until the sour cream turns into butter and the milk caps are fried. Serve in the same dish.",
+      "strona": "18",
+      "sezon": "August–November (saffron milk cap in Poland; Polish Wikipedia, article „Mleczaj rydz”)",
+      "na_dzis": {
+        "skladniki": [
+          "saffron milk caps",
+          "salt, pepper",
+          "onion, sliced",
+          "thick sour cream (enough to cover the mushrooms)"
+        ],
+        "kroki": [
+          "Clean the saffron milk caps dry (with a cloth, without soaking), salt them and set aside for a few hours.",
+          "Arrange them in a shallow dish with a lid (the old „nelsonka”), layering them with slices of onion.",
+          "Season with salt and pepper and pour thick sour cream over them.",
+          "Cover and stew on a low heat until the sour cream „turns into butter” and the mushrooms are fried.",
+          "Serve in the same dish."
+        ]
+      },
+      "gatunki": {
+        "Lactarius deliciosus": {
+          "nazwa_w_przepisie": "rydze (the author has „borowe i jodłowe”, pine and fir) – rydz borowy (pine saffron milk cap)",
+          "nazwa": "saffron milk cap"
+        },
+        "Lactarius salmonicolor": {
+          "nazwa_w_przepisie": "rydze (the author has „borowe i jodłowe”, pine and fir) – rydz jodłowy (fir saffron milk cap)",
+          "nazwa": "salmon milk cap"
+        }
+      }
+    },
+    "grzyby-prawdziwe-z-rusztu-kiewnarska-1927": {
+      "tytul": "Grilled porcini",
+      "oryginal": "Wipe the caps of the finest mushrooms dry with a cloth and salt them in a small bowl; keep them like this for a few hours. Lay them on a grill, put a little piece of butter the size of a hazelnut on each, brown the mushrooms over the coals; when the juice, which they release in abundance, has boiled away, transfer them to a platter and serve hot at once. With them—balls of cold cream butter.",
+      "strona": "13",
+      "sezon": "May–November (penny bun; Polish Wikipedia, article „Borowik szlachetny”)",
+      "na_dzis": {
+        "skladniki": [
+          "caps of the finest porcini (penny buns)",
+          "salt",
+          "butter – a piece the size of a hazelnut for each cap",
+          "balls of cold butter to serve"
+        ],
+        "kroki": [
+          "Clean the caps dry with a cloth, salt them in a bowl and set aside for a few hours.",
+          "Lay them on a grill and put a piece of butter the size of a hazelnut on each.",
+          "Grill over embers until browned and the abundant juice has evaporated.",
+          "Transfer to a platter and serve hot at once with balls of cold butter."
+        ]
+      },
+      "gatunki": {
+        "Boletus edulis": { "nazwa_w_przepisie": "grzyby prawdziwe (literally „true mushrooms”, porcini)", "nazwa": "penny bun (porcini)" }
+      }
+    },
+    "rydze-z-ryzem-kiewnarska-1927": {
+      "tytul": "Saffron milk caps with rice",
+      "oryginal": "Cook twenty decagrams of rice so that the grains stay separate, best by first stewing it in butter, as for risotto. Fry a kilo of saffron milk caps, cleaned dry so that they do not lose their aroma, until golden in a spoonful of butter. Separately fry onion cut into strips. In a nelsonka or on a platter, mix the rice with the milk caps and onion, sprinkle thickly with sharp cheese and put in the oven for a quarter of an hour.",
+      "strona": "29 (recipe no. 99)",
+      "sezon": "August–November (saffron milk cap in Poland; Polish Wikipedia, article „Mleczaj rydz”)",
+      "na_dzis": {
+        "skladniki": [
+          "200 g rice",
+          "butter for frying the rice",
+          "1 kg saffron milk caps",
+          "1 tablespoon butter for the mushrooms",
+          "onion cut into strips",
+          "sharp cheese for sprinkling (grated)"
+        ],
+        "kroki": [
+          "First fry the rice in butter (as for risotto), then cook it so that the grains stay separate.",
+          "Clean the saffron milk caps dry, without washing, so that they do not lose their aroma, and fry them until golden in a tablespoon of butter.",
+          "Separately fry the onion cut into strips.",
+          "In an ovenproof dish mix the rice with the mushrooms and onion and sprinkle thickly with sharp cheese.",
+          "Bake for about 15 minutes in a hot oven (the original gives no temperature)."
+        ]
+      },
+      "gatunki": {
+        "Lactarius deliciosus": { "nazwa_w_przepisie": "rydze (saffron milk caps)", "nazwa": "saffron milk cap" }
+      }
+    },
+    "omlet-z-grzybami-kiewnarska-1928": {
+      "tytul": "Omelette with mushrooms",
+      "oryginal": "For an omelette of six eggs, stew a quarter of a kilo of porcini in butter with a little onion, thicken with a teaspoon of flour and a few spoonfuls of sour cream, taking care that the sauce is thick and that there is not too much of it. When the omelette is done, put the mushrooms on one half, cover with the other half and serve at once.",
+      "strona": "20 (recipe no. 69)",
+      "sezon": "May–November (penny bun; Polish Wikipedia, article „Borowik szlachetny”)",
+      "na_dzis": {
+        "skladniki": [
+          "6 eggs (for the omelette)",
+          "250 g porcini (penny buns)",
+          "butter",
+          "a little onion",
+          "1 teaspoon flour",
+          "2–3 tablespoons sour cream"
+        ],
+        "kroki": [
+          "Stew the porcini in butter with a little onion.",
+          "Thicken with a teaspoon of flour and a few tablespoons of sour cream – the sauce should be thick and not too plentiful.",
+          "Make an omelette from 6 eggs (the author describes how to make the omelette itself in a separate recipe in this book).",
+          "Put the mushrooms on one half of the finished omelette, cover with the other half and serve at once."
+        ]
+      },
+      "gatunki": {
+        "Boletus edulis": { "nazwa_w_przepisie": "grzyby prawdziwe (literally „true mushrooms”, porcini)", "nazwa": "penny bun (porcini)" }
+      }
+    },
+    "rydze-duszone-norkowska-1903": {
+      "tytul": "Stewed saffron milk caps",
+      "oryginal": "Saffron milk caps, if small, can be stewed whole; cut up the larger ones. Put plenty of butter into a small saucepan, slice in an onion and fry it; add the well-rinsed milk caps, salt, pepper and stew under a lid over a low fire until they are soft. Stewed saffron milk caps are excellent with roast mutton.",
+      "strona": "222 (chapter XII „Jarzyny” [Vegetables], recipe no. 54)",
+      "sezon": "August–November (saffron milk cap in Poland; Polish Wikipedia, article „Mleczaj rydz”)",
+      "na_dzis": {
+        "skladniki": [
+          "saffron milk caps",
+          "plenty of butter",
+          "onion",
+          "salt, pepper"
+        ],
+        "kroki": [
+          "Leave small saffron milk caps whole and cut up larger ones; rinse them well.",
+          "Melt plenty of butter in a small saucepan and fry the sliced onion in it.",
+          "Add the mushrooms, season with salt and pepper and stew covered on a low heat until soft.",
+          "Serve e.g. with roast mutton."
+        ]
+      },
+      "gatunki": {
+        "Lactarius deliciosus": { "nazwa_w_przepisie": "rydze (saffron milk caps)", "nazwa": "saffron milk cap" }
+      }
+    }
+  },
+  "polka": {
+    "8309007140": { "typ": "scientific guide (identification key)", "rok": "1988 (4th ed.)", "gloss": "Fungi and their identification" },
+    "9788377636787": { "typ": "atlas", "rok": "2023", "gloss": "Fungi („Encounters with Nature” series)" },
+    "9788393837984": {
+      "typ": "scientific study (protected species)",
+      "rok": "2020",
+      "gloss": "Protected fungi of Poland: distribution, threats, conservation recommendations"
+    },
+    "https://www.gov.pl/web/gis/bezpieczne-grzybobranie": {
+      "typ": "official material",
+      "rok": "2022 (published 23 September 2022)",
+      "gloss": "Safe mushroom picking"
+    },
+    "https://www.gov.pl/web/psse-opoczno/bezpieczne-grzybobranie": {
+      "typ": "official material",
+      "rok": "2024 (published 11 October 2024)",
+      "gloss": "Safe mushroom picking"
+    },
+    "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU20260000258": {
+      "typ": "legal act",
+      "rok": "2026 (Dz.U. 2026 poz. 258)",
+      "wydawca": "Dziennik Ustaw (Journal of Laws of Poland)",
+      "gloss": "Regulation of the Minister of Health on mushrooms approved for sale or for the production of mushroom products… (consolidated text)"
+    }
+  }
+}
