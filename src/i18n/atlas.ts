@@ -95,7 +95,7 @@ export const atlasStrings = defineStrings({
     scannedAll: 'Wszystkie',
     scannedYes: 'W kolekcji',
     scannedNo: 'Do odkrycia',
-    featuresNote: 'Cechy: Wikidata (CC0). Mają je mniej niż połowa gatunków — przy filtrach cech gatunki bez danych są ukryte.',
+    featuresNote: 'Cechy: Wikidata (CC0). Mają je mniej niż połowa gatunków — gatunki bez danych o wybranej cesze nie znikają: pokazujemy je osobno pod filtrami, bo brak danych nie znaczy, że cechy nie mają.',
     showResults: (n: number) => `Pokaż ${n} ${plural('pl', n, ['gatunek', 'gatunki', 'gatunków'])}`,
     /** Feature values come from the data in Polish; the Polish UI shows them as they are. */
     feature: (value: string) => value,
@@ -183,7 +183,7 @@ export const atlasStrings = defineStrings({
     scannedAll: 'All',
     scannedYes: 'In collection',
     scannedNo: 'To discover',
-    featuresNote: 'Features: Wikidata (CC0). Fewer than half of the species have them — with feature filters, species without data are hidden.',
+    featuresNote: 'Features: Wikidata (CC0). Fewer than half of the species have them — species without data on a chosen trait do not disappear: we list them separately under the filters, because missing data does not mean the trait is absent.',
     showResults: (n: number) => `Show ${n} species`,
     feature: (value: string) => FEATURES_EN[value] ?? value,
   },
