@@ -1,0 +1,48 @@
+// code-guard: intentional-duplicate - short text keys (title, colors, maps) fuzzy-match other namespaces; texts only, no logic.
+/** Settings screen (src/app/ustawienia.tsx). Text-size labels are shared with onboarding O3 (onboarding.ts). */
+import { defineStrings } from './i18n';
+
+export const settingsStrings = defineStrings({
+  pl: {
+    title: 'Ustawienia',
+    language: 'Język / Language',
+    textSize: 'Rozmiar tekstu',
+    boldText: 'Pogrubiony tekst',
+    colors: 'Kolory',
+    colorSystem: 'Jak w telefonie',
+    colorLight: 'Jasne',
+    colorDark: 'Ciemne',
+    regions: 'Moje regiony',
+    regionsSelected: (n: number) => `Wybrano: ${n}. Zostają tylko w tym telefonie.`,
+    regionsNone: 'Nie wybrano. Zostają tylko w tym telefonie.',
+    maps: 'Mapy',
+    mapsHint: 'Ogólna mapa Polski jest w telefonie. Dokładne mapy województw pobierzesz na później, bez zasięgu.',
+    offlineMaps: 'Mapy offline',
+    documents: 'Dokumenty',
+    privacyPolicy: 'Polityka prywatności',
+    safetyRules: 'Zasady bezpieczeństwa',
+    licences: 'Licencje i źródła',
+    version: 'wersja',
+  },
+  en: {
+    title: 'Settings',
+    language: 'Język / Language',
+    textSize: 'Text size',
+    boldText: 'Bold text',
+    colors: 'Colours',
+    colorSystem: 'Same as phone',
+    colorLight: 'Light',
+    colorDark: 'Dark',
+    regions: 'My regions',
+    regionsSelected: (n: number) => `Selected: ${n}. They stay only on this phone.`,
+    regionsNone: 'None selected. They stay only on this phone.',
+    maps: 'Maps',
+    mapsHint: 'The overview map of Poland is on the phone. You can download detailed voivodeship maps for later, for use without signal.',
+    offlineMaps: 'Offline maps',
+    documents: 'Documents',
+    privacyPolicy: 'Privacy policy',
+    safetyRules: 'Safety rules',
+    licences: 'Licences and sources',
+    version: 'version',
+  },
+});

@@ -1,56 +1,99 @@
-# Welcome to your Expo app 👋
+# Grzybodex
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Mobilny atlas i skaner polskich grzybów (React Native + Expo): atlas gatunków, rozpoznawanie ze zdjęcia na urządzeniu, ostrzeżenia o trujących sobowtórach, mapa miejscówek offline i prywatny rejestr zbiorów. Aplikacja działa bez konta i bez serwera.
 
-## Get started
+> **Aplikacja nie zastępuje grzyboznawcy.** Wynik skanera to podpowiedź, nie wyrok. Nie jedz grzyba tylko na podstawie rozpoznania z telefonu.
 
-1. Install dependencies
+<!-- GIF/zrzuty: docs/media/ (dodaj po nagraniu) -->
 
-   ```bash
-   npm install
-   ```
+## Co potrafi
 
-2. Start the app
+| Funkcja | Opis |
+|---|---|
+| **Atlas** (400 gatunków) | Kategorie: jadalny / niejadalny / trujący / śmiertelnie trujący (wg wykazu Ministra Zdrowia i podanych źródeł). Szukanie, filtry kategorii i cech (spód kapelusza, trzon), zdjęcia i opisy PL/EN. |
+| **Skaner** | Do 3 ujęć grzyba, rozpoznanie modelem ViT działającym w telefonie (offline). Top-3 z podobieństwem, ramka „może nie być w katalogu” poniżej p = 0,9 i przycisk „Zgłoś grzyba” (e-mail, zdjęcia bez EXIF). |
+| **Alerty o trujących** | Ostrzeżenie, gdy: (1) trujący gatunek jest w top-3, (2) w top-3 jest groźny rodzaj (np. *Amanita*), (3) tabela sobowtórów wskazuje groźny gatunek podobny do wyniku. |
+| **Jak odróżnić** | Ekran porównania sobowtórów (`/porownaj`): cechy obok siebie z Wikipedii PL i teksty urzędowe (LP, WSSE, PSSE). |
+| **Mapa** | Miejscówki grzybów zapisywane tylko na telefonie, nawigacja kompasem do miejscówki, ślad trasy, mapa przeglądowa offline. |
+| **Kolekcja** | Zdjęcia i statystyki zebranych gatunków, odznaki. |
+| **Ustawienia** | Motyw jasny/ciemny, rozmiar tekstu, język PL/EN, polityka prywatności, licencje. |
 
-   ```bash
-   npx expo start
-   ```
+Przepisy są w kodzie, ale ukryte w nawigacji.
 
-In the output, you'll find options to open the app in a
+## Wymagania i system
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+- **System docelowy: Android.** Kod jest wieloplatformowy (Expo), ale iOS i web nie były budowane ani testowane.
+- **To nie działa w Expo Go.** Aplikacja używa natywnych modułów (`onnxruntime-react-native`, MapLibre, SQLite, zadanie w tle dla śladu), więc potrzebny jest *development build* albo gotowy APK.
+- Node 22.13+ (wymóg React Native 0.88), JDK z Android Studio (jbr), Android SDK (`ANDROID_HOME`), przy pierwszym buildzie NDK 27.1 (~22 min).
 
-You can start developing by editing the files inside the **src/app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## Najszybciej: gotowy APK
 
-## Get a fresh project
+Wydania z APK są w zakładce **Releases** repozytorium (`app-release-arm64-v8a.apk`, Android 7.0+, procesor 64-bit ARM, czyli prawie każdy telefon). Emulator x86_64 wymaga osobnego builda.
 
-When you're ready, run:
+## Uruchomienie ze źródeł
 
 ```bash
-npm run reset-project
+npm install                      # instaluje też patch-package (patches/ dla onnxruntime)
+node scripts/fetch-model.js      # pobiera wagę ViT (89 MB) z Releases i sprawdza SHA-256
+npx expo prebuild -p android     # generuje android/ (nie jest w repo)
+npx expo run:android             # build debug + start Metro (telefon z USB lub emulator)
 ```
 
-This command will move the starter code to the **example** directory and create a blank **src/app** directory where you can start developing.
+- **Waga modelu nie leży w repozytorium**: pochodzi z *Danish Fungi 2020* (BVRA), licencja **CC BY-NC 4.0** (tylko użytek niekomercyjny). Bez pliku `assets/model/vit_384_int8.onnx` bundle się nie zbuduje. Adres pobierania ustaw w `scripts/fetch-model.js` (stała `MODEL_URL`) lub zmienną `GRZYBODEX_MODEL_URL`.
+- **Ograniczenie licencji:** skoro waga jest CC BY-NC 4.0, całość z tym modelem nadaje się wyłącznie do użytku niekomercyjnego (np. ocena rekrutacyjna, nauka). Do zastosowań komercyjnych trzeba wymienić model.
+- **Jak wymienić model:** podmień `assets/model/vit_384_int8.onnx` plikiem ONNX o tym samym wejściu (384×384, 3 kanały) i wyjściu `logits` z 1604 klasami w tej samej kolejności; mapowanie klas na gatunki jest w `src/data/classmap.json`. Przy innym zbiorze klas trzeba przebudować `classmap.json` oraz sumę kontrolną w `scripts/fetch-model.js`.
+- Po `expo prebuild` startuj Metro z `--clear`: `npx expo start --dev-client --clear`. Nigdy z `CI=1` (wyłącza obserwowanie plików, dostajesz stare bundle).
+- Windows: ustaw `ANDROID_HOME=%LOCALAPPDATA%\Android\Sdk`, a przy błędzie „Unable to delete directory” wykonaj `gradlew --stop` i usuń wskazany katalog.
 
-### Other setup steps
+### APK release
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+```bash
+cd android
+./gradlew assembleRelease -PreactNativeArchitectures=arm64-v8a
+# wynik: android/app/build/outputs/apk/release/app-release.apk
+```
 
-## Learn more
+## Testy
 
-To learn more about developing your project with Expo, look at the following resources:
+```bash
+npx tsc --noEmit    # typy
+npx expo lint       # lint
+npx jest            # testy jednostkowe (dane, bezpieczeństwo, cechy, geometria mapy)
+```
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## Testowane na
 
-## Join the community
+- **Emulator Androida** (AVD, API 34, x86_64): większość ekranów, skaner z wbudowanymi próbkami (kamera działa tylko na urządzeniu).
+- **Fizyczne urządzenie:** wcześniejsze wersje na Ulefone WP19 Pro (Android 13). **Obecna wersja nie przeszła jeszcze pełnego testu na urządzeniu**: kamera, kompas, kroki, ślad w tle i pinch na mapie nie były zweryfikowane (emulator ich nie obsługuje).
 
-Join our community of developers creating universal apps.
+## Model a Polska
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+- **ViT-B/16 @384**, checkpoint wytrenowany na zbiorze z Danii (1604 gatunki), format ONNX int8; kwantyzacja nie zmieniła trafności względem fp32. Model nie był douczany na polskich zdjęciach.
+- Z 400 najczęściej obserwowanych w Polsce gatunków (iNaturalist) model zna **349 (87,2%)**, co odpowiada 94,3% obserwacji.
+- Trafność na gatunkach znanych: iNaturalist PL top-1 84,4% / top-3 94,4% (na obserwację z kilku zdjęć 91,3%); Wikimedia Commons (trudniejsze zdjęcia) top-1 78,2% / top-3 90,7%. Śmiertelne gatunki w top-3: 30/31 (iNat) i 54/63 (Commons). Dlatego ostrzeżenia nie opierają się tylko na modelu.
+- Model nie umie powiedzieć „nie wiem”, więc poniżej p = 0,9 aplikacja pokazuje ramkę „może nie być w katalogu”. Próg wychwytuje 74% gatunków spoza modelu kosztem 26% znanych, co przyjęliśmy świadomie.
+
+Pomiary i skrypty: katalog `ml/` w repozytorium roboczym (poza tym repo aplikacji).
+
+## Dane i licencje
+
+- Kategorie jadalności: wykaz Ministra Zdrowia (Dz.U. 2026 poz. 258) i źródła podane w aplikacji; gatunki chronione wg rozporządzenia z 9.10.2014.
+- Opisy: Wikipedia PL (CC BY-SA); zdjęcia wzorcowe: Wikimedia Commons (licencje przy każdym zdjęciu w ekranie „Licencje i autorzy”).
+- Biblioteki: lista z licencjami w `src/data/third-party.json` (regeneracja: `node scripts/third-party.js`).
+
+## Prywatność
+
+Dane (miejscówki, zdjęcia, ślad) zostają na telefonie. Jedyny kontakt z siecią to kafelki mapy OpenTopoMap (widzą adres IP i oglądany obszar) oraz e-mail zgłoszenia, który wysyła użytkownik własną aplikacją poczty. Pełna treść: ekran „Prywatność” w aplikacji.
+
+## Struktura
+
+```
+src/app/        ekrany (expo-router): (tabs), skan, wynik, porownaj, gatunek/, nawigacja/ ...
+src/features/   logika: scan (model, bezpieczeństwo), atlas, map, collection, storage ...
+src/data/       dane wbudowane (species, lookalikes, traits, opisy PL/EN)
+src/i18n/       teksty PL/EN
+src/ui/         wspólne komponenty i motyw
+patches/        patch-package dla onnxruntime-react-native (Gradle 9)
+plugins/        pluginy Expo (wersja CMake)
+scripts/        fetch-model, generate-icons, third-party, build-map-packs
+```
