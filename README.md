@@ -4,7 +4,9 @@ Mobilny atlas i skaner polskich grzybów (React Native + Expo): atlas gatunków,
 
 > **Aplikacja nie zastępuje grzyboznawcy.** Wynik skanera to podpowiedź, nie wyrok. Nie jedz grzyba tylko na podstawie rozpoznania z telefonu.
 
-<!-- GIF/zrzuty: docs/media/ (dodaj po nagraniu) -->
+![Grzybodex: filtr cech z gatunkami bez danych, karta muchomora, porównanie borowika z goryczakiem](docs/media/demo.gif)
+
+*Nagranie z emulatora Androida (dev build): filtr cech, karta gatunku, ekran „Jak odróżnić”. Wersja w lepszej jakości: [docs/media/demo.mp4](docs/media/demo.mp4).*
 
 ## Co potrafi
 
