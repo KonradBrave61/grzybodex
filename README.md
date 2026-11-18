@@ -18,6 +18,7 @@ Mobilny atlas i skaner polskich grzybów (React Native + Expo): atlas gatunków,
 | **Jak odróżnić** | Ekran porównania sobowtórów (`/porownaj`): cechy obok siebie z Wikipedii PL i teksty urzędowe (LP, WSSE, PSSE). |
 | **Mapa** | Miejscówki grzybów zapisywane tylko na telefonie, nawigacja kompasem do miejscówki, ślad trasy, mapa przeglądowa offline. |
 | **Kolekcja** | Zdjęcia i statystyki zebranych gatunków, odznaki. |
+| **Quiz** | Zgadnij tajnego grzyba z atlasu: po każdej próbie kolorowe porównanie cech (kategoria, rodzaj, spód, trzon, szczyt sezonu, ochrona). |
 | **Ustawienia** | Motyw jasny/ciemny, rozmiar tekstu, język PL/EN, polityka prywatności, licencje. |
 
 Przepisy są w kodzie, ale ukryte w nawigacji.
@@ -30,18 +31,24 @@ Przepisy są w kodzie, ale ukryte w nawigacji.
 
 ## Najszybciej: gotowy APK
 
-Wydania z APK są w zakładce **Releases** repozytorium (`app-release-arm64-v8a.apk`, Android 7.0+, procesor 64-bit ARM, czyli prawie każdy telefon). Emulator x86_64 wymaga osobnego builda.
+APK jest w zakładce **Releases** repozytorium ([v1.0.0](https://github.com/KonradBrave61/grzybodex/releases/tag/v1.0.0), plik `grzybodex-1.0.0.apk`, Android 7.0+). Jeden plik działa na telefonie (arm64-v8a) i na emulatorze Androida (x86_64):
+
+```bash
+adb install grzybodex-1.0.0.apk
+```
+
+Na emulatorze skaner nie ma kamery: wybierz zdjęcie z galerii albo jedną z wbudowanych próbek.
 
 ## Uruchomienie ze źródeł
 
 ```bash
 npm install                      # instaluje też patch-package (patches/ dla onnxruntime)
-node scripts/fetch-model.js      # pobiera wagę ViT (89 MB) z Releases i sprawdza SHA-256
+node scripts/fetch-model.js      # pobiera wagę ViT (89 MB) z Release v1.0.0 i sprawdza SHA-256
 npx expo prebuild -p android     # generuje android/ (nie jest w repo)
 npx expo run:android             # build debug + start Metro (telefon z USB lub emulator)
 ```
 
-- **Waga modelu nie leży w repozytorium**: pochodzi z *Danish Fungi 2020* (BVRA), licencja **CC BY-NC 4.0** (tylko użytek niekomercyjny). Bez pliku `assets/model/vit_384_int8.onnx` bundle się nie zbuduje. Adres pobierania ustaw w `scripts/fetch-model.js` (stała `MODEL_URL`) lub zmienną `GRZYBODEX_MODEL_URL`.
+- **Waga modelu nie leży w repozytorium**: pochodzi z *Danish Fungi 2020* (BVRA), licencja **CC BY-NC 4.0** (tylko użytek niekomercyjny). Bez pliku `assets/model/vit_384_int8.onnx` bundle się nie zbuduje. Skrypt pobiera ją z Release v1.0.0; inny adres podasz zmienną `GRZYBODEX_MODEL_URL`.
 - **Ograniczenie licencji:** skoro waga jest CC BY-NC 4.0, całość z tym modelem nadaje się wyłącznie do użytku niekomercyjnego (np. ocena rekrutacyjna, nauka). Do zastosowań komercyjnych trzeba wymienić model.
 - **Jak wymienić model:** podmień `assets/model/vit_384_int8.onnx` plikiem ONNX o tym samym wejściu (384×384, 3 kanały) i wyjściu `logits` z 1604 klasami w tej samej kolejności; mapowanie klas na gatunki jest w `src/data/classmap.json`. Przy innym zbiorze klas trzeba przebudować `classmap.json` oraz sumę kontrolną w `scripts/fetch-model.js`.
 - Po `expo prebuild` startuj Metro z `--clear`: `npx expo start --dev-client --clear`. Nigdy z `CI=1` (wyłącza obserwowanie plików, dostajesz stare bundle).
@@ -51,8 +58,9 @@ npx expo run:android             # build debug + start Metro (telefon z USB lub 
 
 ```bash
 cd android
-./gradlew assembleRelease -PreactNativeArchitectures=arm64-v8a
-# wynik: android/app/build/outputs/apk/release/app-release.apk
+./gradlew assembleRelease -PreactNativeArchitectures=arm64-v8a,x86_64
+# wynik: android/app/build/outputs/apk/release/app-release.apk (telefon + emulator)
+# APK jest podpisany kluczem debug z szablonu Expo - wystarcza do instalacji testowej, nie do sklepu.
 ```
 
 ## Testy
@@ -65,7 +73,7 @@ npx jest            # testy jednostkowe (dane, bezpieczeństwo, cechy, geometria
 
 ## Testowane na
 
-- **Emulator Androida** (AVD, API 34, x86_64): większość ekranów, skaner z wbudowanymi próbkami (kamera działa tylko na urządzeniu).
+- **Emulator Androida** (AVD, API 34, x86_64): większość ekranów, skaner z wbudowanymi próbkami (kamera działa tylko na urządzeniu). APK z Release sprawdzony na tym emulatorze od czystej instalacji: onboarding, atlas, skan próbki offline z alertem, quiz.
 - **Fizyczne urządzenie:** wcześniejsze wersje na Ulefone WP19 Pro (Android 13). **Obecna wersja nie przeszła jeszcze pełnego testu na urządzeniu**: kamera, kompas, kroki, ślad w tle i pinch na mapie nie były zweryfikowane (emulator ich nie obsługuje).
 
 ## Model a Polska

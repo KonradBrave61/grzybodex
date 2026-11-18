@@ -6,8 +6,9 @@ const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
 
-// Uzupełnij po utworzeniu Release (np. https://github.com/<user>/<repo>/releases/download/model-v1/vit_384_int8.onnx).
-const MODEL_URL = process.env.GRZYBODEX_MODEL_URL || 'TODO-RELEASE-URL';
+// Plik leży w GitHub Release v1.0.0; inny adres można podać zmienną GRZYBODEX_MODEL_URL.
+const MODEL_URL =
+  process.env.GRZYBODEX_MODEL_URL || 'https://github.com/KonradBrave61/grzybodex/releases/download/v1.0.0/vit_384_int8.onnx';
 const SHA256 = '2738176a8453975006b480ea91210ca858ee9b84412ff98a581eb4a0438da931';
 const SIZE = 89225488;
 const target = path.join(__dirname, '..', 'assets', 'model', 'vit_384_int8.onnx');
