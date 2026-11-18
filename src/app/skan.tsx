@@ -1,8 +1,8 @@
 // code-guard: intentional-duplicate - local UI identifiers fuzzy-match other files; no logic is duplicated.
-import { Asset } from 'expo-asset';
 import { CameraView, useCameraPermissions } from 'expo-camera';
 import * as ImagePicker from 'expo-image-picker';
 import { Image } from 'expo-image';
+import { ImageManipulator, SaveFormat } from 'expo-image-manipulator';
 import { router } from 'expo-router';
 import { useEffect, useRef, useState } from 'react';
 import { ActivityIndicator, Modal, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
@@ -299,8 +299,11 @@ export default function ScanScreen() {
   const pickSample = (id: string) => {
     setSamplesOpen(false);
     return run(async () => {
-      const [asset] = await Asset.loadAsync(BUNDLED_PHOTOS[id]);
-      await process([asset.localUri ?? asset.uri]);
+      // Release Android keeps bundled images in res/drawable, so Asset.localUri is only a resource name the manipulator
+      // cannot open. expo-image resolves the module and the manipulator writes it out as a real PNG file.
+      const ref = await Image.loadAsync(BUNDLED_PHOTOS[id]);
+      const file = await (await ImageManipulator.manipulate(ref).renderAsync()).saveAsync({ format: SaveFormat.PNG });
+      await process([file.uri]);
     }, t.errSample);
   };
 

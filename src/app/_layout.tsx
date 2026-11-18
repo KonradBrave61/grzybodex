@@ -38,7 +38,8 @@ export default function RootLayout() {
     <GestureHandlerRootView style={rootUi.fill}>
       <StatusBar style={isDark ? 'light' : 'dark'} />
       <Stack screenOptions={{ headerShown: false, contentStyle: { backgroundColor: colors.paper } }}>
-        <Stack.Protected guard={onboarded}>
+        {/* redirectTo: bez niego router wybiera pierwszy niechroniony ekran (u nas „prywatnosc”) i nowy użytkownik utyka na polityce. */}
+        <Stack.Protected guard={onboarded} redirectTo="/onboarding">
           <Stack.Screen name="(tabs)" />
           <Stack.Screen name="skan" options={{ presentation: 'fullScreenModal', animation: 'slide_from_bottom' }} />
           <Stack.Screen name="wynik" options={{ animation: 'fade' }} />
