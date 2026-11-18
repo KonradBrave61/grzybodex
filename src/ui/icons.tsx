@@ -7,6 +7,7 @@ const PATHS = {
   map: ['M12 21s-6-6.2-6-11a6 6 0 0 1 12 0c0 4.8-6 11-6 11z'],
   camera: ['M4 8h3l2-3h6l2 3h3v11H4z'],
   collection: ['M8 11V8a4 4 0 0 1 8 0v3'],
+  quiz: ['M5 5h14v14H5z'],
   recipes: ['M3 12h18', 'M5 12v4.5A3.5 3.5 0 0 0 8.5 20h7a3.5 3.5 0 0 0 3.5-3.5V12', 'M9.5 3.5q-1.25 1.25 0 2.5t0 2.5', 'M14.5 3.5q-1.25 1.25 0 2.5t0 2.5'],
   search: ['M20 20l-4.5-4.5'],
   sort: ['M4 6h16', 'M7 12h10', 'M10 18h4'],
@@ -29,6 +30,15 @@ const EXTRA: Partial<Record<IconName, (c: string) => React.ReactNode>> = {
   map: (c) => <Circle cx={12} cy={10} r={2.2} stroke={c} />,
   camera: (c) => <Circle cx={12} cy={13} r={3.5} stroke={c} />,
   collection: (c) => <Rect x={6} y={11} width={12} height={9} rx={2} stroke={c} />,
+  quiz: (c) => (
+    <>
+      <Circle cx={9} cy={9} r={1} stroke={c} />
+      <Circle cx={15} cy={9} r={1} stroke={c} />
+      <Circle cx={12} cy={12} r={1} stroke={c} />
+      <Circle cx={9} cy={15} r={1} stroke={c} />
+      <Circle cx={15} cy={15} r={1} stroke={c} />
+    </>
+  ),
   search: (c) => <Circle cx={11} cy={11} r={6} stroke={c} />,
   inedible: (c) => <Circle cx={12} cy={12} r={8.5} stroke={c} />,
   deadly: (c) => (

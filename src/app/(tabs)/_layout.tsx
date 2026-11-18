@@ -7,7 +7,7 @@ import { shellStrings } from '@/i18n/shell';
 import { NotebookTabBar } from '@/ui/tab-bar';
 
 /**
- * RESPONSIBILITY: Układ zakładek: Atlas · Mapa · [Skanuj] · Kolekcja z menu w stylu notatnika (Przepisy ukryte na razie)
+ * RESPONSIBILITY: Układ zakładek: Atlas · Mapa · [Skanuj] · Kolekcja · Quiz z menu w stylu notatnika (Przepisy ukryte na razie)
  * INPUTS:         ustawienia (czy zaakceptowano aktualne zasady)
  * OUTPUTS:        nawigator Tabs z własnym paskiem; bez akceptacji zasad → przekierowanie do /onboarding
  *                 (Stack.Protected w korzeniu nie przekierowuje pierwszego ekranu po starcie — sprawdzone na emulatorze)
@@ -25,6 +25,7 @@ export default function TabsLayout() {
       <Tabs.Screen name="index" options={{ title: s.tabAtlas }} />
       <Tabs.Screen name="mapa" options={{ title: s.tabMap }} />
       <Tabs.Screen name="kolekcja" options={{ title: s.tabCollection }} />
+      <Tabs.Screen name="quiz" options={{ title: s.tabQuiz }} />
       {/* Przepisy na razie ukryte: href null → expo-router 58 ustawia `hidden`, trasa znika z paska, a wejście na /przepisy przekierowuje do Atlasu. */}
       <Tabs.Screen name="przepisy" options={{ title: s.tabRecipes, href: null }} />
     </Tabs>

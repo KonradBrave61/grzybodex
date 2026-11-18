@@ -18,6 +18,7 @@ const TABS: Record<string, { label: ShellKey; icon: IconName }> = {
   index: { label: 'tabAtlas', icon: 'atlas' },
   mapa: { label: 'tabMap', icon: 'map' },
   kolekcja: { label: 'tabCollection', icon: 'collection' },
+  quiz: { label: 'tabQuiz', icon: 'quiz' },
   // przepisy: { label: 'tabRecipes', icon: 'recipes' } — zakładka na razie ukryta (href: null w (tabs)/_layout.tsx)
 };
 
