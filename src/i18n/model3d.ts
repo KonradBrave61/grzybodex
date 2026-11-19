@@ -1,0 +1,56 @@
+// code-guard: intentional-duplicate - short text keys (title, cap, stem) fuzzy-match other namespaces; texts only, no logic.
+/** 3D model of a species (species card) and its shadow in the quiz. Feature texts paraphrase the Wikipedia PL morphology shown on the card. */
+import { defineStrings } from './i18n';
+
+export const model3dStrings = defineStrings({
+  pl: {
+    title: 'Model 3D',
+    drag: 'Przeciągnij w bok, żeby obrócić. Dotknij cechy, żeby ją pokazać.',
+    all: 'Całość',
+    cap: 'Kapelusz',
+    warts: 'Łatki',
+    gills: 'Blaszki',
+    ring: 'Pierścień',
+    stem: 'Trzon',
+    bulb: 'Bulwa',
+    about: {
+      all: 'Dorosły okaz: kapelusz do 20 cm średnicy, trzon do 20 cm wysokości.',
+      cap: 'Czerwony, u młodych półkulisty, u starszych płaski.',
+      warts: 'Białe lub białożółte łatki to resztki osłony, która okrywała młody owocnik.',
+      gills: 'Białe, gęste, brzuchate i wolne: nie dochodzą do trzonu.',
+      ring: 'Obwisły, biały pierścień w górnej części trzonu.',
+      stem: 'Biały, walcowaty, kruchy; grubość do 3 cm.',
+      bulb: 'Bulwiasta podstawa z kilkoma rzędami wałeczków, bez wyraźnej pochwy.',
+    } as Record<string, string>,
+    source: 'Proporcje i cechy według opisu z Wikipedii PL (sekcja Morfologia). Model jest uproszczony i nie służy do rozpoznawania grzybów.',
+    a11y: (name: string) => `Obracający się model 3D: ${name}`,
+    shadowTitle: 'Podpowiedź: cień tajnego grzyba',
+    shadowA11y: 'Sylwetka tajnego grzyba, bez kolorów',
+    reveal: 'Tak wygląda w 3D',
+  },
+  en: {
+    title: '3D model',
+    drag: 'Drag sideways to rotate. Tap a feature to show it.',
+    all: 'Whole',
+    cap: 'Cap',
+    warts: 'Warts',
+    gills: 'Gills',
+    ring: 'Ring',
+    stem: 'Stem',
+    bulb: 'Bulb',
+    about: {
+      all: 'Mature specimen: cap up to 20 cm across, stem up to 20 cm tall.',
+      cap: 'Red, hemispherical when young, flat when older.',
+      warts: 'White or yellowish-white warts are remains of the veil that covered the young fruiting body.',
+      gills: 'White, crowded, ventricose and free: they do not reach the stem.',
+      ring: 'A hanging white ring on the upper part of the stem.',
+      stem: 'White, cylindrical, brittle; up to 3 cm thick.',
+      bulb: 'Bulbous base with a few rows of roll-like bands and no distinct volva.',
+    } as Record<string, string>,
+    source: 'Proportions and features follow the Wikipedia PL description (Morphology section). The model is simplified and is not for identifying mushrooms.',
+    a11y: (name: string) => `Rotating 3D model: ${name}`,
+    shadowTitle: 'Hint: the secret mushroom’s shadow',
+    shadowA11y: 'Silhouette of the secret mushroom, without colours',
+    reveal: 'This is how it looks in 3D',
+  },
+});

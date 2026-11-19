@@ -18,7 +18,8 @@ Mobilny atlas i skaner polskich grzybów (React Native + Expo): atlas gatunków,
 | **Jak odróżnić** | Ekran porównania sobowtórów (`/porownaj`): cechy obok siebie z Wikipedii PL i teksty urzędowe (LP, WSSE, PSSE). |
 | **Mapa** | Miejscówki grzybów zapisywane tylko na telefonie, nawigacja kompasem do miejscówki, ślad trasy, mapa przeglądowa offline. |
 | **Kolekcja** | Zdjęcia i statystyki zebranych gatunków, odznaki. |
-| **Quiz** | Zgadnij tajnego grzyba z atlasu: po każdej próbie kolorowe porównanie cech (kategoria, rodzaj, spód, trzon, szczyt sezonu, ochrona). |
+| **Quiz** | Zgadnij tajnego grzyba z atlasu: po każdej próbie kolorowe porównanie cech (kategoria, rodzaj, spód, trzon, szczyt sezonu, ochrona). Gdy tajnym grzybem jest muchomor czerwony, po 3 próbach pojawia się podpowiedź: jego cień z modelu 3D. |
+| **Model 3D** | Muchomor czerwony na karcie gatunku (three + expo-gl, model budowany w kodzie, bez plików): obrót palcem, przyciski cech (kapelusz, łatki, blaszki, pierścień, trzon, bulwa) przenoszą kamerę i podświetlają część. |
 | **Ustawienia** | Motyw jasny/ciemny, rozmiar tekstu, język PL/EN, polityka prywatności, licencje. |
 
 Przepisy są w kodzie, ale ukryte w nawigacji.

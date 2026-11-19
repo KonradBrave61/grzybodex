@@ -12,6 +12,8 @@ import { description, referencePhoto } from '@/data/reference';
 import { dangerousSpeciesOfGenus, hasTraits, similarSpecies } from '@/data/traits';
 import { DescriptionSection, PhotoCredit, ReferenceSection } from '@/features/atlas/reference-blocks';
 import { useScans } from '@/features/collection/use-scans';
+import { ModelSection } from '@/features/model3d/model-section';
+import { MODEL_SPECIES } from '@/features/model3d/mushroom-3d';
 import { atlasStrings } from '@/i18n/atlas';
 import { compareStrings } from '@/i18n/compare';
 import { type Lang, locale, useLang, useStrings } from '@/i18n/i18n';
@@ -358,6 +360,7 @@ export default function SpeciesCard() {
         )}
 
         <Traits species={species} />
+        {MODEL_SPECIES.has(species.id) && <ModelSection name={name} />}
 
         {about && <DescriptionSection d={about} />}
         {scan && reference && <ReferenceSection photo={reference} name={name} />}
