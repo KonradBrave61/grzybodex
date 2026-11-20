@@ -45,7 +45,6 @@ export default function RootLayout() {
           <Stack.Screen name="wynik" options={{ animation: 'fade' }} />
           <Stack.Screen name="gatunek/[id]" />
           <Stack.Screen name="porownaj" />
-          <Stack.Screen name="przepis/[id]" />
           <Stack.Screen name="nawigacja/[id]" />
           <Stack.Screen name="licencje" />
           <Stack.Screen name="ustawienia" />

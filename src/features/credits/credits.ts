@@ -2,10 +2,8 @@
 import { displayName, speciesById } from '@/data/atlas';
 import lookalikesJson from '@/data/lookalikes.json';
 import { traitCount } from '@/data/traits';
-import recipesJson from '@/data/przepisy.json';
 import samplesJson from '@/data/samples.json';
 import { referencePhotoCredits } from '@/data/reference';
-import { RECIPES_EN } from '@/features/recipes/data';
 import thirdPartyJson from '@/data/third-party.json';
 import { creditsStrings } from '@/i18n/credits';
 import type { Lang } from '@/i18n/i18n';
@@ -15,13 +13,9 @@ export type CreditItem = { title: string; detail: string; links: CreditLink[] };
 export type CreditSection = { id: string; title: string; intro?: string; items: CreditItem[] };
 
 type Sample = { id: string; latin: string; author: string; license: string; source: string };
-type Recipe = {
-  id: string;
-  tytul: string;
-  ksiazka: { autor: string; autor_zm: number; tytul: string; wydanie_rok: string; miejsce: string; strona: string; url: string; url_skan?: string };
-};
 type SourceRow = { source: { type: string; title: string; url: string } };
 
+const MZ_LIST_URL = 'https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU20260000258';
 const CC_BY_NC_4 = { label: 'CC BY-NC 4.0', url: 'https://creativecommons.org/licenses/by-nc/4.0/' };
 const CC_BY_SA_4 = { label: 'CC BY-SA 4.0', url: 'https://creativecommons.org/licenses/by-sa/4.0/' };
 const OFL = { label: 'SIL Open Font License 1.1', url: 'https://openfontlicense.org/open-font-license-official-text/' };
@@ -59,24 +53,6 @@ export function sampleCredits(lang: Lang): CreditItem[] {
       detail: t.sampleDetail(s.author, lic.label),
       links: [{ label: t.commonsFile, url: s.source }, lic],
     };
-  });
-}
-
-/**
- * RESPONSIBILITY: Źródła przepisów z dawnych książek kucharskich (domena publiczna)
- * INPUTS:         lang: język opisów i tytułów (przepisy.json / przepisy.en.json, trusted; tytuły książek bez tłumaczenia)
- * OUTPUTS:        po jednej pozycji na przepis: autor (rok śmierci), książka, wydanie, strona; linki do transkrypcji i skanu
- * AUTHN:          none
- * AUTHZ:          none
- * TOUCHES:        none
- * ERRORS:         none
- */
-export function recipeCredits(lang: Lang): CreditItem[] {
-  const t = creditsStrings[lang];
-  return (recipesJson.przepisy as Recipe[]).map((r) => {
-    const k = r.ksiazka;
-    const links = [{ label: t.recipeText, url: k.url }, ...(k.url_skan ? [{ label: t.recipeScan, url: k.url_skan }] : [])];
-    return { title: lang === 'en' ? (RECIPES_EN[r.id]?.tytul ?? r.tytul) : r.tytul, detail: t.recipeDetail(k), links };
   });
 }
 
@@ -129,7 +105,7 @@ export function referencePhotoItems(lang: Lang): CreditItem[] {
 }
 
 /**
- * RESPONSIBILITY: Składa pełną treść ekranu „Licencje i autorzy” (model, zdjęcia, dane, przepisy, czcionki, biblioteki)
+ * RESPONSIBILITY: Składa pełną treść ekranu „Licencje i autorzy” (model, zdjęcia, dane, czcionki, biblioteki)
  * INPUTS:         lang: język nagłówków i opisów (dane w paczce aplikacji; autorzy, nazwy licencji i adresy bez zmian)
  * OUTPUTS:        lista sekcji w kolejności wyświetlania; każda pozycja ma tytuł, opis i linki
  * AUTHN:          none
@@ -197,7 +173,7 @@ export function creditSections(lang: Lang): CreditSection[] {
         {
           title: t.mzTitle,
           detail: t.mzDetail,
-          links: [{ label: 'ISAP', url: recipesJson.zrodlo_listy_mz.url }],
+          links: [{ label: 'ISAP', url: MZ_LIST_URL }],
         },
         {
           title: t.protectionTitle,
@@ -225,12 +201,6 @@ export function creditSections(lang: Lang): CreditSection[] {
       ],
     },
     { id: 'lookalikes', title: t.lookalikesTitle, items: lookalikes.official },
-    {
-      id: 'recipes',
-      title: t.recipesTitle,
-      intro: t.recipesIntro,
-      items: recipeCredits(lang),
-    },
     {
       id: 'fonts',
       title: t.fontsTitle,

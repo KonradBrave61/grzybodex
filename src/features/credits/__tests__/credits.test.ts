@@ -1,7 +1,6 @@
 // code-guard: intentional-duplicate - local fixture names in tests fuzzy-match production identifiers; no logic is duplicated.
 import { BUNDLED_PHOTOS } from '@/data/bundled-photos';
 import lookalikes from '@/data/lookalikes.json';
-import recipes from '@/data/przepisy.json';
 import samples from '@/data/samples.json';
 
 import { ccLicense, creditSections, lookalikeSources, sampleCredits } from '../credits';
@@ -21,9 +20,6 @@ describe('licences and attributions screen data', () => {
     }
   });
 
-  it('every recipe author died in 1955 or earlier (public domain in Poland in 2026: 70 years p.m.a.)', () => {
-    expect(recipes.przepisy.filter((r) => !(r.ksiazka.autor_zm <= 1955)).map((r) => r.id)).toEqual([]);
-  });
 
   it('lookalike sources account for every pair exactly once', () => {
     const { official, wikipediaPairs } = lookalikeSources('pl');

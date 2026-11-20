@@ -19,7 +19,6 @@ const TABS: Record<string, { label: ShellKey; icon: IconName }> = {
   mapa: { label: 'tabMap', icon: 'map' },
   kolekcja: { label: 'tabCollection', icon: 'collection' },
   quiz: { label: 'tabQuiz', icon: 'quiz' },
-  // przepisy: { label: 'tabRecipes', icon: 'recipes' } — zakładka na razie ukryta (href: null w (tabs)/_layout.tsx)
 };
 
 function Indicator({ active, color }: { active: boolean; color: string }) {

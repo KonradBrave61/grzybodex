@@ -22,8 +22,6 @@ Mobilny atlas i skaner polskich grzybów (React Native + Expo): atlas gatunków,
 | **Model 3D** | Muchomor czerwony na karcie gatunku (three + expo-gl, model budowany w kodzie, bez plików): obrót palcem, przyciski cech (kapelusz, łatki, blaszki, pierścień, trzon, bulwa) przenoszą kamerę i podświetlają część. |
 | **Ustawienia** | Motyw jasny/ciemny, rozmiar tekstu, język PL/EN, polityka prywatności, licencje. |
 
-Przepisy są w kodzie, ale ukryte w nawigacji.
-
 ## Wymagania i system
 
 - **System docelowy: Android.** Kod jest wieloplatformowy (Expo), ale iOS i web nie były budowane ani testowane.

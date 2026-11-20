@@ -5,17 +5,12 @@
  */
 import { defineStrings } from './i18n';
 
-type Book = { autor: string; autor_zm: number; tytul: string; miejsce: string; wydanie_rok: string; strona: string };
-
 export const creditsStrings = defineStrings({
   pl: {
     title: 'Licencje',
     intro: 'Grzybodex korzysta z cudzych zdjęć, danych i modelu. Poniżej autorzy i licencje. Wymienienie autorów nie oznacza, że popierają ten projekt.',
     sampleDetail: (author: string, licence: string) => `Autor: ${author} · ${licence} · Wikimedia Commons. Zmiany: zmniejszone do 1600 px.`,
     commonsFile: 'Plik w Commons',
-    recipeText: 'Tekst',
-    recipeScan: 'Skan',
-    recipeDetail: (k: Book) => `${k.autor} (zm. ${k.autor_zm}), „${k.tytul}”, ${k.miejsce} ${k.wydanie_rok}, s. ${k.strona}. Domena publiczna.`,
     scientific: 'Publikacja naukowa',
     official: 'Materiał urzędowy',
     pairs: (n: number) => `par: ${n}`,
@@ -49,8 +44,6 @@ export const creditsStrings = defineStrings({
     wikidataDetail: 'Cechy do filtrów: spód kapelusza i trzon.',
     inatDetail: 'Wybór 400 gatunków i polskie nazwy: obserwacje z Polski w iNaturalist. Dopasowanie nazw naukowych do klas modelu: GBIF.',
     lookalikesTitle: 'Sobowtóry — materiały urzędowe i publikacje',
-    recipesTitle: 'Przepisy',
-    recipesIntro: 'Oryginały z dawnych książek kucharskich; prawa majątkowe autorek wygasły (art. 36 i 39 ustawy o prawie autorskim).',
     fontsTitle: 'Czcionki',
     project: 'Projekt',
     shantellDetail: 'Copyright 2022 The Shantell Sans Project Authors. Zmiany: statyczne odmiany z osią INFM = 20.',
@@ -64,9 +57,6 @@ export const creditsStrings = defineStrings({
     intro: "Grzybodex uses other people's photos, data and model. The authors and licences are listed below. Naming the authors does not mean they endorse this project.",
     sampleDetail: (author: string, licence: string) => `Author: ${author} · ${licence} · Wikimedia Commons. Changes: downscaled to 1600 px.`,
     commonsFile: 'File on Commons',
-    recipeText: 'Text',
-    recipeScan: 'Scan',
-    recipeDetail: (k: Book) => `${k.autor} (d. ${k.autor_zm}), “${k.tytul}”, ${k.miejsce} ${k.wydanie_rok}, p. ${k.strona}. Public domain.`,
     scientific: 'Scientific publication',
     official: 'Official material',
     pairs: (n: number) => `pairs: ${n}`,
@@ -100,8 +90,6 @@ export const creditsStrings = defineStrings({
     wikidataDetail: 'Features for filters: underside of the cap and stem.',
     inatDetail: 'Choice of 400 species and Polish names: observations from Poland on iNaturalist. Matching scientific names to model classes: GBIF.',
     lookalikesTitle: 'Look-alikes — official materials and publications',
-    recipesTitle: 'Recipes',
-    recipesIntro: "Originals from old cookbooks; the authors' economic rights have expired (Art. 36 and 39 of the Polish Copyright Act).",
     fontsTitle: 'Fonts',
     project: 'Project',
     shantellDetail: 'Copyright 2022 The Shantell Sans Project Authors. Changes: static styles with the INFM axis = 20.',

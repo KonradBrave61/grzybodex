@@ -45,7 +45,7 @@ function Credit({ item }: { item: CreditItem }) {
 }
 
 /**
- * RESPONSIBILITY: Ekran „Licencje i autorzy”: atrybucje modelu, zdjęć, danych, przepisów, czcionek i bibliotek
+ * RESPONSIBILITY: Ekran „Licencje i autorzy”: atrybucje modelu, zdjęć, danych, czcionek i bibliotek
  * INPUTS:         none (treść z creditSections() w języku aplikacji)
  * OUTPUTS:        przewijana lista sekcji z linkami do źródeł i licencji
  * AUTHN:          none

@@ -66,7 +66,15 @@
         }
       ],
       "@maplibre/maplibre-react-native",
-      "expo-mail-composer"
+      "expo-mail-composer",
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "extraProguardRules": "# expo-gl: GLView extends TextureView (not ExpoView), so expo-modules-core rules do not keep the (Context, AppContext) constructor Expo calls by reflection; the native side also calls into this package.\n-keep class expo.modules.gl.** { *; }"
+          }
+        }
+      ]
     ],
     "experiments": {
       "typedRoutes": true,

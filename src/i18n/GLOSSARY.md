@@ -10,7 +10,6 @@ Plain, short British/International English, sentence case, no Pokémon/Pokédex 
 | Atlas | Atlas |
 | Mapa | Map |
 | Kolekcja | Collection |
-| Przepisy | Recipes |
 | Skan / zeskanuj / skaner | Scan / scan / scanner |
 | Ustawienia | Settings |
 | Notatnik grzybiarza | Mushroom picker's notebook |
