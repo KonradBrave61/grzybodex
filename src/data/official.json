@@ -12,154 +12,154 @@
  "species": {
   "Agaricus campestris": {
    "source": "lasy_bg",
-   "text": "(Agaricus campestris) – pieczarka polna, polowa, ogrodowa, piekarka Od maja do listopada na łąkach, pastwiskach, polach, miedzach, w ogrodach i rowach – miejscach bogatych w związki azotowe. Kapelusz kulisty, potem wypukły i na koniec rozpostarty, białawy. Trzon krótki, gruby i pełny z pierścieniem u góry. Jadalna. Mylona z trującymi, białymi muchomorami, np. z jadowitym. W odróżnieniu od nich nie ma bulwy i pochwy u nasady trzonu oraz białawych blaszek, które u pieczarek są różowe, czerwonobrązowe aż do brązowoczarnych."
+   "text": "Mylona z trującymi, białymi muchomorami, np. z jadowitym. W odróżnieniu od nich nie ma bulwy i pochwy u nasady trzonu oraz białawych blaszek, które u pieczarek są różowe, czerwonobrązowe aż do brązowoczarnych."
   },
   "Agaricus xanthodermus": {
    "source": "lasy_bg",
-   "text": "(Agaricus xanthoderma) – pieczarka cuchnąca, karbolowa Od maja do października w lasach liściastych, parkach, na poboczach dróg i wśród traw, w miejscach żyznych i bogatych w azot. Często rośnie w czarcich kręgach. Kapelusz półkolisty, wypukły, a czasem rozpostarty, białawy, kremowy lub szarobrązowy. Blaszki różowoszare. Trzon białawy o cienkim i delikatnym pierścieniu, u podstawy bulwiasto rozszerzony. Miąższ biały, po przekrojeniu u podstawy trzonu zmienia kolor na chromowożółty. Zapach nieprzyjemny, karbolowy (zwłaszcza przy gotowaniu, smażeniu). Trująca!"
+   "text": "Blaszki różowoszare. Trzon białawy o cienkim i delikatnym pierścieniu, u podstawy bulwiasto rozszerzony. Miąższ biały, po przekrojeniu u podstawy trzonu zmienia kolor na chromowożółty. Zapach nieprzyjemny, karbolowy (zwłaszcza przy gotowaniu, smażeniu). Trująca!"
   },
   "Amanita pantherina": {
    "source": "lasy_bg",
-   "text": "(Amanita pantherina) Od lipca do października w lasach iglastych i liściastych, na glebach suchych i piaszczystych, pod sosnami, świerkami, dębami i bukami. Kapelusz półkulisty, potem wypukły, a na koniec rozpostarty, z prążkowanym brzegiem, brązowawy z białymi plamkami, które może zmywać deszcz. Trzon cylindryczny, wysmukły, gładki, ze zwisającym gładkim pierścieniem i pochwą w postaci wałeczków, na bulwiastej nasadzie. Zapach rzodkiewki. Silnie trujący! Bywa mylony z czubajką kanią."
+   "text": "Kapelusz […] brązowawy z białymi plamkami, które może zmywać deszcz. Trzon cylindryczny, wysmukły, gładki, ze zwisającym gładkim pierścieniem i pochwą w postaci wałeczków, na bulwiastej nasadzie. Zapach rzodkiewki. Silnie trujący! Bywa mylony z czubajką kanią."
   },
   "Amanita phalloides": {
    "source": "lasy_bg",
-   "text": "(Amanita phalloides) – muchomor sromotnikowy Od lipca do października w lasach liściastych i mieszanych, pojedynczo lub w grupach. Kapelusz wypukły, potem płaski, zielonawy (niekiedy biały), lśniący. Trzon z zygzakowatym wzorem, ze zwisającym pierścieniem, cylindryczny z bulwiasto zgrubiałą nasadą i białą, workowatą, porozrywaną pochwą. Zapach mdły, słodkawy. Śmiertelnie trujący! Mylony z gąską zielonką, gołąbkiem zielonawym i pieczarkami."
+   "text": "Kapelusz […] zielonawy (niekiedy biały), lśniący. Trzon z zygzakowatym wzorem, ze zwisającym pierścieniem, cylindryczny z bulwiasto zgrubiałą nasadą i białą, workowatą, porozrywaną pochwą. Zapach mdły, słodkawy. Śmiertelnie trujący! Mylony z gąską zielonką, gołąbkiem zielonawym i pieczarkami."
   },
   "Amanita porphyria": {
    "source": "lasy_bg",
-   "text": "(Amanita porphyria) Od lipca do października, zwykle grupowo w prześwietlonych borach sosnowych, na glebach piaszczystych i kwaśnych, głównie pod sosnami, brzozami i świerkami (często wśród borówki czernicy). Kapelusz wypukły, potem rozpostarty, brązowoszary do szaroﬁ oletowego, o gładkim lub nieznacznie prążkowanym brzegu, suchy, pokryty nieregularnymi szaroﬁ oletowymi łatkami. Blaszki białe i gęste. Trzon białawy lub szary, potem z ﬁ oletowym odcieniem, cylindryczny i wysmukły, pełny, potem pusty, o zgrubiałej bulwiastej nasadzie, z pierścieniem. Miąższ biały, pod skórką kapelusza ﬁ oletowy, o smaku rzodkwi i zapachu stęchłych ziemniaków. Niejadalny, słabo trujący! Mylony z gąską niekształtną i muchomorem czerwonawym."
+   "text": "Kapelusz […] pokryty nieregularnymi szaroﬁ oletowymi łatkami. Blaszki białe i gęste. Trzon […] o zgrubiałej bulwiastej nasadzie, z pierścieniem. […] Niejadalny, słabo trujący! Mylony z gąską niekształtną i muchomorem czerwonawym."
   },
   "Amanita verna": {
    "source": "lasy_bg",
-   "text": "(Amanita verna) Od czerwca do października, dość rzadko w nizinnych lasach liściastych i mieszanych na glebach wapiennych. Preferuje ciepłe stanowiska. Kapelusz dzwonkowaty, potem wypukły, biały lub kremowy, gładki o prążkowanym brzegu. Blaszki białe, przy brzegu kapelusza zaokrąglone. Trzon wysmukły, cylindryczny, biały i gładki o bulwiastej podstawie otoczonej białą odstającą i porozrywaną pochwą. Pierścień biały, cienki i niezbyt duży. Miąższ biały, kruchy. Śmiertelnie trujący! Mylony z młodymi pieczarkami i majówką wiosenną."
+   "text": "Blaszki białe, przy brzegu kapelusza zaokrąglone. Trzon wysmukły, cylindryczny, biały i gładki o bulwiastej podstawie otoczonej białą odstającą i porozrywaną pochwą. Pierścień biały, cienki i niezbyt duży. […] Śmiertelnie trujący! Mylony z młodymi pieczarkami i majówką wiosenną."
   },
   "Amanita virosa": {
    "source": "lasy_bg",
-   "text": "(Amanita virosa) Od lipca do października, głównie na glebach ubogich, wilgotnych i kwaśnych, w lasach iglastych, rzadziej w liściastych, pod świerkami, sosnami, brzozami, dębami i bukami. Kapelusz dzwonkowaty, potem bardziej płaski, białawy z prążkowanym brzegiem. Trzon cylindryczny, łuskowato-włóknisty z bulwiasto zgrubiałą nasadą i błoniastą pochwą; pierścień szczątkowy lub brak. Zapach rzodkwi. Śmiertelnie trujący! Młode owocniki mylone z pieczarkami."
+   "text": "Kapelusz dzwonkowaty, potem bardziej płaski, białawy z prążkowanym brzegiem. Trzon cylindryczny, łuskowato-włóknisty z bulwiasto zgrubiałą nasadą i błoniastą pochwą; pierścień szczątkowy lub brak. Zapach rzodkwi. Śmiertelnie trujący! Młode owocniki mylone z pieczarkami."
   },
   "Armillaria ostoyae": {
    "source": "lasy_bg",
-   "text": "(Armillaria ostoyae) – podpieńka, pniokówka Od września do listopada gromadnie w kępkach na drzewach iglastych i liściastych oraz pniakach. Kapelusz półkulisty, potem rozpostarty, a nawet zapadnięty, beżowy lub brązowy z drobnymi, ciemnymi łuskami. Trzon cylindryczny i wygięty o zgrubiałej podstawie, żółtawobrązowy, łykowato-włóknisty z wyraźnym pierścieniem. Wytwarza czarne sznury grzybniowe (ryzomorfy). Jadalne tylko kapelusze. Niedogotowana może być szkodliwa. Mylona z maślaną wiązkową (łysiczką trującą)."
+   "text": "Kapelusz […] beżowy lub brązowy z drobnymi, ciemnymi łuskami. Trzon cylindryczny i wygięty o zgrubiałej podstawie, żółtawobrązowy, łykowato-włóknisty z wyraźnym pierścieniem. […] Jadalne tylko kapelusze. Niedogotowana może być szkodliwa. Mylona z maślaną wiązkową (łysiczką trującą)."
   },
   "Boletus edulis": {
    "source": "lasy_bg",
-   "text": "(Boletus edulis) – prawdziwek, grzyb biały Od czerwca do listopada w borach iglastych, rzadziej w lasach liściastych i mieszanych, pod świerkami, sosnami i brzozami. Najobﬁ ciej w górskich drzewostanach świerkowych. Kapelusz półkolisty, potem wypukły, matowy, od białego po różne odcienie brązu. Spód kapelusza zbudowany z rurek, których wyloty (pory) są początkowo białawe, kremowe, potem żółtozielone, nie zmieniają barwy po dotknięciu. Trzon pełny, baryłkowaty, potem maczugowaty, białawy, jasnobrązowy z drobną siateczką żyłek, u podstawy biały, ﬁ lcowaty. Jadalny. Mylony z goryczakiem żółciowym i borowikiem szatańskim."
+   "text": "Spód kapelusza zbudowany z rurek, których wyloty (pory) są początkowo białawe, kremowe, potem żółtozielone, nie zmieniają barwy po dotknięciu. Trzon pełny, baryłkowaty, potem maczugowaty, białawy, jasnobrązowy z drobną siateczką żyłek […] Mylony z goryczakiem żółciowym i borowikiem szatańskim."
   },
   "Caloboletus calopus": {
    "source": "lasy_bg",
-   "text": "(Boletus calopus) – borowik grubotrzonowy Od czerwca do października, głównie w podgórskich i górskich lasach południowej Polski i na Pomorzu, pod świerkami i bukami, na kwaśnych glebach. Kapelusz półkolisty, potem wypukły z nieregularnie powyginanymi brzegami, szarobrązowy z żółtawym odcieniem, gładki, matowy i suchy, zamszowy. Spód żółtocytrynowy, żółtooliwkowy, po dotknięciu sinieje. Trzon gruby, mocny, pełny i maczugowaty, u góry żółty, pośrodku czerwony, a na dole brązowoczerwony, wszędzie z wyraźną siateczką. Miąższ twardy, jędrny, żółtawy, na dole trzonu różowy. Po przekrojeniu sinieje. Smak początkowo łagodny, potem gorzki. Trujący! Mylony z borowikiem ceglastoporym."
+   "text": "Spód żółtocytrynowy, żółtooliwkowy, po dotknięciu sinieje. Trzon gruby, mocny, pełny i maczugowaty, u góry żółty, pośrodku czerwony, a na dole brązowoczerwony, wszędzie z wyraźną siateczką. […] Smak początkowo łagodny, potem gorzki. Trujący! Mylony z borowikiem ceglastoporym."
   },
   "Calocybe gambosa": {
    "source": "lasy_bg",
-   "text": "(Calocybe gambosa) – majówka wiosenna, gąska majowa Od kwietnia do czerwca pojedynczo, czasem gromadnie (w czarcich kręgach) na łąkach, pastwiskach, obrzeżach lasu, śródleśnych polanach, w parkach i zaroślach. Kapelusz dzwonkowaty z podwiniętym brzegiem, potem rozpłaszczony, kremowy z żółtawym odcieniem, gładki i suchy. Blaszki białawe do kremowych, gęste i cienkie, wąskie, przy trzonie wycięte. Trzon równogruby lub maczugowaty, pełny lub gąbczasty, białawy. Miąższ jędrny, białawy o mącznym smaku i zapachu. Jadalna. Mylona z wieruszką zatokowatą, strzępiakiem ceglastym i białymi muchomorami."
+   "text": "Od kwietnia do czerwca […] Blaszki białawe do kremowych, gęste i cienkie, wąskie, przy trzonie wycięte. […] Miąższ jędrny, białawy o mącznym smaku i zapachu. Jadalna. Mylona z wieruszką zatokowatą, strzępiakiem ceglastym i białymi muchomorami."
   },
   "Cantharellus cibarius": {
    "source": "lasy_bg",
-   "text": "(Cantharellus cibarius) – kurka, lisica, liszka Od czerwca do listopada w lasach iglastych (sosna, świerk) i liściastych (dąb, buk), gromadnie w mchu lub opadłych liściach. Owocnik wypukły, potem lejkowaty z nieregularnym brzegiem, żółty. Trzon tej samej barwy, u góry rozszerzony, pełny. Listwowate blaszki zbiegają na trzon. Smak surowego owocnika ostrawy, pieprzny. Mylony z niejadalną lisówką pomarańczową, tzw. fałszywą kurką."
+   "text": "Owocnik wypukły, potem lejkowaty z nieregularnym brzegiem, żółty. Trzon tej samej barwy, u góry rozszerzony, pełny. Listwowate blaszki zbiegają na trzon. Smak surowego owocnika ostrawy, pieprzny. Mylony z niejadalną lisówką pomarańczową, tzw. fałszywą kurką."
   },
   "Cortinarius caperatus": {
    "source": "lasy_bg",
-   "text": "(Rozites caperatus) – niemka, turek, bydlarka, chochółka, leśna pieczarka, szampion Od lipca do października gromadnie w lasach iglastych, głównie sosnowych i świerkowych, często wśród borówki czernicy i wśród wrzosów. Kapelusz jajowaty, potem wypukły i rozpłaszczony z garbkiem, białawy, żółtawy lub szarawożółty, czasem z jasnoniebieskim odcieniem, na brzegach popękany. Blaszki żółtawe, potem brązowe, gęste, z karbowanym ostrzem. Trzon biały, żółtawy, cylindryczny, u podstawy zgrubiały, podłużnie prążkowany, pełny z wąskim błoniastym pierścieniem, który z czasem zanika. Miąższ białawy, mięsisty, pod skórką kapelusza żółtawy, o przyjemnym zapachu i smaku. Jadalna. Mylona ze strzępiakiem ceglastym."
+   "text": "Blaszki żółtawe, potem brązowe, gęste, z karbowanym ostrzem. Trzon biały, żółtawy, cylindryczny, u podstawy zgrubiały, podłużnie prążkowany, pełny z wąskim błoniastym pierścieniem, który z czasem zanika. […] Mylona ze strzępiakiem ceglastym."
   },
   "Entoloma sinuatum": {
    "source": "lasy_bg",
-   "text": "(Entoloma sinuatum) – dzwonkówka trująca Od czerwca do września pojedynczo lub grupowo w prześwietlonych lasach liściastych, śródleśnych polanach, pod dębami, bukami i grabami, na glebach gliniastych i wapiennych. Preferuje ciepłe i wilgotne stanowiska. Kapelusz półkolisty z podwiniętymi brzegami, potem wypukły, a na koniec płaski, gładki z łatwo odchodzącą skórką, białawy, kremowy do szarobrązowego. Blaszki białawe, potem różowawe, przy trzonie zatokowato wycięte. Trzon białawy lub jasnożółty, cylindryczny lub lekko maczugowaty, pełny, potem gąbczasty i pusty, bez pierścienia. Miąższ biały, błyszczący, o mącznym smaku i zapachu. Silnie trująca! Mylona z gęśnicą (majówką) wiosenną oraz pieczarkami."
+   "text": "Blaszki białawe, potem różowawe, przy trzonie zatokowato wycięte. Trzon białawy lub jasnożółty […] bez pierścienia. Miąższ biały, błyszczący, o mącznym smaku i zapachu. Silnie trująca! Mylona z gęśnicą (majówką) wiosenną oraz pieczarkami."
   },
   "Galerina marginata": {
    "source": "lasy_bg",
-   "text": "(Galerina marginata) – hełmówka jadowita Od czerwca do października, pojedynczo lub w grupach na rozkładającym się drewnie iglastym, rzadziej liściastym. Kapelusz półkolisty, wypukły, potem płaski, w środku z zagłębieniem lub garbkiem o równym ostrym brzegu, w różnych odcieniach brązu (mokry – ciemniejszy). W młodości z włókienkami osłony przy brzegu. Blaszki żółtawe, jasnobrązowe, potem czerwonobrązowe, szerokie i przyrośnięte do trzonu. Trzon w różnych odcieniach brązu, cylindryczny, pełny, potem pusty z skórkowatym, nietrwałym, białawym lub brązowym pierścieniem, poniżej którego jest białawowłókienkowaty. Miąższ brązowawy, cienki, o mącznym smaku i zapachu. Śmiertelnie trująca! Mylona z łuszczakiem zmiennym."
+   "text": "[…] na rozkładającym się drewnie iglastym, rzadziej liściastym. […] Trzon […] z skórkowatym, nietrwałym, białawym lub brązowym pierścieniem, poniżej którego jest białawowłókienkowaty. Miąższ brązowawy, cienki, o mącznym smaku i zapachu. Śmiertelnie trująca! Mylona z łuszczakiem zmiennym."
   },
   "Gyromitra esculenta": {
    "source": "lasy_bg",
-   "text": "(Gyromitra esculenta) Od marca do maja w drzewostanach sosnowych i świerkowych na glebach suchych i piaszczystych, na zrębach, zwykle bezpośrednio na nagiej glebie. Główka nieregularnie kulista i pofałdowana, w środku pusta, kasztanowata lub ciemnobrązowa. Trzon krótki, cylindryczny, białawy. Miąższ kruchy i woskowaty. Zapach przyjemny. Śmiertelnie trująca! Mylona ze smardzem."
+   "text": "Główka nieregularnie kulista i pofałdowana, w środku pusta, kasztanowata lub ciemnobrązowa. Trzon krótki, cylindryczny, białawy. Miąższ kruchy i woskowaty. Zapach przyjemny. Śmiertelnie trująca! Mylona ze smardzem."
   },
   "Hygrophoropsis aurantiaca": {
    "source": "lasy_bg",
-   "text": "(Hygrophoropsis auriantiaca) – fałszywa kurka, jadowita kurka, pieprznik pomarańczowy Od września do listopada w borach iglastych i mieszanych. Kapelusz wypukły, potem lejkowaty o podwiniętych brzegach, pomarańczowy lub brązowawy, matowy, elastyczny. Blaszki intensywnie pomarańczowe. Trzon cienki, wysmukły, rozszerzony ku górze, gładki. Niejadalna! Mylona z pieprznikiem jadalnym, czyli kurką."
+   "text": "Kapelusz wypukły, potem lejkowaty o podwiniętych brzegach, pomarańczowy lub brązowawy, matowy, elastyczny. Blaszki intensywnie pomarańczowe. Trzon cienki, wysmukły, rozszerzony ku górze, gładki. Niejadalna! Mylona z pieprznikiem jadalnym, czyli kurką."
   },
   "Hypholoma fasciculare": {
    "source": "lasy_bg",
-   "text": "(Hypholoma fasciculare) – łysiczka trująca, maślanka trująca, opieńka trująca, opieńka fałszywa Od maja do grudnia, pospolicie kępkami na pniakach drzew iglastych i liściastych. Kapelusz półkulisty, potem wypukły, a na koniec płaski z garbkiem, żółty lub rdzawobrązowy, z ciemniejszym środkiem, gładki i błyszczący. Trzon cylindryczny, wysmukły, powyginany i pusty, pokryty włóknami. Miąższ o nieprzyjemnym zapachu. Cała wiązka zrośnięta u nasady. Trująca! Mylona z opieńkami."
+   "text": "Kapelusz […] żółty lub rdzawobrązowy, z ciemniejszym środkiem, gładki i błyszczący. Trzon cylindryczny, wysmukły, powyginany i pusty, pokryty włóknami. Miąższ o nieprzyjemnym zapachu. Cała wiązka zrośnięta u nasady. Trująca! Mylona z opieńkami."
   },
   "Inosperma erubescens": {
    "source": "lasy_bg",
-   "text": "(Inocybe erubescens) Od czerwca do września (bardzo rzadko późną jesienią) w prześwietlonych lasach liściastych, zaroślach, starych parkach, pod dębami, bukami, grabami i lipami. Kapelusz dzwonkowaty z podwiniętym brzegiem, potem płaski z garbkiem, promieniście popękany z odgiętymi brzegami, białawy, żółtawy, a nawet ceglastobrązowy. Blaszki białawe, potem brązowawe, gęste, po uszkodzeniu czerwienieją. Trzon biały, potem ceglasty, cylindryczny, pełny, skrzywiony i zgrubiały u nasady, suchy i włóknisty. Miąższ mięsisty, po przekrojeniu czerwienieje, o słodkawym, owocowym zapachu i łagodnym smaku. Śmiertelnie trujący (zawiera dużo muskaryny)! Mylony z płachetką zwyczajną i gęśnicą (majówką) wiosenną."
+   "text": "Kapelusz […] promieniście popękany […] Blaszki białawe, potem brązowawe, gęste, po uszkodzeniu czerwienieją. […] Miąższ mięsisty, po przekrojeniu czerwienieje, o słodkawym, owocowym zapachu i łagodnym smaku. Śmiertelnie trujący (zawiera dużo muskaryny)! Mylony z płachetką zwyczajną i gęśnicą (majówką) wiosenną."
   },
   "Kuehneromyces mutabilis": {
    "source": "lasy_bg",
-   "text": "(Kuehneromyces mutabilis) – łuskwiak Od maja do listopada w lasach, parkach i zadrzewieniach, na drewnie, pniakach i leżaninie, gromadnie w wiązkach. Preferuje drewno drzew liściastych, rzadziej iglastych. Kapelusz półkolisty, potem płaski z garbkiem, do żółtego do rdzawobrunatnego, gładki z ciemniejszym prążkowanym brzegiem. Blaszki o podobnym zmiennym kolorze. Trzon cylindryczny, pusty, łykowaty, rdzawobrązowy, u nasady ciemniejszy, smukły i cienki. Trzon poniżej zanikającego pierścienia pokryty brunatnymi łuskami. Miąższ w kapeluszu białawy i miękki, a w trzonie twardy, rdzawobrunatny. Jadalny (zdrewniałe trzony należy odciąć). Mylony z trującą hełmówką obrzeżoną."
+   "text": "Preferuje drewno drzew liściastych, rzadziej iglastych. […] Trzon poniżej zanikającego pierścienia pokryty brunatnymi łuskami. […] Jadalny (zdrewniałe trzony należy odciąć). Mylony z trującą hełmówką obrzeżoną."
   },
   "Lactarius deliciosus": {
    "source": "lasy_bg",
-   "text": "(Lactarius deliciosus) – rycek, rydzyk, ryżyk Od sierpnia do listopada pojedynczo lub gromadnie pod sosnami. Kapelusz wypukły, potem lejkowaty, ceglastopomarańczowy z domieszką zielonego, z koncentrycznymi kręgami. Blaszki pomarańczowe, po zgnieceniu zielenieją. Trzon cylindryczny z ciemnymi plamkami. W miąższu pomarańczowe mleczko. Grzyb coraz rzadszy. Bywa mylony z trującymi: mleczajem wełnianką i krowiakiem podwiniętym."
+   "text": "Od sierpnia do listopada pojedynczo lub gromadnie pod sosnami. […] Blaszki pomarańczowe, po zgnieceniu zielenieją. Trzon cylindryczny z ciemnymi plamkami. W miąższu pomarańczowe mleczko. […] Bywa mylony z trującymi: mleczajem wełnianką i krowiakiem podwiniętym."
   },
   "Lactarius torminosus": {
    "source": "lasy_bg",
-   "text": "(Lactarius torminosus) – bawełnianka, wełniak, rydz koński, kosmaty Od sierpnia do października w lasach iglastych i mieszanych, wyłącznie pod brzozami. Kapelusz wypukły, potem płaski i lejkowaty z podwiniętym brzegiem, pomarańczowy do jasnobrązowego z ciemnymi koncentrycznymi kręgami, owłosiony. Trzon cylindryczny, krótki i masywny, gładki. Wydziela obﬁ cie białe, piekące w smaku mleczko. Trujący! Mylony z rydzem."
+   "text": "[…] wyłącznie pod brzozami. Kapelusz […] z podwiniętym brzegiem, pomarańczowy do jasnobrązowego z ciemnymi koncentrycznymi kręgami, owłosiony. […] Wydziela obﬁ cie białe, piekące w smaku mleczko. Trujący! Mylony z rydzem."
   },
   "Lycoperdon perlatum": {
    "source": "lasy_bg",
-   "text": "(Lycoperdon perlatum) – purchawka szorstka, purchadka, kurzawka Od czerwca do listopada pospolicie w lasach iglastych i liściastych, na łąkach i pastwiskach. Przypomina odwróconą pękatą butelkę lub gruszkę. Biały owocnik pokryty kolcami. W środku też biały i zbity, później ciemnieje i nabiera stęchłego zapachu. Jadalna dopóki jej wnętrze jest białe i elastyczne. Bywa mylona z trującym tęgoskórem cytrynowym."
+   "text": "Przypomina odwróconą pękatą butelkę lub gruszkę. Biały owocnik pokryty kolcami. W środku też biały i zbity, później ciemnieje i nabiera stęchłego zapachu. Jadalna dopóki jej wnętrze jest białe i elastyczne. Bywa mylona z trującym tęgoskórem cytrynowym."
   },
   "Macrolepiota procera": {
    "source": "lasy_bg",
-   "text": "(Macrolepiota procera) – kania, sowa Od lipca do listopada w lasach liściastych i mieszanych, przy drogach, na polanach i zrębach, w miejscach trawiastych. Rośnie grupowo. Kapelusz jajowaty, potem parasolowaty z małym garbem na szczycie, suchy, spękany, pokryty odstającymi łuskami, w różnych odcieniach brązu. Trzon długi, wysmukły, u podstawy bulwiasty, w górnej części z podwójnym, ruchomym pierścieniem, wewnątrz pusty. Łatwo się odłamuje od kapelusza. Jadalny tylko kapelusz. Bywa mylona z muchomorem plamistym."
+   "text": "Kapelusz […] z małym garbem na szczycie, suchy, spękany, pokryty odstającymi łuskami, w różnych odcieniach brązu. Trzon długi, wysmukły, u podstawy bulwiasty, w górnej części z podwójnym, ruchomym pierścieniem, wewnątrz pusty. […] Jadalny tylko kapelusz. Bywa mylona z muchomorem plamistym."
   },
   "Marasmius oreades": {
    "source": "lasy_bg",
-   "text": "(Marasmius oreades) – podróżniczka, przydróżka, tańcówka Od maja do października na pastwiskach, łąkach, trawiastych poboczach dróg, poza lasami. Bardzo pospolity, rośnie w szeregach lub czarcich kręgach. Kapelusz półkolisty, stożkowaty, potem płaski, z ciemniejszym garbkiem, cielisty, jasnobrązowy, po zmoczeniu ciemniejszy, gładki. Blaszki podobnej barwy, dość grube i szeroko rozstawione. Trzon cylindryczny, włóknisty i łykowaty, u podstawy z białawą grzybnią, gładki. Miąższ białawy, elastyczny o aromatycznym grzybowym zapachu i łagodnym smaku. Jadalny (używa się tylko kapeluszy). Mylony z trującą lejkówką liściową."
+   "text": "Kapelusz półkolisty, stożkowaty, potem płaski, z ciemniejszym garbkiem, cielisty, jasnobrązowy, po zmoczeniu ciemniejszy, gładki. Blaszki podobnej barwy, dość grube i szeroko rozstawione. […] Jadalny (używa się tylko kapeluszy). Mylony z trującą lejkówką liściową."
   },
   "Morchella esculenta": {
    "source": "lasy_bg",
-   "text": "(Morchella esculenta) – smardz zwyczajny, smorz Od kwietnia do maja, po wiosennych deszczach, w prześwietlonych lasach liściastych, parkach, głównie pod jesionami, wiązami, klonami i bukami. Składa się z kulistej lub jajowatej, pustej w środku główki i przysadzistego, rozszerzonego u podstawy trzonu. Na kapeluszu barwy od szarej do brązowożółtej charakterystyczne fałdki i jamki otoczone żeberkami – jak plaster miodu. Objęty częściową ochroną gatunkową poza terenem ogrodów, upraw ogrodniczych, szkółek leśnych i terenami zieleni. Mylony z trującą piestrzenicą kasztanowatą."
+   "text": "Na kapeluszu barwy od szarej do brązowożółtej charakterystyczne fałdki i jamki otoczone żeberkami – jak plaster miodu. Objęty częściową ochroną gatunkową poza terenem ogrodów, upraw ogrodniczych, szkółek leśnych i terenami zieleni. Mylony z trującą piestrzenicą kasztanowatą."
   },
   "Neoboletus luridiformis": {
    "source": "lasy_bg",
-   "text": "(Boletus luridiformis) – gniewus, pociec, ceglak Od maja do października w lasach iglastych i liściastych, na kwaśnych glebach. Kapelusz półkolisty ciemnobrązowy, potem poduszkowaty z ceglastym lub oliwkowym odcieniem, matowy, zamszowy, podczas wilgotnej pogody lepki. Spód żółtawooliwkowy, potem ceglastoczerwony, po naciśnięciu sinieje. Trzon żółtawy z czerwonymi kosmkami lub ziarenkami, bez siateczki, u podstawy czerwonobrązowy, cylindryczny lub lekko maczugowaty, przy ucisku siniejący. Miąższ żółty, po przekrojeniu siniejący, o łagodnym smaku i zapachu. Jadalny. Mylony z trującym borowikiem grubotrzonowym."
+   "text": "Spód żółtawooliwkowy, potem ceglastoczerwony, po naciśnięciu sinieje. Trzon żółtawy z czerwonymi kosmkami lub ziarenkami, bez siateczki […] Miąższ żółty, po przekrojeniu siniejący, o łagodnym smaku i zapachu. Jadalny. Mylony z trującym borowikiem grubotrzonowym."
   },
   "Paxillus involutus": {
    "source": "lasy_bg",
-   "text": "(Paxillus involutus) – olszówka Od lipca do października pospolicie w wilgotnych lasach iglastych i liściastych, parkach, często pod brzozami i olszami, a także sosnami, świerkami i dębami. Kapelusz wypukły, potem płaski i lejkowaty o podwiniętym brzegu, aksamitny, brązowy Trzon krótki, cylindryczny, krępy, zwężony u nasady. Dawniej uważany za jadalny. Trujący! Bywa mylony z mleczajem rudym i z rydzem – w przeciwieństwie do niego nie wydziela mleczka."
+   "text": "Kapelusz wypukły, potem płaski i lejkowaty o podwiniętym brzegu, aksamitny, brązowy Trzon krótki, cylindryczny, krępy, zwężony u nasady. Dawniej uważany za jadalny. Trujący! Bywa mylony z mleczajem rudym i z rydzem – w przeciwieństwie do niego nie wydziela mleczka."
   },
   "Russula emetica": {
    "source": "lasy_bg",
-   "text": "(Russula emetica) – serojeszka mierzliwa, gorzkówka Od czerwca do listopada w dość wilgotnych lasach sosnowych, świerkowych, na torfowiskach. Kapelusz wypukły, potem płaski i w końcu zapadnięty, czerwonawy, podczas deszczu lepki. Trzon cylindryczny, gładki i kruchy, przeważnie czysto biały. Zapach owocowy. Mylony z gołąbkiem wybornym (jadalnym). W przeciwieństwie do niego gołąbek wymiotny ma smak ostry i piekący."
+   "text": "Kapelusz wypukły, potem płaski i w końcu zapadnięty, czerwonawy, podczas deszczu lepki. Trzon cylindryczny, gładki i kruchy, przeważnie czysto biały. Zapach owocowy. Mylony z gołąbkiem wybornym (jadalnym). W przeciwieństwie do niego gołąbek wymiotny ma smak ostry i piekący."
   },
   "Russula vesca": {
    "source": "lasy_bg",
-   "text": "(Russula vesca) – gołąbek jadalny, surojadka Od czerwca do października w lasach liściastych, mieszanych i iglastych, zwłaszcza pod dębami, bukami, sosnami i świerkami. Kapelusz półkulisty, potem wypukły lub płaski z wgłębieniem pośrodku, czerwonawy, cielistoróżowy, miejscami odbarwiony na kolor ochrowy. Skórka w czasie deszczu lepka, często nie dochodzi do brzegu kapelusza. Trzon cylindryczny, pełny, białawy. Jeden z najsmaczniejszych gołąbków. Bywa mylony z trującym gołąbkiem wymiotnym, który ma piekący smak."
+   "text": "Kapelusz […] czerwonawy, cielistoróżowy, miejscami odbarwiony na kolor ochrowy. Skórka w czasie deszczu lepka, często nie dochodzi do brzegu kapelusza. Trzon cylindryczny, pełny, białawy. […] Bywa mylony z trującym gołąbkiem wymiotnym, który ma piekący smak."
   },
   "Russula virescens": {
    "source": "lasy_bg",
-   "text": "(Russula virescens) – surowiatka, surojadka zielonawa, siwek Od czerwca do października, najczęściej pod dębami, bukami i brzozami w lasach liściastych i mieszanych. Kapelusz kulisty, potem rozpostarty z wgłębieniem pośrodku, szarozielony, zielononiebieski lub oliwkowy. Początkowo gładki, szybko charakterystycznie kostkowato spękany. Mylony ze śmiertelnie trującym muchomorem zielonawym (sromotnikowym)."
+   "text": "Kapelusz kulisty, potem rozpostarty z wgłębieniem pośrodku, szarozielony, zielononiebieski lub oliwkowy. Początkowo gładki, szybko charakterystycznie kostkowato spękany. Mylony ze śmiertelnie trującym muchomorem zielonawym (sromotnikowym)."
   },
   "Scleroderma citrinum": {
    "source": "lasy_bg",
-   "text": "(Scleroderma citrinum) – bycze jaja, fałszywa truﬂ a, trufel Od czerwca do listopada gromadnie w lasach iglastych i liściastych. Preferuje miejsca nasłonecznione. Owocnik kulisty lub bulwiasty, przypomina ziemniaka, żółtawy lub brązowy, bez trzonu, pokryty odstającymi łuskami. Wnętrze owocnika białe i twarde, potem czarne, przypominające utarty mak. Zapach silny, korzenny. Trujący! Może być mylony z purchawką chropowatą."
+   "text": "Owocnik kulisty lub bulwiasty, przypomina ziemniaka, żółtawy lub brązowy, bez trzonu, pokryty odstającymi łuskami. Wnętrze owocnika białe i twarde, potem czarne, przypominające utarty mak. Zapach silny, korzenny. Trujący! Może być mylony z purchawką chropowatą."
   },
   "Tricholoma equestre": {
    "source": "lasy_bg",
-   "text": "(Tricholoma equestre) – zielonka, gąska żółta Od września do listopada (czasem w grudniu) pospolicie w lasach iglastych na piaskach. Pojedynczo lub grupowo, głównie pod sosną. Z mchu lub gleby wystaje tylko górna część kapelusza. Kapelusz o podgiętym brzegu, potem rozpostarty, żółtozielony do brązowooliwkowego, w środku ciemniejszy, gładki. Zwykle upiaszczony, podczas deszczu lepki. Blaszki jaskrawożółte, cienkie i kruche. Trzon pełny, cylindryczny, u podstawy zgrubiały, żółtozielony. Miąższ twardy, mięsisty, białawy o łagodnym smaku. Jadalna. Może jednak powodować groźne zatrucia w przypadku regularnego spożywania większych ilości. Mylona z gąską siarkową, a nawet muchomorem sromotnikowym."
+   "text": "Blaszki jaskrawożółte, cienkie i kruche. […] Miąższ twardy, mięsisty, białawy o łagodnym smaku. Jadalna. Może jednak powodować groźne zatrucia w przypadku regularnego spożywania większych ilości. Mylona z gąską siarkową, a nawet muchomorem sromotnikowym."
   },
   "Tricholoma portentosum": {
    "source": "lasy_bg",
-   "text": "(Tricholoma portentosum) – gąska siwa, siwka, siwuszka Od września do grudnia, gromadnie w lasach iglastych na glebach piaszczystych. W podobnych miejscach i czasie jak gąska zielonka. Kapelusz płaski z garbkiem pośrodku, szarawy o ﬁ oletowobrązowym odcieniu, gładki, z czarnymi, promienistymi włóknami. Trzon białawy, cylindryczny, pełny, na starość, podobnie jak blaszki, z żółtozielonym połyskiem. Mylona z trującymi muchomorami, np. porﬁ rowym."
+   "text": "Kapelusz płaski z garbkiem pośrodku, szarawy o ﬁ oletowobrązowym odcieniu, gładki, z czarnymi, promienistymi włóknami. Trzon białawy, cylindryczny, pełny, na starość, podobnie jak blaszki, z żółtozielonym połyskiem. Mylona z trującymi muchomorami, np. porﬁ rowym."
   },
   "Tricholoma sulphureum": {
    "source": "lasy_bg",
-   "text": "(Tricholoma sulphureum) Od sierpnia do listopada w lasach liściastych i mieszanych (głównie na piaskach), pod sosnami, dębami i bukami. Kapelusz wypukły, z garbkiem, żółtooliwkowy do brązowożółtego, suchy i gładki, czasem z drobnymi kosmkami. Blaszki żółte, dość rzadkie i grube. Trzon wysmukły, cylindryczny, żółtooliwkowy z brązowym odcieniem, suchy z kosmkami. Miąższ siarkowożółty, cienki i włóknisty o nieprzyjemnym smaku i karbidowym duszącym zapachu. Niejadalna, słabo trująca. Mylona z gąską zielonką."
+   "text": "Blaszki żółte, dość rzadkie i grube. […] Miąższ siarkowożółty, cienki i włóknisty o nieprzyjemnym smaku i karbidowym duszącym zapachu. Niejadalna, słabo trująca. Mylona z gąską zielonką."
   },
   "Tylopilus felleus": {
    "source": "lasy_bg",
-   "text": "(Tylopilus felleus) – borowik żółciowy, podgrzybek gorzki Od czerwca do października w lasach iglastych i mieszanych, głównie pod sosnami i świerkami. W górach nie występuje. Kapelusz półkolisty, potem wypukły lub płaski, jasnobrązowy; u młodych zamszowaty, u starszych gładki, podczas deszczu lepki. Rurki i pory białawe, z wiekiem lub po dotknięciu zmieniają kolor na różowy do różowobrązowego. Trzon pełny, zgrubiały u dołu, jaśniejszy od kapelusza, z wyraźną brązowawą siateczką. Miąższ biały, bardzo gorzki, ale o przyjemnym zapachu. Niejadalny! Powoduje silne zaburzenia żołądkowo-jelitowe. Mylony z borowikiem szlachetnym."
+   "text": "Rurki i pory białawe, z wiekiem lub po dotknięciu zmieniają kolor na różowy do różowobrązowego. Trzon […] z wyraźną brązowawą siateczką. Miąższ biały, bardzo gorzki, ale o przyjemnym zapachu. Niejadalny! Powoduje silne zaburzenia żołądkowo-jelitowe. Mylony z borowikiem szlachetnym."
   }
  },
  "pairs": [
   {
    "source": "psse_golub",
    "heading": "Borowik szlachetny, a goryczak żółciowy",
-   "text": "Kapelusz borowika jest mięsisty, wypukły, suchy i matowy o barwie od piaskowej do kasztanowej. Rurki u młodych osobników są prawie białe, u starszych żółtooliwkowe. Trzon gruby, baryłkowaty, koloru piaskowego z białawą siateczką żyłek. Niejadalny goryczak żółciowy charakteryzuje się trzonem z brązową siateczką o długich oczkach oraz różowo zabarwioną warstwą rurek. U młodych osobników rurki są brudnobiałe. Kapelusz poduchowaty, zamszowaty. Nawet niewielki dodatek goryczaka do potrawy sporządzonej z borowików nie będzie nadawał się do jedzenia z powodu silnej goryczy.",
+   "text": "Kapelusz borowika […] Rurki u młodych osobników są prawie białe, u starszych żółtooliwkowe. Trzon gruby, baryłkowaty, koloru piaskowego z białawą siateczką żyłek. Niejadalny goryczak żółciowy charakteryzuje się trzonem z brązową siateczką o długich oczkach oraz różowo zabarwioną warstwą rurek. U młodych osobników rurki są brudnobiałe.",
    "species": [
     "Boletus edulis",
     "Tylopilus felleus"
@@ -169,7 +169,7 @@
   {
    "source": "psse_golub",
    "heading": "Czubajka kania, czubajka czerwieniejąca, ostrołuskowa, a śmiertelnie trujące muchomory",
-   "text": "Cechą rozpoznawczą czubajki kani jest zygzakowaty wzór na trzonie, ruchomy pierścień, kapelusz z garbkiem, biały, niezmienny miąższ, bulwiasta podstawa bez pochwy. Czubajkę wywołującą zatrucia, jak czubajka czerwieniejąca odróżnimy po wyraźnych, odstających łuskach na kapeluszu, czerwonym wybarwieniu blaszek i trzonu po uszkodzeniu oraz braku ciemniejszego wzoru na trzonie. Z kolei trująca czubajka ostrołuskowa ma kapelusz pokryty stożkowatymi łuskami, nieprzesuwalny pierścień oraz nieprzyjemny zapach. Śmiertelnym zagrożeniem jest pomyłka czubajki kani z muchomorem zielonawym. Ma on zielonkawy, gładki (bez łatek) kapelusz bez garbka, nieruchomy pierścień oraz bulwę z pochwą. Z kolei muchomora plamistego od kani odróżniają jaśniejsze, białe łatki na brązowym kapeluszu, który jest pozbawiony garbku, zwisający pierścień oraz bulwa u podstawy trzonu.",
+   "text": "Cechą rozpoznawczą czubajki kani jest […] ruchomy pierścień, […] bulwiasta podstawa bez pochwy. […] Śmiertelnym zagrożeniem jest pomyłka czubajki kani z muchomorem zielonawym. Ma on zielonkawy, gładki (bez łatek) kapelusz bez garbka, nieruchomy pierścień oraz bulwę z pochwą. Z kolei muchomora plamistego od kani odróżniają jaśniejsze, białe łatki na brązowym kapeluszu, który jest pozbawiony garbku, zwisający pierścień oraz bulwa u podstawy trzonu.",
    "species": [
     "Amanita pantherina",
     "Amanita phalloides",
@@ -190,7 +190,7 @@
   {
    "source": "psse_golub",
    "heading": "Łuszczak zmienny, a śmiertelnie trująca hełmówka jadowita",
-   "text": "Łuszczak zmienny zmienia barwę w zależności od stopnia zawilgocenia. Suchy jest wyblakły i jaśniejszy na brzegu, wilgotny robi się miodowobrązowy i trochę obślizgły. Blaszki od białych, przez cynamonowe do rudobrązowych. Trzon pusty z brązowym pierścieniem, poniżej łuseczkowaty, starszy wyłysiały. Łuszczak zmienny ma przyjemny grzybowy zapach i rośnie na drewnie drzew liściastych. Pomylić go możemy ze śmiertelnie trującą hełmówką jadowitą, która wydziela zapach mąki, rośnie na drewnie drzew iglastych, ma biały pierścień poniżej, którego trzon ma strukturę z białymi włókienkami.",
+   "text": "Trzon pusty z brązowym pierścieniem, poniżej łuseczkowaty, starszy wyłysiały. Łuszczak zmienny ma przyjemny grzybowy zapach i rośnie na drewnie drzew liściastych. Pomylić go możemy ze śmiertelnie trującą hełmówką jadowitą, która wydziela zapach mąki, rośnie na drewnie drzew iglastych, ma biały pierścień poniżej, którego trzon ma strukturę z białymi włókienkami.",
    "species": [
     "Galerina marginata",
     "Kuehneromyces mutabilis"
@@ -200,7 +200,7 @@
   {
    "source": "psse_golub",
    "heading": "Mleczaj rydz, a trujący mleczaj wełnianka i krowiak podwinięty",
-   "text": "Mleczaj rydz ma pomarańczowe blaszki, które po uszkodzeniu zielenieją, ale nigdy nie przechodzą w winnoczerwone. Mleczko jest marchewkowe, które wysychając blaknie i zmienia się w szarozielone, ale nigdy nie przebarwia się do winnoczerwonego. Warto zapamiętac także, że mleczaj rydz rośnie tylko pod sosnami. Szczególne zagrożenie dla zdrowia stanowi pomyłka z mleczajem wełnianką. Jego blaszki są białe, mleczko piekące i białe. Charakterystyczny jest frędzlowato-kosmkowaty brzeg kapelusza. Rośnie tylko pod brzozami. Należy unikać również toksycznego krowiaka podwiniętego, zwanego olszówką. Grzyb ten po uszkodzeniu nie wydziela mleczka. Zamiast tego blaszki oraz trzon przebarwiają się na kolor czerwonobrązowy.",
+   "text": "Szczególne zagrożenie dla zdrowia stanowi pomyłka z mleczajem wełnianką. Jego blaszki są białe, mleczko piekące i białe. Charakterystyczny jest frędzlowato-kosmkowaty brzeg kapelusza. Rośnie tylko pod brzozami. Należy unikać również toksycznego krowiaka podwiniętego, zwanego olszówką. Grzyb ten po uszkodzeniu nie wydziela mleczka. Zamiast tego blaszki oraz trzon przebarwiają się na kolor czerwonobrązowy.",
    "species": [
     "Lactarius deliciosus",
     "Lactarius torminosus",
@@ -211,7 +211,7 @@
   {
    "source": "psse_golub",
    "heading": "Śmiertelnie trujący muchomor zielonawy, a podobne jadalne gatunki",
-   "text": "Muchomor zielonawy jest jednym z najsilniej trujących grzybów. Cechami charakterystycznymi tego grzyba są: zawsze białe, kremowe blaszki; gładka powierzchnia kapelusza; zwieszony, nieprzesuwalny pierścień na trzonie, pod kapeluszem; gruba bulwa otoczona pochwą; słodki zapach przypominający sztuczny miód. Jadalnymi gatunkami, z którymi możemy go pomylić są czubajka kania, gołąbek zielonawy oraz gąska zielonka, a więc grzyby także blaszkowe. I jest to jedyna ich cecha wspólna. Czubajkę kanię odróżniają łuski na kapeluszu, ruchomy pierścień oraz bulwa bez pochwy. Jeśli podczas grzybobrania kierujemy się wyłącznie barwą kapelusza pomyłka może dotyczyć gołąbka zielonawego. Jednak gołąbek nie posiada pierścienia ani pochwy, trzon jest gładki, a powierzchnia kapelusza u dorosłych osobników charakterystycznie poletkowato popękana. Podczas zbierania młodych osobników, trującego muchomora możemy pomylić także z gąską zielonką. Tu cechami charakterystycznymi odróżniającymi gąskę są żółte blaszki, brak pierścienia i pochwy oraz zdecydowanie mniejszy rozmiar dorosłych osobników. W przypadku pomyłek grzybów jadalnych z muchomorem zielonkawym szczególnie musimy stosować się do zasady, aby zbierać tylko dorosłe owocniki, które wykształciły już cechy charakterystyczne.",
+   "text": "Muchomor zielonawy jest jednym z najsilniej trujących grzybów. Cechami charakterystycznymi tego grzyba są: zawsze białe, kremowe blaszki […] Czubajkę kanię odróżniają łuski na kapeluszu, ruchomy pierścień oraz bulwa bez pochwy. […] gołąbek nie posiada pierścienia ani pochwy […] odróżniającymi gąskę są żółte blaszki, brak pierścienia i pochwy […] zbierać tylko dorosłe owocniki, które wykształciły już cechy charakterystyczne.",
    "species": [
     "Amanita phalloides",
     "Macrolepiota procera",
@@ -233,7 +233,7 @@
   {
    "source": "psse_golub",
    "heading": "Pieczarki jadalne, pieczarka trująca (karbolowa), a śmiertelnie trujące muchomory",
-   "text": "Do pomyłki może dojść przy ocenie młodych owocników. Dlatego pamiętajmy, aby zbierać pieczarki, gdy wykształcą cechy rozpoznawcze. Najważniejszą cechą są blaszki pieczarek. Te jadalne początkowo są bladoszare, potem różowe, a na końcu czarnawe. Trująca pieczarka karbolowa bardzo przypomina jadalną pieczarkę. W tym przypadku pieczarkę karbolową zdecydowanie odróżnia zapach i reakcja na uszkodzenie. Jeśli żółknie po uszkodzeniu, a przy tym nieprzyjemnie pachnie mamy do czynienia z pieczarką karbolową. Jeśli chcemy dodatkowo upewnić się, możemy pieczarkę przekroić i umieścić w miseczce z gorącą wodą-zapach karbolu będzie bardziej intensywny. Cechą charakterystyczną, która odróżnia muchomora jadowitego od jadalnych pieczarek są niezmiennie białe, ewentualnie lekko kremowe blaszki przez cały okres życia tego grzyba.",
+   "text": "Do pomyłki może dojść przy ocenie młodych owocników. […] Najważniejszą cechą są blaszki pieczarek. Te jadalne początkowo są bladoszare, potem różowe, a na końcu czarnawe. […] Cechą charakterystyczną, która odróżnia muchomora jadowitego od jadalnych pieczarek są niezmiennie białe, ewentualnie lekko kremowe blaszki przez cały okres życia tego grzyba.",
    "species": [
     "Agaricus xanthodermus",
     "Amanita virosa"
@@ -245,7 +245,7 @@
   {
    "source": "psse_golub",
    "heading": "Pieprznik jadalny, a lisówka pomarańczowa",
-   "text": "Pieprznika jadalnego możemy pomylić z lisówką pomarańczową. Fałszywa kurka będzie miała kapelusz, blaszki i trzon w jednakowym, pomarańczowym kolorze. Elastyczny, miękki i pomarańczowy miąższ. Trzon zdecydowanie węższy niż jadalna kurka i przeważnie jednakowej grubości lub delikatnie zwężający się do dołu. Pieprznika jadalnego poznamy po trzonie nieco jaśniejszym od kapelusza i białym miąższu.",
+   "text": "Fałszywa kurka będzie miała kapelusz, blaszki i trzon w jednakowym, pomarańczowym kolorze. Elastyczny, miękki i pomarańczowy miąższ. Trzon zdecydowanie węższy niż jadalna kurka […] Pieprznika jadalnego poznamy po trzonie nieco jaśniejszym od kapelusza i białym miąższu.",
    "species": [
     "Cantharellus cibarius",
     "Hygrophoropsis aurantiaca"

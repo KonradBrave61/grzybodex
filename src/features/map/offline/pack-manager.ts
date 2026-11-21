@@ -76,7 +76,7 @@ function restoreError(s: Record<string, unknown>): PackError | null {
 }
 
 /** Free space kept after a download, so the phone does not run out of storage. */
-const RESERVE_BYTES = 200e6;
+export const RESERVE_BYTES = 200e6;
 /** Downloads running at the same time (more only splits the same bandwidth). */
 export const MAX_PARALLEL = 3;
 

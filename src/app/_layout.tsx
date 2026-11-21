@@ -11,6 +11,9 @@ import { useOnboardingDone } from '@/features/settings/settings';
 import { useAppFonts } from '@/ui/fonts';
 import { useTheme } from '@/ui/theme';
 
+// expo-router renders this instead of a blank crash when any screen throws while rendering.
+export { ErrorScreen as ErrorBoundary } from '@/ui/error-screen';
+
 SplashScreen.preventAutoHideAsync();
 
 /**

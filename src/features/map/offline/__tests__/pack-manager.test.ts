@@ -96,12 +96,12 @@ describe('PackManager', () => {
     const { io, tasks, saved } = makeIO();
     const m = new PackManager(io, BASE);
     m.download(A);
-    expect(tasks[0].url).toBe('https://example.org/maps/20261106-malopolskie-z13.pmtiles');
+    expect(tasks[0].url).toBe('https://example.org/maps/20261120-malopolskie-z13.pmtiles');
     tasks[0].progress(10, 100);
     expect(m.getStates()[A]).toEqual({ status: 'downloading', written: 10, total: 100 });
     tasks[0].finish();
     await flush();
-    expect(m.getStates()[A]).toEqual({ status: 'done', bytes: 1234, build: '20261106' });
+    expect(m.getStates()[A]).toEqual({ status: 'done', bytes: 1234, build: '20261120' });
     expect(m.usedBytes()).toBe(1234);
     expect(JSON.parse(saved() ?? '{}')[A].status).toBe('done');
   });
@@ -201,7 +201,7 @@ describe('PackManager', () => {
 
 describe('packsToDraw', () => {
   it('draws finished packs and only the detailed one when both levels are on the phone', () => {
-    const done = { status: 'done', bytes: 1, build: '20261106' } as const;
+    const done = { status: 'done', bytes: 1, build: '20261120' } as const;
     expect(
       packsToDraw({ 'malopolskie.z13': done, 'malopolskie.z15': done, 'slaskie.z13': done, 'opolskie.z13': { status: 'paused', written: 1, total: 2, resume: null } }).sort(),
     ).toEqual(['malopolskie.z15', 'slaskie.z13']);
@@ -213,8 +213,8 @@ describe('restoreStates', () => {
     const raw = JSON.stringify({
       'malopolskie.z13': { status: 'downloading', written: 50, total: 100 },
       'slaskie.z13': { status: 'paused', written: 30, total: 100, resume: { t: 1 } },
-      'opolskie.z15': { status: 'done', bytes: 9, build: '20261106' },
-      'lubuskie.z13': { status: 'done', bytes: 9, build: '20261106' },
+      'opolskie.z15': { status: 'done', bytes: 9, build: '20261120' },
+      'lubuskie.z13': { status: 'done', bytes: 9, build: '20261120' },
       'atlantyda.z13': { status: 'done', bytes: 9, build: 'x' },
       'pomorskie.z99': { status: 'done' },
       'lodzkie.z13': 'zepsute',
@@ -223,7 +223,7 @@ describe('restoreStates', () => {
     expect(s).toEqual({
       'malopolskie.z13': { status: 'paused', written: 0, total: 100, resume: null },
       'slaskie.z13': { status: 'paused', written: 30, total: 100, resume: { t: 1 } },
-      'opolskie.z15': { status: 'done', bytes: 9, build: '20261106' },
+      'opolskie.z15': { status: 'done', bytes: 9, build: '20261120' },
     });
     expect(restoreStates('{nie json', () => true)).toEqual({});
     expect(restoreStates(null, () => true)).toEqual({});

@@ -65,12 +65,6 @@ export function numberSpots(spots: readonly Spot[]): Map<number, number> {
 }
 
 /**
- * Demo position used ONLY when the phone gives no real location (e.g. Android emulator without `adb emu geo fix`).
- * Point "Ty" of the design board C2-Mapa: Lasy Oliwskie near Gołębiewo, Gdańsk (in the forest, outside the reserve).
- */
-export const DEMO_POSITION = { latitude: 54.445601, longitude: 18.505845 } as const;
-
-/**
  * Fictional sample spots of the design board (mapa-v3/work/punkty_A.json): private demo data, not observations.
  * All lie in the Lasy Oliwskie forest polygon and outside the reserve (checked point-in-polygon in the design phase).
  * Names and notes are texts of the app language (i18n/map.ts demoSpots / demoCarNote, same order: 3 spots, then the car).

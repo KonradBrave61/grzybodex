@@ -77,7 +77,7 @@ export function packInfo(key: PackKey): PackEntry {
 }
 
 /**
- * RESPONSIBILITY: Nazwa pliku paczki na serwerze i w telefonie, np. "20261106-malopolskie-z13.pmtiles"
+ * RESPONSIBILITY: Nazwa pliku paczki na serwerze i w telefonie, np. "20261120-malopolskie-z13.pmtiles"
  * INPUTS:         key: PackKey
  * OUTPUTS:        nazwa pliku z datą wydania mapy
  * AUTHN:          none

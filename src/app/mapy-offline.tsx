@@ -5,6 +5,7 @@ import { ScrollView, StyleSheet, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { useMyLocation } from '@/features/map/location';
+import { AreaPicker } from '@/features/map/offline/area-picker';
 import { formatBytes, OVERVIEW_BYTES } from '@/features/map/offline/catalog';
 import { PackCard } from '@/features/map/offline/pack-card';
 import { getPackManager, usePackStates } from '@/features/map/offline/pack-store';
@@ -43,18 +44,19 @@ export default function OfflineMapsScreen() {
   const used = getPackManager().usedBytes();
   const s = useStrings(mapStrings);
   const lang = useLang();
-  const bytes = (n: number) => formatBytes(n, false, lang);
 
   return (
     <NotebookScreen title={s.offlineTitle} onBack={() => router.back()}>
       <ScrollView contentContainerStyle={[pageUi.page, { paddingBottom: SPACE.xxxl + insets.bottom }]}>
         <View style={[pageUi.intro, { backgroundColor: colors.panel }]}>
           <Text style={[type.body, { color: colors.ink }]}>
-            {s.offlineIntro(bytes(OVERVIEW_BYTES))}
+            {s.offlineIntro(formatBytes(OVERVIEW_BYTES, false, lang))}
           </Text>
           <Text style={[type.caption, { color: colors.ink2 }]}>{s.offlineIntroHint}</Text>
-          <Text style={[type.label, { color: colors.ink }]}>{s.offlineUsage(bytes(used), bytes(Paths.availableDiskSpace))}</Text>
+          <Text style={[type.label, { color: colors.ink }]}>{s.offlineUsage(formatBytes(used, false, lang), formatBytes(Paths.availableDiskSpace, false, lang))}</Text>
         </View>
+
+        <AreaPicker states={states} />
 
         <View style={pageUi.section}>
           <Text style={[type.section, { color: colors.ink }]} accessibilityRole="header">

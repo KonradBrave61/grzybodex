@@ -23,7 +23,7 @@ function finish() {
 }
 
 /**
- * RESPONSIBILITY: Linia dla ratowników pod przyciskiem 112: współrzędne z GPS (albo wyraźnie szacunkowe z kroków) jako tekst do zaznaczenia; nigdy współrzędne demo
+ * RESPONSIBILITY: Linia dla ratowników pod przyciskiem 112: współrzędne z GPS (albo wyraźnie szacunkowe z kroków / wskazane ręcznie) jako tekst do zaznaczenia; nigdy współrzędne demo
  * INPUTS:         location: MyLocation
  * OUTPUTS:        tekst (selectable) — przy demo/szukaniu zamiast liczb prośba o opisanie okolicy
  * AUTHN:          none (internal UI)
@@ -41,6 +41,8 @@ function RescueLine({ location }: { location: MyLocation }) {
     text = s.rescueGps(formatCoordinates(location.fix, lang), acc !== null ? Math.round(acc) : null);
   } else if (location.status === 'steps') {
     text = s.rescueSteps(location.fix.accuracy, formatCoordinates(location.fix, lang));
+  } else if (location.status === 'manual') {
+    text = s.rescueManual(location.fix.accuracy, formatCoordinates(location.fix, lang));
   } else if (location.status === 'demo') {
     text = s.rescueDemo;
   }
@@ -102,10 +104,13 @@ export default function GuideScreen() {
   }
 
   let hint = s.hintArrow;
-  const guessM = location.status === 'steps' ? (location.fix.accuracy ?? 0) : null;
+  const guessM = location.status === 'steps' || location.status === 'manual' ? (location.fix.accuracy ?? 0) : null;
+  // Set by hand and steps are not counted: the point does not follow you, so do not say "counting steps".
+  const manualStill = location.status === 'manual' && location.missing?.length !== 0;
   if (dist === null) hint = s.searching;
   else if (guessM !== null && dist <= Math.max(guessM, ARRIVED_M)) hint = s.hintNearGuess(guessM);
   else if (dist <= ARRIVED_M) hint = s.hintArrived;
+  else if (manualStill) hint = s.hintManual;
   else if (guessM !== null) hint = s.hintSteps;
   else if (heading === null) hint = s.hintNoCompass;
   const toward = bearing !== null ? s.toward(compassWord(bearing, lang)) : '';
@@ -117,10 +122,12 @@ export default function GuideScreen() {
       ? s.chipGps(location.fix.accuracy !== null ? Math.round(location.fix.accuracy) : null)
       : location.status === 'steps'
         ? s.chipSteps(location.fix.accuracy)
-        : location.status === 'demo'
-          ? s.chipDemo
-          : s.chipSearching;
-  const chipAlert = location.status === 'demo' || location.status === 'steps';
+        : location.status === 'manual'
+          ? s.chipManual(location.fix.accuracy)
+          : location.status === 'demo'
+            ? s.chipDemo
+            : s.chipSearching;
+  const chipAlert = location.status === 'demo' || location.status === 'steps' || location.status === 'manual';
 
   return (
     <NotebookScreen title={s.guideTitle}>
@@ -147,7 +154,7 @@ export default function GuideScreen() {
         </View>
         {location.status === 'demo' && (
           <Text style={[type.caption, { color: colors.ink2 }]}>
-            {`${s.demoLabel}. ${s.demoReason[location.reason]} ${s.demoDistance}`}
+            {`${s.demoLabel(location.region)}. ${s.demoReason[location.reason]} ${location.retryS !== null ? s.gpsRetry(location.retryS) : s.gpsListening} ${s.demoDistance}`}
           </Text>
         )}
         <Compass bearing={bearing} heading={heading} label={s.compassA11y(targetName, where)} />

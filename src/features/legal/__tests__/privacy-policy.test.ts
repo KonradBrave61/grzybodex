@@ -17,12 +17,12 @@ describe('privacy policy text in the app', () => {
     expect(tables.map((t) => [t.head.length, t.rows.length])).toEqual([[3, 6]]);
   });
 
-  it('has exactly one placeholder (the creator contact) and the version date 2026-11-15', () => {
+  it('has exactly one placeholder (the creator contact) and the version date 2026-11-20', () => {
     const placeholders = policy.markdown.match(/\[[^\]]*(UZUPEŁNIENIA|USTALENIA|DECYZJI|POTWIERDZENIA|NUMER|DATA|LINK)[^\]]*\]/g) ?? [];
     expect(placeholders).toHaveLength(1);
     expect(placeholders[0]).toContain('DANE KONTAKTOWE TWÓRCY');
     expect(text).toContain(placeholders[0]);
-    expect(text).toContain('2026-11-15');
+    expect(text).toContain('2026-11-20');
   });
 
   it.each(['Supabase', 'Hugging Face', '[NUMER]', '[DATA]', 'Usuń konto', 'publiczna mapa', 'rozpoznawanie przez internet'])(
@@ -67,8 +67,8 @@ describe('English privacy policy (translation; the Polish version prevails)', ()
   it('has the same version, date, links and bold phrases count as the Polish policy, and one placeholder', () => {
     const urls = (md: string) => [...md.matchAll(/\]\((https?:\/\/[^)\s]+)\)/g)].map((m) => m[1]);
     expect(urls(policyEn.markdown)).toEqual(urls(policy.markdown));
-    expect(policyEn.markdown).toContain('**Version:** 4');
-    expect(policyEn.markdown).toContain('2026-11-15');
+    expect(policyEn.markdown).toContain('**Version:** 5');
+    expect(policyEn.markdown).toContain('2026-11-20');
     const bold = (md: string) => (md.match(/\*\*[^*]+\*\*/g) ?? []).length;
     expect(bold(policyEn.markdown)).toBe(bold(policy.markdown));
     expect(policyEn.markdown.match(/\[[^\]]*TO BE COMPLETED[^\]]*\]/g)).toEqual([expect.stringContaining('CREATOR CONTACT DETAILS')]);
@@ -78,6 +78,20 @@ describe('English privacy policy (translation; the Polish version prevails)', ()
     const letters = (x: string) => x.replace(/[^\p{L}\p{N}]/gu, '');
     const source = policyEn.markdown.replace(/\]\(https?:\/\/[^)\s]+\)/g, '').replace(/^\d+\. /gm, '');
     expect(letters(blocksToText(en))).toBe(letters(source));
+  });
+});
+
+describe('report section (reporting from the Collection, with licence choice)', () => {
+  it.each([
+    ['pl', policy.markdown, ['Kolekcja', 'zgloszenie.json', 'CC BY 4.0', 'CC BY-SA 4.0', 'CC0 1.0', 'nieodwołalne', 'osobnej zgody', 'nie dłużej niż 12 miesięcy', 'nie zmienia kategorii jadalności']],
+    ['en', policyEn.markdown, ['Collection', 'zgloszenie.json', 'CC BY 4.0', 'CC BY-SA 4.0', 'CC0 1.0', 'irrevocable', 'separate consent', 'no longer than 12 months', 'does not change the edibility category']],
+  ])('%s: describes the new fields, the licence, no model training and the 12-month retention', (_lang, md, phrases) => {
+    for (const phrase of phrases as string[]) expect(md).toContain(phrase);
+  });
+
+  it('no longer says the report button is on the result screen', () => {
+    expect(policy.markdown).not.toContain('na ekranie wyniku jest przycisk');
+    expect(policyEn.markdown).not.toContain('the result screen shows');
   });
 });
 

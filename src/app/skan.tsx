@@ -3,7 +3,7 @@ import { CameraView, useCameraPermissions } from 'expo-camera';
 import * as ImagePicker from 'expo-image-picker';
 import { Image } from 'expo-image';
 import { ImageManipulator, SaveFormat } from 'expo-image-manipulator';
-import { router } from 'expo-router';
+import { router, useIsFocused } from 'expo-router';
 import { useEffect, useRef, useState } from 'react';
 import { ActivityIndicator, Modal, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import Animated, { FadeIn, useAnimatedStyle, useSharedValue, withSequence, withTiming } from 'react-native-reanimated';
@@ -221,6 +221,15 @@ export default function ScanScreen() {
   const cameraOn = permission?.granted === true && !cameraFailed;
 
   useEffect(() => scanStore.reset(), []);
+  // The "done" beat below waits 350 ms; if another screen came on top (or this one closed) meanwhile, do not replace it.
+  const focused = useIsFocused();
+  const onTop = useRef(focused);
+  useEffect(() => {
+    onTop.current = focused;
+    return () => {
+      onTop.current = false;
+    };
+  }, [focused]);
   // Warm the 89 MB model while the user frames the shot; a failure here is retried by classify().
   useEffect(() => {
     if (modelReady) getSession().catch(() => undefined);
@@ -257,7 +266,7 @@ export default function ScanScreen() {
       setProgress({ uri, ...at, phase: 'done' });
       await nextPaint();
       await new Promise((resolve) => setTimeout(resolve, 350)); // a visible "done" beat instead of a sudden jump
-      router.replace('/wynik');
+      if (onTop.current) router.replace('/wynik');
     }
   };
 

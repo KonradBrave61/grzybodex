@@ -3,6 +3,7 @@ import { destinationPoint, distanceMeters, initialBearing } from '../geo';
 import {
   acceptTrailPoints,
   anchorReckoning,
+  gpsRetryDelayMs,
   isGpsLost,
   reckoningError,
   STEP_LENGTH_M,
@@ -82,5 +83,13 @@ describe('dead reckoning from steps', () => {
     expect(reckoningError(anchor)).toBe(8);
     expect(reckoningError(stepReckoning(anchor, 100 + 500, 90))).toBe(8 + 35); // 500 steps = 350 m
     expect(reckoningError(anchorReckoning({ ...START, accuracy: null }, 0))).toBe(10);
+  });
+});
+
+describe('gpsRetryDelayMs', () => {
+  it('backs off 5, 10, 20, 40 s, then stays at 60 s', () => {
+    expect([0, 1, 2, 3, 4, 5, 50].map(gpsRetryDelayMs)).toEqual([5000, 10_000, 20_000, 40_000, 60_000, 60_000, 60_000]);
+    expect(gpsRetryDelayMs(-1)).toBe(5000);
+    expect(gpsRetryDelayMs(Number.NaN)).toBe(5000);
   });
 });

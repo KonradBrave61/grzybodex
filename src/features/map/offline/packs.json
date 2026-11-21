@@ -1,171 +1,171 @@
 {
-  "build": "20261106",
+  "build": "20261120",
   "source": "Protomaps basemap (OpenStreetMap, ODbL)",
-  "baseUrl": null,
+  "baseUrl": "https://github.com/KonradBrave61/grzybodex/releases/download/maps-20261120",
   "sizesExact": true,
   "overview": {
     "maxZoom": 9,
-    "bytes": 32443569
+    "bytes": 32289937
   },
   "packs": {
     "dolnoslaskie": {
       "z13": {
-        "bytes": 64371825,
-        "sha256": "679f479e16afdc300adb4ad3cbb25c97d7ed4bd5914ae6b1e6d579a10df6a445"
+        "bytes": 64341793,
+        "sha256": "11330d6f9acaf2965b508606f1c2231f22136941c8be9f107b39b82660de630e"
       },
       "z15": {
-        "bytes": 224645397,
-        "sha256": "0da65867c35e7ce8c31e2ecc5fd877627f3b7d41725d8dde3c69d02437b83e02"
+        "bytes": 224358734,
+        "sha256": "00590dca8301728e089cdf60f184e56981a7a01482aa1e7f4e16b2588045b3fb"
       }
     },
     "kujawsko-pomorskie": {
       "z13": {
-        "bytes": 50550504,
-        "sha256": "453179f56056d7c4904e9e8c03ce758327316e1ddda0f93c860b272d6507641c"
+        "bytes": 50513025,
+        "sha256": "ef9ddd0f23f3f9c0b9f18b1b23dc2d7e187b22d20ddb60809c3025df303ab180"
       },
       "z15": {
-        "bytes": 171394242,
-        "sha256": "21427603d42b1ad4282be186e4f09a2a6df5a8e742c033dcb2c352e178373bfb"
+        "bytes": 171207418,
+        "sha256": "7f407570d9d2f0bb0ab8e57bbeea7e6ea5f79ed55f639697244e0787737f40be"
       }
     },
     "lodzkie": {
       "z13": {
-        "bytes": 56349806,
-        "sha256": "ac99abdebb75d84e5f4f4a4d0b6903249b1a1d130463c0c778a4f6e95c419986"
+        "bytes": 55990694,
+        "sha256": "c8b8b0d48c68790c0a80216723ba00968d87361f55e8a56235f7ab3eb4dde05a"
       },
       "z15": {
-        "bytes": 203246636,
-        "sha256": "186ebb3afe358d5b37e661541f866b67e5034eed9273d6d7c41c8a1e2273ba94"
+        "bytes": 202822125,
+        "sha256": "5bb7b225e8eb6ee0d8a05ec398787856a4a1811821680ac118b8b42ac185e6a0"
       }
     },
     "lubelskie": {
       "z13": {
-        "bytes": 61932245,
-        "sha256": "6e6f69759624defac107ff7903aaf598a69881390f9e27c184c79820471494ff"
+        "bytes": 61939802,
+        "sha256": "45780c3955044a75529c7baadf8314b27a99d31a189ff5f9d7bf6fc8a4b9869b"
       },
       "z15": {
-        "bytes": 212147697,
-        "sha256": "bcb277917f7c2559a47794d4ce286e9199106681563683150f9c418529ca9fa0"
+        "bytes": 211919604,
+        "sha256": "d853e5b48f1a33eaeb180cfa9379d0bcff602180a8fe1c7fdd40426664e3e975"
       }
     },
     "lubuskie": {
       "z13": {
-        "bytes": 33931955,
-        "sha256": "f4ae085683b11e67ced11bafe340541a69cbb257e201f629503e9eb0f0c5d07c"
+        "bytes": 33783756,
+        "sha256": "af5c1fc21d11e021f81021ad581207e643b59036304343eb48dd755caca86879"
       },
       "z15": {
-        "bytes": 104985704,
-        "sha256": "81cfde3aaeab5ceb45091a342d2565b839a8c9e30b8c809517471de53552518d"
+        "bytes": 104844346,
+        "sha256": "2828135d5daadc6ae2124ee6f4e6c391334ceafea5a1e1d9180d231b73629527"
       }
     },
     "malopolskie": {
       "z13": {
-        "bytes": 67574160,
-        "sha256": "fcf258d1640cc4b07f87d1d2c658d0116e6b493f7f97791e77ae489a76291021"
+        "bytes": 67637301,
+        "sha256": "f9aae60e1d48f1a4de52d213ff118b2d9296a0fca56025b1af35ef9b1d608b6f"
       },
       "z15": {
-        "bytes": 254795451,
-        "sha256": "ed595c1e97058740619cff60879b1a39c65bedbb9a50154ca38426fb0ddd67be"
+        "bytes": 254546555,
+        "sha256": "6ac4cfdcee797fd530019b9fad93e7cabba6fffb3da0113be8a0dad98813f0d9"
       }
     },
     "mazowieckie": {
       "z13": {
-        "bytes": 117431916,
-        "sha256": "e3f788c1ddca10499d3536c75d80e82c4a0a7e03d5856974161a9127704a86b7"
+        "bytes": 117006100,
+        "sha256": "7b04d5cf93dadebc84a6d55c03b015c5f8ba5a20f83f3e19ddd5aec5727d9f0e"
       },
       "z15": {
-        "bytes": 412895773,
-        "sha256": "48aec0a257bc6984e09c9fec33a4001c5384dda706b77d54148d78f833e031d6"
+        "bytes": 412047461,
+        "sha256": "92c014da423ec511abddc6d3530f8c487b9ad2de48a85b98a203d83987244df0"
       }
     },
     "opolskie": {
       "z13": {
-        "bytes": 25383752,
-        "sha256": "dc7487968400268bced6f6bb4f6a8571fe0a2e105b615a13f1974dbf5bdfb24c"
+        "bytes": 25442864,
+        "sha256": "ea6a6e5e0b63821dc1082f6c40433e49b24c5d2d3b6c2f72516b9d9f3df023e6"
       },
       "z15": {
-        "bytes": 85115118,
-        "sha256": "718438826ee6bde02b947b0c0568bb8a58665e995bb95628666811c168506fe3"
+        "bytes": 85035166,
+        "sha256": "ae0527a28d51c382d21da9dc832b1b1207e1e92ab9a07ccf5171fff9e2350780"
       }
     },
     "podkarpackie": {
       "z13": {
-        "bytes": 64126655,
-        "sha256": "29d70c2796297b7b0100b253a9067ac865baf0c244e3c0c18860ba965acd2411"
+        "bytes": 64419288,
+        "sha256": "b2726ef43463d3f3947b2b459d62655fa0033d7140a5588e09aa87c96d96976b"
       },
       "z15": {
-        "bytes": 228402097,
-        "sha256": "c946cac646068aeee670393acf31fbed6b62701388eac15f6c7be14f4be38321"
+        "bytes": 229070366,
+        "sha256": "a16850fa2ef3c05dc202c45ca793dbf18993d54a9fc7c050f64ac996453f16f3"
       }
     },
     "podlaskie": {
       "z13": {
-        "bytes": 52008759,
-        "sha256": "3d9efa59a6e759e6f8de5f32c667eefca4be1899cd9f5b57162d04050a5a60c9"
+        "bytes": 52378337,
+        "sha256": "7fad425080f7ee894abb15333473060b627bb84f9872e984525ae26ac1d4bcba"
       },
       "z15": {
-        "bytes": 155692528,
-        "sha256": "b3d51b6f20ddf92011438dc92c67495f9351c0890f098e2dc511e4a4349f933a"
+        "bytes": 155860346,
+        "sha256": "d9983762a42877371b808136b3d9d93721584e389b4443bf9c9531fc363d7a3a"
       }
     },
     "pomorskie": {
       "z13": {
-        "bytes": 49248911,
-        "sha256": "355600a25e111f496a275d6ac2b1ad173b7eaa266c26560a505bd7e9cb63ffe9"
+        "bytes": 49199014,
+        "sha256": "2d333a84d8b12b84053e112feb0e3b4f106b69b32de968b6e3530abf29b69a91"
       },
       "z15": {
-        "bytes": 170647585,
-        "sha256": "855fbb1aa0d705f191c5440cdb24180607eb2a8dc86fed1fe31b4bbf37372fe6"
+        "bytes": 170598149,
+        "sha256": "aa3ad68fabe36cfd5f2c62e1ad847ccc050761ed23c1312746c3cf07a4f9af93"
       }
     },
     "slaskie": {
       "z13": {
-        "bytes": 56698942,
-        "sha256": "740419f0b4daa93f98898ae863ad29b39615ae61ce5b1cb8e632066619444a43"
+        "bytes": 56581752,
+        "sha256": "4241c25150971f94882878453307d7369deb3264d53058a1d9da06e67594abb7"
       },
       "z15": {
-        "bytes": 218388218,
-        "sha256": "e62375a3983dec9420d538a3ba09a91d6069ee0fecd811b160f32c6ace837307"
+        "bytes": 217910768,
+        "sha256": "991ada15ebd69e4979d3cf25a97a37842c2417d6ef5afa69e61efdc4c6567bd3"
       }
     },
     "swietokrzyskie": {
       "z13": {
-        "bytes": 43843289,
-        "sha256": "bfc03f8c2ef00467dc2b053bd8a28f21d2a97d0e3a3da5000ede922ce3fffea5"
+        "bytes": 44135593,
+        "sha256": "dcba67c53f03fa5e38733b76a6831021364b5bc3a4b4603ebd4851644a7a87f7"
       },
       "z15": {
-        "bytes": 141486182,
-        "sha256": "da2e8d5774e01690ed35e814b0b21b5e5840794aeeb0816d71d304a466a5c889"
+        "bytes": 141881775,
+        "sha256": "81f1961b32882455e83d292f1bd1e31f34ec1859da67f2f94c14a3180c8c44b0"
       }
     },
     "warminsko-mazurskie": {
       "z13": {
-        "bytes": 55678370,
-        "sha256": "e28b3ff1a927fd60cddd25fbce4eec57f29b2477ff81bac85c8898fa33731872"
+        "bytes": 55512156,
+        "sha256": "c2ab9d61d8c12a866bbc566855bcf785addd66dc9f029975db4c85f973bd0eb2"
       },
       "z15": {
-        "bytes": 165609013,
-        "sha256": "f3805cb9a32470b82bd5cfd8c85c444e9c5697ca3075df818c79381f1800ccc4"
+        "bytes": 164974193,
+        "sha256": "1363a98494f756ded56238a962a9edc681a050225ea9c94b8933d03c5da4cbf8"
       }
     },
     "wielkopolskie": {
       "z13": {
-        "bytes": 56219550,
-        "sha256": "37c562a6f2adf169e9e7a6f8aee186b6d5997376455042e5e320abcff3b50762"
+        "bytes": 56228946,
+        "sha256": "61996122d140e7598989735bf8ede4352daec241b8ef7fadc6a03b732282d29b"
       },
       "z15": {
-        "bytes": 224835855,
-        "sha256": "fefce77402bac7612d47ca91994a0348a6059a2e6b93d75c55e79b48dbbd0696"
+        "bytes": 224508759,
+        "sha256": "f8d08bfbbb372a0a5c7a667f0e7581b5c55b52783923ec063856e51ef8b2f80b"
       }
     },
     "zachodniopomorskie": {
       "z13": {
-        "bytes": 48700303,
-        "sha256": "78bd5337cb31b58904675b2011be0afe233b8c6842d8a14ceb4aad1939b67bbf"
+        "bytes": 48716420,
+        "sha256": "e7dc828612f530de0b6c28c6449dee3128c32688eb3535f81246adf4c5359e9e"
       },
       "z15": {
-        "bytes": 160340543,
-        "sha256": "2372836481e6ef2ac361c4f055bc0715efff3586e5865f8e9745d22bcd2368c9"
+        "bytes": 160226776,
+        "sha256": "2e7f735735bc17037c1e38b6b2488075e26a9f6bd5c88aa777e867debaf88b54"
       }
     }
   }

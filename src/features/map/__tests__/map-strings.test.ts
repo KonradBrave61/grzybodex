@@ -29,4 +29,11 @@ describe('map texts', () => {
     expect(en.savedCount(3)).toBe('3 saved');
     expect(en.demoSpots).toHaveLength(pl.demoSpots.length);
   });
+
+  it('names the approximate start point (chosen voivodeship or Poland)', () => {
+    expect(pl.demoLabel('pomorskie')).toBe('Położenie przybliżone: środek woj. pomorskie');
+    expect(pl.demoLabel(null)).toBe('Położenie przybliżone: środek Polski');
+    expect(en.demoLabel('małopolskie')).toBe('Approximate position: centre of małopolskie voivodeship');
+    expect(pl.gpsRetry(20)).toBe('Ponawiam próbę co 20 s.');
+  });
 });

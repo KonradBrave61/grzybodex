@@ -5,7 +5,8 @@
  */
 import { destinationPoint, distanceMeters, type LatLon } from './geo';
 
-export type TrailPoint = LatLon & { t: number; accuracy: number | null };
+/** estimated = guessed from steps + compass (no GPS); drawn as a dashed line, accuracy = estimated error in metres. */
+export type TrailPoint = LatLon & { t: number; accuracy: number | null; estimated?: boolean };
 
 /** Fixes worse than this are skipped (in a forest a good phone fix is 5–15 m; 40 m+ zig-zags the line). */
 export const TRAIL_MAX_ACCURACY_M = 40;
@@ -17,8 +18,9 @@ export const STEP_LENGTH_M = 0.7;
 export const LOST_AFTER_STEPS = 25;
 
 /**
- * RESPONSIBILITY: Wybiera z nowych odczytów GPS te, które trafią do śladu (dość dokładne i co najmniej 10 m od poprzedniego)
- * INPUTS:         last: ostatni zapisany punkt albo null; fixes: nowe odczyty w kolejności czasu (z systemu — trusted)
+ * RESPONSIBILITY: Wybiera z nowych punktów te, które trafią do śladu: co najmniej 10 m od poprzedniego; odczyty GPS dodatkowo dość dokładne
+ *                 (punkty szacowane z kroków nie mają progu dokładności — ich błąd rośnie z drogą, a bez nich ślad urwałby się po ~200 m)
+ * INPUTS:         last: ostatni zapisany punkt albo null; fixes: nowe punkty w kolejności czasu (GPS z systemu albo szacunek z kroków — trusted)
  * OUTPUTS:        punkty do dopisania (podzbiór fixes, ta sama kolejność)
  * AUTHN:          none (pure)
  * AUTHZ:          none
@@ -30,7 +32,7 @@ export function acceptTrailPoints(last: TrailPoint | null, fixes: readonly Trail
   let prev = last;
   for (const f of fixes) {
     if (!Number.isFinite(f.latitude) || !Number.isFinite(f.longitude)) continue;
-    if (f.accuracy !== null && f.accuracy > TRAIL_MAX_ACCURACY_M) continue;
+    if (!f.estimated && f.accuracy !== null && f.accuracy > TRAIL_MAX_ACCURACY_M) continue;
     if (prev && distanceMeters(prev, f) < TRAIL_MIN_STEP_M) continue;
     out.push(f);
     prev = f;
@@ -68,6 +70,20 @@ export function thinTrail<T>(points: readonly T[], max: number): T[] {
   const out = points.filter((_, i) => i % stride === 0);
   if (out[out.length - 1] !== points[points.length - 1]) out.push(points[points.length - 1]);
   return out;
+}
+
+/**
+ * RESPONSIBILITY: Odstęp przed kolejną próbą uruchomienia GPS (backoff): 5 s, 10 s, 20 s, 40 s, potem co 60 s
+ * INPUTS:         attempt: numer nieudanej próby (0 = pierwsza)
+ * OUTPUTS:        milisekundy
+ * AUTHN:          none (pure)
+ * AUTHZ:          none
+ * TOUCHES:        none
+ * ERRORS:         none (ujemny/NaN → 5 s)
+ */
+export function gpsRetryDelayMs(attempt: number): number {
+  const n = Number.isFinite(attempt) && attempt > 0 ? Math.floor(attempt) : 0;
+  return Math.min(5000 * 2 ** Math.min(n, 4), 60_000);
 }
 
 /** Position guessed from steps since the last good GPS fix ("anchor"). */
@@ -127,4 +143,81 @@ export function isGpsLost(r: Reckoning): boolean {
  */
 export function reckoningError(r: Reckoning): number {
   return Math.ceil((r.anchorAccuracy ?? 10) + 0.1 * r.walkedM);
+}
+
+/**
+ * Error assumed for a position the user set by hand ("Jestem tutaj"). A conventional value, not a measurement:
+ * a fingertip covers ~40 dp, which at the usual forest zoom (MapLibre 15–16) is ±10–20 m, and people point at the path or
+ * clearing they believe they stand on. 20 m keeps the circle honest without hiding the target ("within 20 m") at the start;
+ * it then grows like any step estimate (+10 % of the distance walked, reckoningError).
+ */
+export const MANUAL_ACCURACY_M = 20;
+
+/**
+ * RESPONSIBILITY: Czy odczyt GPS jest „dobry” (≤ 40 m) — ten sam próg co dla śladu i kotwicy kroków
+ * INPUTS:         accuracy: metry albo null (system nie podał — traktujemy jak dobry, jak w całym module)
+ * OUTPUTS:        boolean
+ * AUTHN:          none (pure)
+ * AUTHZ:          none
+ * TOUCHES:        none
+ * ERRORS:         none
+ */
+export function isGoodFix(accuracy: number | null): boolean {
+  return (accuracy ?? 0) <= TRAIL_MAX_ACCURACY_M;
+}
+
+/**
+ * RESPONSIBILITY: Czy wolno teraz ustawić położenie ręcznie (przytrzymanie palca na mapie): tylko gdy brak dobrego GPS
+ * INPUTS:         location: pokazywane położenie (status + dokładność)
+ * OUTPUTS:        true dla 'searching' / 'demo' / 'steps' / 'manual' oraz dla GPS gorszego niż 40 m; false dla dobrego GPS
+ * AUTHN:          none (pure)
+ * AUTHZ:          none
+ * TOUCHES:        none
+ * ERRORS:         none
+ */
+export function canSetManualPosition(location: { status: string; fix: { accuracy: number | null } | null }): boolean {
+  return location.status !== 'gps' || !isGoodFix(location.fix?.accuracy ?? null);
+}
+
+/**
+ * RESPONSIBILITY: Czy pokazywać położenie ustawione ręcznie: tak, dopóki nie przyjdzie dobry odczyt GPS NOWSZY niż chwila ustawienia
+ * INPUTS:         manual: { setAt: ms } albo null; gps: ostatni odczyt GPS { accuracy, t: ms } albo null (brak odczytu)
+ * OUTPUTS:        boolean; stary dobry odczyt (np. zapamiętany przez system sprzed kilku minut) nie wygrywa z ręcznym
+ * AUTHN:          none (pure)
+ * AUTHZ:          none
+ * TOUCHES:        none
+ * ERRORS:         none
+ */
+export function manualWins(manual: { setAt: number } | null, gps: { accuracy: number | null; t: number } | null): boolean {
+  if (!manual) return false;
+  return !(gps && isGoodFix(gps.accuracy) && gps.t > manual.setAt);
+}
+
+/**
+ * RESPONSIBILITY: Dzieli ślad na odcinki do rysowania: z GPS (linia ciągła) i szacowane z kroków (przerywana)
+ * INPUTS:         points: punkty śladu w kolejności (flaga estimated)
+ * OUTPUTS:        { gps, estimated }: listy linii (każda ≥ 2 punkty); odcinek jest szacowany, gdy choć jeden jego koniec jest szacowany
+ * AUTHN:          none (pure)
+ * AUTHZ:          none
+ * TOUCHES:        none
+ * ERRORS:         none (< 2 punkty → puste listy)
+ */
+export function trailSegments(points: readonly (LatLon & { estimated?: boolean })[]): { gps: LatLon[][]; estimated: LatLon[][] } {
+  const out: { gps: LatLon[][]; estimated: LatLon[][] } = { gps: [], estimated: [] };
+  let run: LatLon[] = [];
+  let runEstimated = false;
+  for (let i = 1; i < points.length; i++) {
+    const a = points[i - 1];
+    const b = points[i];
+    const est = Boolean(a.estimated || b.estimated);
+    if (run.length > 0 && est === runEstimated) {
+      run.push(b);
+      continue;
+    }
+    if (run.length > 0) (runEstimated ? out.estimated : out.gps).push(run);
+    run = [a, b];
+    runEstimated = est;
+  }
+  if (run.length > 0) (runEstimated ? out.estimated : out.gps).push(run);
+  return out;
 }

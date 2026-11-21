@@ -1,13 +1,14 @@
 // code-guard: intentional-duplicate - local UI identifiers (screen, styles, state names) fuzzy-match other tab screens; no logic is duplicated.
 import { router, useLocalSearchParams } from 'expo-router';
-import { useMemo, useState } from 'react';
+import Storage from 'expo-sqlite/kv-store';
+import { useEffect, useMemo, useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
 
 import { displayName, SPECIES, type Species } from '@/data/atlas';
 import { filterSpecies } from '@/features/atlas/search';
 import { MODEL_SPECIES, Mushroom3D } from '@/features/model3d/mushroom-3d';
 import { GuessCard, Legend } from '@/features/quiz/guess-card';
-import { compareGuess, pickSecret, secretPool, type GuessRow } from '@/features/quiz/quiz';
+import { compareGuess, type DailyGame, dailySecret, localDayNumber, msUntilNextDay, parseDailyGame, secretPool } from '@/features/quiz/quiz';
 import { useLang, useStrings } from '@/i18n/i18n';
 import { model3dStrings } from '@/i18n/model3d';
 import { quizStrings } from '@/i18n/quiz';
@@ -18,17 +19,23 @@ import { RADIUS, SPACE, useTheme } from '@/ui/theme';
 const NO_FILTER = new Set<never>();
 const MAX_SUGGESTIONS = 6;
 const POOL = secretPool(SPECIES);
+const KNOWN = new Set(SPECIES.map((sp) => sp.id));
+const BY_ID = new Map(SPECIES.map((sp) => [sp.id, sp]));
+/** Today's tries (DailyGame JSON); a game from another day is ignored on read. */
+const STORAGE_KEY = 'quiz.daily.v1';
+/** How often the countdown and the date are re-read (the day flips at the first tick after local midnight). */
+const TICK_MS = 30_000;
 /** The shadow hint shows up after this many missed tries (only for species with a 3D model). */
 const SHADOW_AFTER = 3;
 
 /**
- * RESPONSIBILITY: Zakładka Quiz w stylu Loldle: zgadnij tajnego grzyba, po każdej próbie kolorowe porównanie cech (kategoria, rodzaj, spód, trzon, sezon, ochrona)
- * INPUTS:         wpisany tekst (untrusted, tylko do filtrowania lokalnej listy gatunków); wybór gatunku z podpowiedzi
- * OUTPUTS:        lista prób (najnowsza na górze), po trafieniu lub poddaniu się karta wyniku z przejściem do atlasu i „Nowa runda”
+ * RESPONSIBILITY: Zakładka Quiz w stylu Loldle: grzyb dnia (zmiana o lokalnej 00:00), po każdej próbie kolorowe porównanie cech (kategoria, rodzaj, spód, trzon, sezon, ochrona)
+ * INPUTS:         wpisany tekst (untrusted, tylko do filtrowania lokalnej listy gatunków); wybór gatunku z podpowiedzi; zegar telefonu
+ * OUTPUTS:        lista prób (najnowsza na górze), po trafieniu lub poddaniu się karta wyniku z przejściem do atlasu i odliczaniem do kolejnego grzyba
  * AUTHN:          none
  * AUTHZ:          none
- * TOUCHES:        none (stan tylko w pamięci; nic nie jest zapisywane ani wysyłane)
- * ERRORS:         brak podpowiedzi → komunikat „Nie ma takiego gatunku w atlasie”
+ * TOUCHES:        kv-store (quiz.daily.v1: próby z dzisiaj; nic nie jest wysyłane)
+ * ERRORS:         brak podpowiedzi → komunikat „Nie ma takiego gatunku w atlasie”; uszkodzony zapis → pusta gra na dziś; błąd zapisu → gra działa dalej bez zapisu
  */
 export default function QuizScreen() {
   const { colors, type } = useTheme();
@@ -37,11 +44,42 @@ export default function QuizScreen() {
   const lang = useLang();
   // Dev builds only: ?secret=<id> fixes the secret species so a screen can be checked on purpose.
   const { secret: forced } = useLocalSearchParams<{ secret?: string }>();
-  const [secret, setSecret] = useState<Species>(() => (__DEV__ && POOL.find((sp) => sp.id === forced)) || pickSecret(POOL, Math.random()));
-  const [rows, setRows] = useState<GuessRow[]>([]);
+  const forcedSecret = __DEV__ ? POOL.find((sp) => sp.id === forced) : undefined;
+  const [now, setNow] = useState(() => new Date());
+  useEffect(() => {
+    const id = setInterval(() => setNow(new Date()), TICK_MS);
+    return () => clearInterval(id);
+  }, []);
+  const day = localDayNumber(now);
+  const secret = forcedSecret ?? dailySecret(POOL, day);
+  const [saved, setSaved] = useState<DailyGame>(() => {
+    let raw: string | null = null;
+    try {
+      raw = Storage.getItemSync(STORAGE_KEY);
+    } catch {
+      // unreadable storage: start empty
+    }
+    return parseDailyGame(raw, localDayNumber(new Date()), KNOWN);
+  });
+  // After midnight yesterday's tries simply stop counting: the game is derived for today.
+  const game: DailyGame = saved.day === day ? saved : { day, guesses: [], gaveUp: false };
   const [query, setQuery] = useState('');
-  const [gaveUp, setGaveUp] = useState(false);
+  const save = (next: DailyGame) => {
+    setSaved(next);
+    setNow(new Date()); // fresh countdown right when the result card appears
+    if (forcedSecret) return; // a dev-forced secret must not overwrite today's real game
+    try {
+      Storage.setItemSync(STORAGE_KEY, JSON.stringify(next));
+    } catch {
+      // the game keeps working in memory
+    }
+  };
 
+  const rows = useMemo(
+    () => game.guesses.flatMap((id) => (BY_ID.has(id) ? [compareGuess(BY_ID.get(id) as Species, secret)] : [])).reverse(),
+    [game.guesses, secret],
+  );
+  const gaveUp = game.gaveUp;
   const won = rows.some((r) => r.species.id === secret.id);
   const finished = won || gaveUp;
   const hasModel = MODEL_SPECIES.has(secret.id);
@@ -52,15 +90,11 @@ export default function QuizScreen() {
   }, [query, rows]);
 
   const guess = (sp: Species) => {
-    setRows((prev) => [compareGuess(sp, secret), ...prev]);
+    save({ ...game, guesses: [...game.guesses, sp.id] });
     setQuery('');
   };
-  const reset = () => {
-    setSecret(pickSecret(POOL, Math.random()));
-    setRows([]);
-    setQuery('');
-    setGaveUp(false);
-  };
+  // Whole minutes left, rounded down (just after midnight: 23 h 59 min, never "24 h 0 min").
+  const left = Math.floor(msUntilNextDay(now) / 60_000);
 
   return (
     <NotebookScreen title={s.title} withSettings>
@@ -86,10 +120,8 @@ export default function QuizScreen() {
                 style={[ui.button, { backgroundColor: colors.ink }]}>
                 <Text style={[type.button, { color: colors.paper }]}>{s.seeInAtlas}</Text>
               </Pressable>
-              <Pressable onPress={reset} accessibilityRole="button" style={[ui.button, { backgroundColor: colors.moss }]}>
-                <Text style={[type.button, { color: '#FBF5E6' }]}>{s.newRound}</Text>
-              </Pressable>
             </View>
+            <Text style={[type.label, { color: colors.ink2 }]}>{s.nextIn(Math.floor(left / 60), left % 60)}</Text>
           </View>
         ) : (
           <>
@@ -127,7 +159,7 @@ export default function QuizScreen() {
               </View>
             )}
             {rows.length > 0 && (
-              <Pressable onPress={() => setGaveUp(true)} accessibilityRole="button" style={ui.giveUp}>
+              <Pressable onPress={() => save({ ...game, gaveUp: true })} accessibilityRole="button" style={ui.giveUp}>
                 <Text style={[type.button, { color: colors.ink2 }]}>{s.giveUp}</Text>
               </Pressable>
             )}

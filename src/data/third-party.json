@@ -20,6 +20,11 @@
   "license": "MIT"
  },
  {
+  "name": "expo-build-properties",
+  "version": "58.0.12",
+  "license": "MIT"
+ },
+ {
   "name": "expo-camera",
   "version": "58.0.14",
   "license": "MIT"
@@ -37,6 +42,11 @@
  {
   "name": "expo-font",
   "version": "58.0.11",
+  "license": "MIT"
+ },
+ {
+  "name": "expo-gl",
+  "version": "58.0.4",
   "license": "MIT"
  },
  {
@@ -167,6 +177,11 @@
  {
   "name": "react-native-worklets",
   "version": "0.13.0",
+  "license": "MIT"
+ },
+ {
+  "name": "three",
+  "version": "0.187.0",
   "license": "MIT"
  }
 ]

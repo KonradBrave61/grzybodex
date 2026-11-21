@@ -9,6 +9,7 @@ import { BadgeStamp, BadgeToast } from '@/features/collection/badge-stamp';
 import { computeBadges, type BadgeState } from '@/features/collection/badges';
 import { listScans, type ScanRow } from '@/features/collection/collection';
 import { StickyNote } from '@/features/collection/sticky-note';
+import { ReportSheet } from '@/features/scan/report-sheet';
 import { collectionStrings } from '@/i18n/collection';
 import { type Lang, useLang, useStrings } from '@/i18n/i18n';
 import { NotebookScreen } from '@/ui/screen';
@@ -199,6 +200,7 @@ export default function CollectionScreen() {
   const [error, setError] = useState<string | null>(null);
   const [freshBadges, setFreshBadges] = useState<Set<string>>(new Set());
   const [toast, setToast] = useState<BadgeState | null>(null);
+  const [reporting, setReporting] = useState<ScanRow | null>(null);
 
   const badges = useMemo(() => badgesOf(scans ?? [], lang), [scans, lang]);
 
@@ -260,6 +262,7 @@ export default function CollectionScreen() {
                 createdAt={new Date(scan.created_at)}
                 species={species}
                 fresh={scan.id === freshId}
+                onReport={() => setReporting(scan)}
               />
             ))}
             {pair.length === 1 && <View style={col.flex} />}
@@ -268,6 +271,13 @@ export default function CollectionScreen() {
         ListFooterComponent={scans && tab === 1 ? <Badges badges={badges} scans={scans} fresh={freshBadges} /> : undefined}
       />
       {toast && <BadgeToast badge={toast} onClose={() => setToast(null)} />}
+      {reporting && (
+        <ReportSheet
+          key={reporting.id}
+          source={{ photoUri: reporting.photo_path, speciesId: reporting.species_id, createdAt: new Date(reporting.created_at) }}
+          onClose={() => setReporting(null)}
+        />
+      )}
     </NotebookScreen>
   );
 }

@@ -1,0 +1,181 @@
+// code-guard: intentional-duplicate - text keys (title, cancel, error…) fuzzy-match other namespaces; texts only, no logic.
+/**
+ * Texts of the "Report a mushroom" form (opened from the Collection): the notice about what happens, the form,
+ * the licence descriptions (based on the official deeds at creativecommons.org, checked 2026-11-20), errors and the e-mail.
+ */
+import { defineStrings } from './i18n';
+
+export const reportStrings = defineStrings({
+  pl: {
+    action: 'Zgłoś do atlasu',
+    actionA11y: (name: string) => `Zgłoś grzyba do atlasu: ${name}`,
+    title: 'Zgłoś grzyba do atlasu',
+    // What happens — shown above the form
+    noticeTitle: 'Co się stanie',
+    noticeItems: [
+      'Otworzy się Twoja aplikacja pocztowa z gotowym e-mailem do twórcy Grzybodexu. Aplikacja niczego nie wysyła sama — e-mail wyślesz dopiero Ty. Możesz go jeszcze zmienić albo zrezygnować.',
+      'Do e-maila dołączymy: zdjęcia bez danych o miejscu i bez EXIF (do 3), pola tego formularza, wybraną licencję, wersję aplikacji oraz plik zgloszenie.json z tymi samymi danymi w formie uporządkowanej.',
+      'Nie dołączamy dokładnej lokalizacji ani współrzędnych. Województwo jest opcjonalne.',
+      'Wysyłając e-mail, ujawniasz twórcy swój adres e-mail i wszystko, co sam wpiszesz. E-mail idzie przez dostawcę Twojej poczty.',
+      'Zgłoszenie nie zmienia kategorii jadalności żadnego gatunku. Twórca sprawdza je ręcznie, zanim ewentualnie doda coś do atlasu. Nie ma gwarancji, że zgłoszenie zostanie wykorzystane. Zgłoszenia nie służą do uczenia modelu bez Twojej osobnej zgody.',
+    ],
+    // Form
+    photosLabel: (n: number) => `Zdjęcia ze skanu (${n} z maks. 3)`,
+    nameLabel: 'Nazwa grzyba (nieobowiązkowa)',
+    nameHint: 'Dowolna: polska, łacińska albo „nie wiem”.',
+    descriptionLabel: 'Opis (nieobowiązkowy)',
+    descriptionHint: 'Np. zapach, kolor miąższu po przekrojeniu, pod jakim drzewem rósł.',
+    habitatLabel: 'Siedlisko (nieobowiązkowe)',
+    habitats: {
+      deciduous: 'Las liściasty',
+      coniferous: 'Las iglasty',
+      mixed: 'Las mieszany',
+      meadow: 'Łąka, pastwisko',
+      park: 'Park, ogród',
+      other: 'Inne',
+    },
+    dateLabel: 'Data znalezienia (RRRR-MM-DD)',
+    regionLabel: 'Województwo (nieobowiązkowe)',
+    regionNone: 'Nie podaję',
+    regionNote: 'Tylko województwo — nigdy dokładne współrzędne.',
+    // Licences
+    licenseLabel: 'Licencja zdjęć i opisu (wymagana)',
+    licenseIrrevocable:
+      'Licencje Creative Commons są nieodwołalne: raz udzielonej nie cofniesz, nawet gdy później usuniesz zgłoszenie. Wybierz uważnie. Nie masz pewności — wybierz „Tylko do wglądu twórcy”.',
+    licenseFull: 'Pełny tekst licencji',
+    licenses: {
+      'cc-by': {
+        title: 'CC BY 4.0 — uznanie autorstwa',
+        body: 'Każdy może kopiować, rozpowszechniać i przerabiać Twoje zdjęcia i opis w dowolnym celu, także komercyjnym. Warunek: podanie autora, linku do licencji i informacji o zmianach. Licencja jest nieodwołalna (dopóki korzystający przestrzega jej warunków).',
+      },
+      'cc-by-sa': {
+        title: 'CC BY-SA 4.0 — uznanie autorstwa, na tych samych warunkach',
+        body: 'Jak CC BY (dowolne użycie, także komercyjne, z podaniem autora i linku do licencji), a dodatkowo: jeśli ktoś przerobi Twoje zdjęcie lub opis, nowy utwór musi udostępnić na tej samej (lub zgodnej) licencji. Licencja jest nieodwołalna (dopóki korzystający przestrzega jej warunków).',
+      },
+      cc0: {
+        title: 'CC0 1.0 — domena publiczna',
+        body: 'Zrzekasz się praw autorskich w najszerszym zakresie dozwolonym przez prawo. Każdy może używać zdjęć i opisu w dowolnym celu, także komercyjnym, bez pytania o zgodę i bez podawania autora. Zrzeczenie jest trwałe i nieodwołalne (według pełnego tekstu CC0). CC0 nie obejmuje m.in. praw do wizerunku i prywatności osób na zdjęciu.',
+      },
+      'view-only': {
+        title: 'Tylko do wglądu twórcy (bez publikacji)',
+        body: 'Twórca Grzybodexu może obejrzeć zgłoszenie, by sprawdzić grzyba, ale nie opublikuje zdjęć ani opisu (np. w atlasie) i nie przekaże ich dalej. Nie jest to licencja Creative Commons. Zdjęcia nie trafią do atlasu jako zdjęcia ilustrujące gatunek.',
+      },
+    },
+    // Declarations
+    ownPhotos: 'To są moje zdjęcia. Zrobiłem je sam (nie wysyłam cudzych).',
+    consent:
+      'Zgadzam się na przetwarzanie moich danych z tego zgłoszenia (w tym adresu e-mail, z którego wyślę wiadomość) w celu sprawdzenia grzyba i ewentualnego dodania go do atlasu. Zgodę mogę cofnąć. Rozumiem, że licencja Creative Commons jest nieodwołalna.',
+    // Buttons and states
+    send: 'Otwórz pocztę',
+    preparing: 'Przygotowuję zdjęcia…',
+    cancel: 'Anuluj',
+    noMail: 'Nie znaleziono aplikacji poczty z kontem. Dodaj konto e-mail w telefonie i spróbuj ponownie.',
+    failed: 'Nie udało się przygotować zgłoszenia.',
+    errors: {
+      photos_required: 'Brak zdjęcia do wysłania.',
+      photos_too_many: 'Za dużo zdjęć (maks. 3).',
+      name_too_long: 'Nazwa jest za długa (maks. 100 znaków).',
+      description_too_long: 'Opis jest za długi (maks. 1000 znaków).',
+      habitat_invalid: 'Nieprawidłowe siedlisko.',
+      date_invalid: 'Wpisz datę jako RRRR-MM-DD, np. 2026-10-05.',
+      date_future: 'Data znalezienia nie może być z przyszłości.',
+      voivodeship_invalid: 'Nieprawidłowe województwo.',
+      license_required: 'Wybierz licencję.',
+      own_photos_required: 'Potwierdź, że to Twoje zdjęcia.',
+      consent_required: 'Zaznacz zgodę na przetwarzanie.',
+    },
+    // E-mail
+    mailSubject: 'Grzybodex — zgłoszenie grzyba',
+    mailName: 'Nazwa:',
+    mailDescription: 'Opis:',
+    mailHabitat: 'Siedlisko:',
+    mailFound: 'Data znalezienia:',
+    mailRegion: 'Województwo:',
+    mailLicense: 'Licencja zdjęć i opisu:',
+    mailVersion: 'Wersja aplikacji:',
+    mailNone: '(brak)',
+  },
+  en: {
+    action: 'Report to the atlas',
+    actionA11y: (name: string) => `Report mushroom to the atlas: ${name}`,
+    title: 'Report a mushroom to the atlas',
+    noticeTitle: 'What will happen',
+    noticeItems: [
+      'Your mail app will open with a ready e-mail to the creator of Grzybodex. The app sends nothing by itself — only you send the e-mail. You can still change it or cancel.',
+      'We will attach: photos without location data and without EXIF (up to 3), the fields of this form, the chosen licence, the app version, and a zgloszenie.json file with the same data in structured form.',
+      'We do not attach an exact location or coordinates. The voivodeship is optional.',
+      'By sending the e-mail you reveal your e-mail address to the creator, and anything you type yourself. The e-mail goes through your e-mail provider.',
+      'The report does not change the edibility category of any species. The creator checks it by hand before possibly adding anything to the atlas. There is no guarantee that the report will be used. Reports are not used to train the model without your separate consent.',
+    ],
+    photosLabel: (n: number) => `Photos from the scan (${n} of max. 3)`,
+    nameLabel: 'Mushroom name (optional)',
+    nameHint: 'Any: Polish, Latin or “I don’t know”.',
+    descriptionLabel: 'Description (optional)',
+    descriptionHint: 'E.g. smell, colour of the flesh when cut, under which tree it grew.',
+    habitatLabel: 'Habitat (optional)',
+    habitats: {
+      deciduous: 'Deciduous forest',
+      coniferous: 'Coniferous forest',
+      mixed: 'Mixed forest',
+      meadow: 'Meadow, pasture',
+      park: 'Park, garden',
+      other: 'Other',
+    },
+    dateLabel: 'Date found (YYYY-MM-DD)',
+    regionLabel: 'Voivodeship (optional)',
+    regionNone: 'Do not say',
+    regionNote: 'Voivodeship only — never exact coordinates.',
+    licenseLabel: 'Licence of photos and description (required)',
+    licenseIrrevocable:
+      'Creative Commons licences are irrevocable: once granted, you cannot take it back, even if you later delete the report. Choose carefully. Not sure — choose “For the creator’s eyes only”.',
+    licenseFull: 'Full licence text',
+    licenses: {
+      'cc-by': {
+        title: 'CC BY 4.0 — attribution',
+        body: 'Anyone may copy, redistribute and adapt your photos and description for any purpose, including commercial. Condition: credit the author, link to the licence and indicate changes. The licence is irrevocable (as long as the user follows its terms).',
+      },
+      'cc-by-sa': {
+        title: 'CC BY-SA 4.0 — attribution, share alike',
+        body: 'Like CC BY (any use, including commercial, with credit and a link to the licence), and in addition: if someone adapts your photo or description, they must release the new work under the same (or a compatible) licence. The licence is irrevocable (as long as the user follows its terms).',
+      },
+      cc0: {
+        title: 'CC0 1.0 — public domain',
+        body: 'You waive your copyright to the fullest extent allowed by law. Anyone may use the photos and description for any purpose, including commercial, without asking and without crediting you. The waiver is permanent and irrevocable (according to the full CC0 text). CC0 does not cover, for example, the publicity and privacy rights of people in the photo.',
+      },
+      'view-only': {
+        title: 'For the creator’s eyes only (no publication)',
+        body: 'The creator of Grzybodex may look at the report to check the mushroom, but will not publish the photos or description (e.g. in the atlas) and will not pass them on. This is not a Creative Commons licence. The photos will not appear in the atlas as illustrations of a species.',
+      },
+    },
+    ownPhotos: 'These are my photos. I took them myself (I am not sending anyone else’s).',
+    consent:
+      'I agree to the processing of my data from this report (including the e-mail address I will send the message from) in order to check the mushroom and possibly add it to the atlas. I can withdraw consent. I understand that a Creative Commons licence is irrevocable.',
+    send: 'Open mail',
+    preparing: 'Preparing photos…',
+    cancel: 'Cancel',
+    noMail: 'No mail app with an account was found. Add an e-mail account on the phone and try again.',
+    failed: 'Could not prepare the report.',
+    errors: {
+      photos_required: 'No photo to send.',
+      photos_too_many: 'Too many photos (max. 3).',
+      name_too_long: 'The name is too long (max. 100 characters).',
+      description_too_long: 'The description is too long (max. 1000 characters).',
+      habitat_invalid: 'Invalid habitat.',
+      date_invalid: 'Enter the date as YYYY-MM-DD, e.g. 2026-10-05.',
+      date_future: 'The date found cannot be in the future.',
+      voivodeship_invalid: 'Invalid voivodeship.',
+      license_required: 'Choose a licence.',
+      own_photos_required: 'Confirm that these are your photos.',
+      consent_required: 'Tick the consent to processing.',
+    },
+    mailSubject: 'Grzybodex — mushroom report',
+    mailName: 'Name:',
+    mailDescription: 'Description:',
+    mailHabitat: 'Habitat:',
+    mailFound: 'Date found:',
+    mailRegion: 'Voivodeship:',
+    mailLicense: 'Licence of photos and description:',
+    mailVersion: 'App version:',
+    mailNone: '(none)',
+  },
+});

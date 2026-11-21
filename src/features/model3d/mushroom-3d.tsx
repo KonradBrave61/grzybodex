@@ -1,5 +1,6 @@
 // code-guard: intentional-duplicate - local names (view, state, loop) fuzzy-match other components; the only GL view in the app.
 import { GLView, type ExpoWebGLRenderingContext } from 'expo-gl';
+import { useIsFocused } from 'expo-router';
 import { useEffect, useMemo, useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Gesture, GestureDetector } from 'react-native-gesture-handler';
@@ -45,9 +46,9 @@ function tint(part: THREE.Object3D | undefined, k: number) {
 }
 
 /**
- * RESPONSIBILITY: Zmienny stan widoku 3D wspólny dla gestu, propsów i pętli renderu (poza stanem Reacta: zmiany nie mogą przerysowywać)
- * INPUTS:         focus, reduced (z propsów i ustawień ruchu); drag(dx) z gestu
- * OUTPUTS:        pola czytane przez pętlę renderu (yaw, focus, reduced, lastDrag)
+ * RESPONSIBILITY: Zmienny stan widoku 3D wspólny dla gestu, propsów i pętli renderu (poza stanem Reacta: zmiany nie mogą przerysowywać); pilnuje, żeby działała najwyżej jedna scena
+ * INPUTS:         focus, reduced, active (z propsów, ustawień ruchu i fokusu ekranu); drag(dx) z gestu; attach(start) z fabryką sceny
+ * OUTPUTS:        pola czytane przez pętlę renderu (yaw, focus, reduced, active, lastDrag)
  * AUTHN:          none
  * AUTHZ:          none
  * TOUCHES:        none
@@ -57,6 +58,8 @@ class Live {
   yaw = 0.6;
   lastDrag = 0;
   frame = 0;
+  /** False while the screen is covered or hidden: the loop keeps ticking but skips all GL calls. */
+  active = true;
   cleanup = () => {};
   constructor(
     public focus: Focus,
@@ -67,12 +70,26 @@ class Live {
     this.yaw -= dx * 0.012;
     this.lastDrag = Date.now();
   }
-  attach(cleanup: () => void) {
-    this.cleanup = cleanup;
+  /** Stops the previous scene first: expo-gl can fire onContextCreate again (surface re-created), and two loops would share `frame`. */
+  attach(start: () => () => void) {
+    this.release();
+    this.cleanup = start();
   }
-  sync(focus: Focus, reduced: boolean) {
+  /** Runs the scene cleanup once (a second call, e.g. StrictMode remount, must not dispose twice). */
+  release() {
+    const stop = this.cleanup;
+    this.cleanup = () => {};
+    try {
+      stop();
+    } catch (e) {
+      // The old surface may already be destroyed under us; the new scene must still start.
+      console.warn('3D cleanup failed', e);
+    }
+  }
+  sync(focus: Focus, reduced: boolean, active: boolean) {
     this.focus = focus;
     this.reduced = reduced;
+    this.active = active;
   }
 }
 
@@ -118,6 +135,10 @@ function startScene(gl: ExpoWebGLRenderingContext, background: string, silhouett
 
   const loop = (t: number) => {
     const s = live;
+    if (!s.active) {
+      s.frame = requestAnimationFrame(loop);
+      return;
+    }
     const target = silhouette ? SILHOUETTE_VIEW : VIEWS[s.focus];
     // ease the camera towards the chosen view
     cam.pitch += (target.pitch - cam.pitch) * 0.08;
@@ -131,8 +152,14 @@ function startScene(gl: ExpoWebGLRenderingContext, background: string, silhouett
       shown = s.focus;
       if (shown !== 'all') tint(model.getObjectByName(shown), s.reduced ? 0.3 : 0.2 + 0.15 * Math.sin(t / 250));
     }
-    renderer.render(scene, camera);
-    gl.endFrameEXP();
+    try {
+      renderer.render(scene, camera);
+      gl.endFrameEXP();
+    } catch (e) {
+      // Context lost or destroyed under us: stop drawing instead of throwing from every frame.
+      console.warn('3D view stopped', e);
+      return;
+    }
     s.frame = requestAnimationFrame(loop);
   };
   live.frame = requestAnimationFrame(loop);
@@ -154,9 +181,10 @@ function startScene(gl: ExpoWebGLRenderingContext, background: string, silhouett
  */
 export function Mushroom3D({ height, background, silhouette, focus = 'all', accessibilityLabel }: Props) {
   const reduced = useReducedMotion();
+  const focused = useIsFocused();
   const [live] = useState(() => new Live(focus, reduced));
-  useEffect(() => live.sync(focus, reduced), [live, focus, reduced]);
-  useEffect(() => () => live.cleanup(), [live]);
+  useEffect(() => live.sync(focus, reduced, focused), [live, focus, reduced, focused]);
+  useEffect(() => () => live.release(), [live]);
 
   const pan = useMemo(
     () =>
@@ -170,7 +198,7 @@ export function Mushroom3D({ height, background, silhouette, focus = 'all', acce
 
   const onContextCreate = (gl: ExpoWebGLRenderingContext) => {
     try {
-      live.attach(startScene(gl, background, silhouette, live));
+      live.attach(() => startScene(gl, background, silhouette, live));
     } catch (e) {
       // No usable WebGL (very old GPU): leave the background patch, the rest of the screen still works.
       console.warn('3D model unavailable', e);

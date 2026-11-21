@@ -11,7 +11,6 @@ import { hasTraits } from '@/data/traits';
 import { saveScan } from '@/features/collection/collection';
 import { averageProbs, shotAgreement, topK } from '@/features/scan/math';
 import { UNCATALOGUED_BELOW } from '@/features/scan/report';
-import { ReportSheet } from '@/features/scan/report-sheet';
 import { evaluateSafety, type Warning } from '@/features/scan/safety';
 import { warningText } from '@/features/scan/warning-text';
 import { useScanShots } from '@/features/scan/scan-store';
@@ -179,7 +178,6 @@ export default function ResultScreen() {
   const [saveError, setSaveError] = useState<string | null>(null);
   const [whereOpen, setWhereOpen] = useState(false);
   const [showAll, setShowAll] = useState(false);
-  const [reportOpen, setReportOpen] = useState(false);
 
   const analysis = useMemo(() => {
     if (shots.length === 0) return null;
@@ -287,9 +285,6 @@ export default function ResultScreen() {
           <View style={[res.notice, res.mismatch, { backgroundColor: colors.panel, borderColor: colors.ink }]} accessibilityRole="alert">
             <Text style={[type.tileTitle, { color: colors.ink }]}>{t.uncatTitle}</Text>
             <Text style={[type.body, { color: colors.ink }]}>{t.uncatBody}</Text>
-            <Pressable onPress={() => setReportOpen(true)} style={[res.secondary, { borderColor: colors.ink }]} accessibilityRole="button">
-              <Text style={[type.button, res.centerText, { color: colors.ink }]}>{t.reportOpen}</Text>
-            </Pressable>
           </View>
         )}
         {!best.species && <Notice title={t.unknownTitle} body={t.unknownBody} />}
@@ -333,7 +328,6 @@ export default function ResultScreen() {
           </View>
         </View>
       </Modal>
-      <ReportSheet visible={reportOpen} photoUris={shots.map((s) => s.uri)} onClose={() => setReportOpen(false)} />
     </View>
   );
 }

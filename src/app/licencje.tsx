@@ -1,7 +1,7 @@
 // code-guard: intentional-duplicate - short UI names (item, section, link) fuzzy-match other screens; no logic is duplicated.
 import { router } from 'expo-router';
 import { useMemo } from 'react';
-import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Pressable, SectionList, StyleSheet, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { creditSections, type CreditItem } from '@/features/credits/credits';
@@ -58,30 +58,40 @@ export default function Licences() {
   const insets = useSafeAreaInsets();
   const s = useStrings(creditsStrings);
   const lang = useLang();
-  const sections = useMemo(() => creditSections(lang), [lang]);
+  const sections = useMemo(() => creditSections(lang).map((sec) => ({ ...sec, data: sec.items })), [lang]);
+  // SectionList renders only what is on screen: the list has over a thousand rows (one per bundled photo and library).
   return (
     <NotebookScreen title={s.title} onBack={() => router.back()}>
-      <ScrollView contentContainerStyle={[lic.page, { paddingBottom: SPACE.xxxl + insets.bottom }]}>
-        <Text style={[type.body, { color: colors.ink }]}>{s.intro}</Text>
-        {sections.map((sec) => (
-          <View key={sec.id} style={lic.section}>
+      <SectionList
+        sections={sections}
+        keyExtractor={(item, i) => `${i}-${item.title}`}
+        contentContainerStyle={[lic.page, { paddingBottom: SPACE.xxxl + insets.bottom }]}
+        stickySectionHeadersEnabled={false}
+        initialNumToRender={12}
+        ListHeaderComponent={<Text style={[type.body, { color: colors.ink }]}>{s.intro}</Text>}
+        renderSectionHeader={({ section: sec }) => (
+          <View style={lic.section}>
             <Text style={[type.section, { color: colors.ink }]} accessibilityRole="header">
               {sec.title}
             </Text>
             {sec.intro && <Text style={[type.caption, { color: colors.ink2 }]}>{sec.intro}</Text>}
-            {sec.items.map((item) => (
-              <Credit key={item.title} item={item} />
-            ))}
           </View>
-        ))}
-      </ScrollView>
+        )}
+        renderItem={({ item }) => <Credit item={item} />}
+        ItemSeparatorComponent={Gap}
+      />
     </NotebookScreen>
   );
 }
 
+function Gap() {
+  return <View style={lic.gap} />;
+}
+
 const lic = StyleSheet.create({
-  page: { paddingLeft: 28, paddingRight: SPACE.xl, paddingTop: SPACE.l, gap: SPACE.xxl },
-  section: { gap: SPACE.m },
+  page: { paddingLeft: 28, paddingRight: SPACE.xl, paddingTop: SPACE.l },
+  section: { gap: SPACE.m, paddingTop: SPACE.xxl, paddingBottom: SPACE.m },
+  gap: { height: SPACE.m },
   item: { gap: 2 },
   links: { flexDirection: 'row', flexWrap: 'wrap', columnGap: SPACE.l },
   link: { minHeight: 44, justifyContent: 'center' },

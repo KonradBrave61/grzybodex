@@ -13,7 +13,7 @@ import { NAME_MAX, NOTE_MAX, type SpotKind, validateSpot } from './spot-model';
 import { addSpot } from './spots';
 
 /**
- * RESPONSIBILITY: Formularz „Zapisz to miejsce”: rodzaj (miejscówka/auto), nazwa, notatka; zapis w bieżącym położeniu (GPS lub demo)
+ * RESPONSIBILITY: Formularz „Zapisz to miejsce”: rodzaj (miejscówka/auto), nazwa, notatka; zapis w bieżącym położeniu (GPS, z kroków, ręczne lub demo)
  * INPUTS:         location: MyLocation (bez położenia zapis jest zablokowany); initialKind; hasCar (ostrzeżenie o zastąpieniu auta);
  *                 onSaved(id), onCancel() — tekst z pól to dane od użytkownika, walidowane w validateSpot
  * OUTPUTS:        karta z polami (cele dotyku ≥ 44 px); po zapisie wywołuje onSaved
@@ -35,10 +35,12 @@ export function SpotForm({ location, initialKind, hasCar, onSaved, onCancel }: {
   const where = !fix
     ? s.whereSearching
     : location.status === 'demo'
-      ? s.whereDemo
+      ? s.whereDemo(location.region)
       : location.status === 'steps'
         ? s.whereSteps(fix.accuracy)
-        : s.whereGps(formatCoordinates(fix, lang), fix.accuracy !== null ? Math.round(fix.accuracy) : null);
+        : location.status === 'manual'
+          ? s.whereManual(fix.accuracy)
+          : s.whereGps(formatCoordinates(fix, lang), fix.accuracy !== null ? Math.round(fix.accuracy) : null);
 
   const save = async () => {
     if (!fix || saving) return;
@@ -96,7 +98,7 @@ export function SpotForm({ location, initialKind, hasCar, onSaved, onCancel }: {
         accessibilityLabel={s.noteA11y}
         style={field}
       />
-      <Text style={[type.caption, { color: location.status === 'demo' || location.status === 'steps' ? colors.maple : colors.ink2 }]}>{where}</Text>
+      <Text style={[type.caption, { color: location.status === 'demo' || location.status === 'steps' || location.status === 'manual' ? colors.maple : colors.ink2 }]}>{where}</Text>
       {kind === 'car' && hasCar && <Text style={[type.caption, { color: colors.ink2 }]}>{s.carReplaced}</Text>}
       {error && (
         <Text style={[type.caption, { color: colors.maple }]} accessibilityLiveRegion="polite">

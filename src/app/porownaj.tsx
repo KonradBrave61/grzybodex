@@ -100,7 +100,7 @@ function Sentences({ c }: { c: Comparison }) {
 /**
  * RESPONSIBILITY: Sekcja tekstów urzędowych (Sanepid, Lasy Państwowe) — przed zdaniami z Wikipedii
  * INPUTS:         c: Comparison (official: akapity różnic i hasła broszury)
- * OUTPUTS:        karty z cytatem, nagłówkiem akapitu albo nazwą gatunku, źródłem i linkiem; nic, gdy brak tekstów
+ * OUTPUTS:        notka „krótkie fragmenty” + karty z cytatem, nagłówkiem akapitu albo nazwą gatunku, źródłem i linkiem; nic, gdy brak tekstów
  * AUTHN:          none
  * AUTHZ:          none
  * TOUCHES:        network (tylko po dotknięciu linku)
@@ -114,6 +114,7 @@ function Official({ c }: { c: Comparison }) {
   return (
     <View style={ui.section}>
       <Text style={[type.section, { color: colors.ink }]}>{s.officialHeader}</Text>
+      <Text style={[type.caption, { color: colors.ink2 }]}>{s.officialExcerpt}</Text>
       {c.official.map((o, i) => (
         <View key={i} style={[ui.card, { backgroundColor: colors.panel, borderColor: colors.moss }]}>
           <Text style={[type.label, { color: colors.bolete }]}>{o.heading ?? displayName(o.about ?? '', lang)}</Text>

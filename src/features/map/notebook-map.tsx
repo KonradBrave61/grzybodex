@@ -1,5 +1,5 @@
 // code-guard: intentional-duplicate - local UI identifiers fuzzy-match other files; no logic is duplicated.
-import { Camera, type CameraRef, GeoJSONSource, Layer, Map, Marker, type ViewStateChangeEvent } from '@maplibre/maplibre-react-native';
+import { Camera, type CameraRef, GeoJSONSource, Layer, Map, Marker, type PressEvent, type ViewStateChangeEvent } from '@maplibre/maplibre-react-native';
 import { router } from 'expo-router';
 import { useEffect, useRef, useState } from 'react';
 import { type NativeSyntheticEvent, Pressable, StyleSheet, Text, View } from 'react-native';
@@ -15,7 +15,7 @@ import { buildStyle, type MapMode, prepareBasemap } from './offline/basemap';
 import { packsToDraw } from './offline/pack-manager';
 import { packSourceUrl, usePackStates } from './offline/pack-store';
 import { shownName, type Spot } from './spot-model';
-import { thinTrail } from './trail-model';
+import { thinTrail, trailSegments } from './trail-model';
 
 const MAP_HEIGHT = 340;
 /** Space kept free around the points: pins rise 50 px above their tip; overlays sit in the corners. */
@@ -120,6 +120,9 @@ function circlePolygon(c: LatLon, meters: number): GeoJSON.Feature {
 }
 
 type Features = GeoJSON.FeatureCollection;
+type TrailLine = readonly (LatLon & { estimated?: boolean })[];
+const lines = (runs: LatLon[][]): GeoJSON.Feature[] =>
+  runs.map((run) => ({ type: 'Feature', properties: {}, geometry: { type: 'LineString', coordinates: run.map((p) => [p.longitude, p.latitude]) } }));
 const collection = (features: GeoJSON.Feature[]): Features => ({ type: 'FeatureCollection', features });
 const point = (p: LatLon, properties: Record<string, string> = {}): GeoJSON.Feature => ({
   type: 'Feature',
@@ -128,23 +131,25 @@ const point = (p: LatLon, properties: Record<string, string> = {}): GeoJSON.Feat
 });
 
 /**
- * RESPONSIBILITY: Dane GeoJSON nakładek: ślad, jego początek, „Ty” (z podpisem) i koło błędu położenia z kroków
- * INPUTS:         me, meEstimate, line (ślad po przerzedzeniu); meLabel: podpis kropki („Ty” / „Ty?” w języku aplikacji)
- * OUTPUTS:        { trail, start, me, error } — kolekcje (puste, gdy brak danych)
+ * RESPONSIBILITY: Dane GeoJSON nakładek: ślad (odcinki z GPS i szacowane z kroków osobno), jego początek, „Ty” (z podpisem),
+ *                 koło błędu położenia z kroków / ręcznego i punkt wskazany palcem (czeka na „Jestem tutaj”)
+ * INPUTS:         me, meEstimate, line (ślad po przerzedzeniu, z flagą estimated); meLabel: podpis kropki („Ty” / „Ty?”); pending: punkt albo null
+ * OUTPUTS:        { trail, trailEstimated, start, me, error, pending } — kolekcje (puste, gdy brak danych)
  * AUTHN:          none
  * AUTHZ:          none
  * TOUCHES:        none (czysta funkcja)
  * ERRORS:         none
  */
-function overlayData(me: LatLon | null, meEstimate: { errorM: number } | null, line: readonly LatLon[], meLabel: string) {
+function overlayData(me: LatLon | null, meEstimate: { errorM: number } | null, line: TrailLine, meLabel: string, pending: LatLon | null) {
   const walked = line.length > 1;
+  const runs = trailSegments(line);
   return {
-    trail: collection(
-      walked ? [{ type: 'Feature', properties: {}, geometry: { type: 'LineString', coordinates: line.map((p) => [p.longitude, p.latitude]) } }] : [],
-    ),
+    trail: collection(lines(runs.gps)),
+    trailEstimated: collection(lines(runs.estimated)),
     start: collection(walked ? [point(line[0])] : []),
     me: collection(me ? [point(me, { label: meLabel })] : []),
     error: collection(me && meEstimate ? [circlePolygon(me, Math.max(meEstimate.errorM, 5))] : []),
+    pending: collection(pending ? [point(pending)] : []),
   };
 }
 
@@ -159,17 +164,30 @@ const ME_LABEL = {
 } as const;
 
 /**
- * RESPONSIBILITY: Warstwy rysowane na mapie: błąd położenia z kroków, ślad drogi z kropką startu, kropka „Ty” z podpisem
- * INPUTS:         me, meEstimate, line (ślad po przerzedzeniu), colors
+ * RESPONSIBILITY: Warstwy rysowane na mapie: błąd położenia z kroków, ślad drogi (GPS ciągłą linią, z kroków przerywaną) z kropką startu,
+ *                 kropka „Ty” z podpisem, punkt wskazany palcem
+ * INPUTS:         me, meEstimate, line (ślad po przerzedzeniu), pending, colors
  * OUTPUTS:        źródła GeoJSON + warstwy MapLibre (dziecko <Map>)
  * AUTHN:          none (internal UI)
  * AUTHZ:          none
  * TOUCHES:        none
  * ERRORS:         none (puste kolekcje, gdy brak danych)
  */
-function MapOverlays({ me, meEstimate, line, colors }: { me: LatLon | null; meEstimate: { errorM: number } | null; line: readonly LatLon[]; colors: Palette }) {
+function MapOverlays({
+  me,
+  meEstimate,
+  line,
+  pending,
+  colors,
+}: {
+  me: LatLon | null;
+  meEstimate: { errorM: number } | null;
+  line: TrailLine;
+  pending: LatLon | null;
+  colors: Palette;
+}) {
   const s = useStrings(mapStrings);
-  const data = overlayData(me, meEstimate, line, meEstimate ? s.meGuess : s.me);
+  const data = overlayData(me, meEstimate, line, meEstimate ? s.meGuess : s.me, pending);
   const blue = colors.category.protected.bg;
   const guess = meEstimate !== null;
   return (
@@ -182,11 +200,28 @@ function MapOverlays({ me, meEstimate, line, colors }: { me: LatLon | null; meEs
         <Layer id="trail-halo" type="line" layout={ROUND} paint={{ 'line-color': colors.paper, 'line-width': 9 }} />
         <Layer id="trail-line" type="line" layout={ROUND} paint={{ 'line-color': colors.maple, 'line-width': 5 }} />
       </GeoJSONSource>
+      {/* Estimated from steps: same colour, dashed (butt caps keep the gaps visible). */}
+      <GeoJSONSource id="trail-estimated" data={data.trailEstimated}>
+        <Layer id="trail-estimated-halo" type="line" layout={ROUND} paint={{ 'line-color': colors.paper, 'line-width': 9 }} />
+        <Layer
+          id="trail-estimated-line"
+          type="line"
+          layout={{ 'line-cap': 'butt', 'line-join': 'round' }}
+          paint={{ 'line-color': colors.maple, 'line-width': 5, 'line-dasharray': [1.6, 1.2] }}
+        />
+      </GeoJSONSource>
       <GeoJSONSource id="trail-start" data={data.start}>
         <Layer
           id="trail-start-dot"
           type="circle"
           paint={{ 'circle-radius': 6, 'circle-color': colors.maple, 'circle-stroke-color': colors.paper, 'circle-stroke-width': 2 }}
+        />
+      </GeoJSONSource>
+      <GeoJSONSource id="pending" data={data.pending}>
+        <Layer
+          id="pending-dot"
+          type="circle"
+          paint={{ 'circle-radius': 9, 'circle-color': colors.mustard, 'circle-stroke-color': colors.ink, 'circle-stroke-width': 2.5 }}
         />
       </GeoJSONSource>
       <GeoJSONSource id="me" data={data.me}>
@@ -255,8 +290,8 @@ export type MapProps = {
   me: LatLon | null;
   /** The "Ty" dot is guessed from steps (GPS lost): drawn hollow with a circle of the estimated error. */
   meEstimate: { errorM: number } | null;
-  /** Recorded walking trail, oldest first (empty = none). */
-  trail: readonly LatLon[];
+  /** Recorded walking trail, oldest first (empty = none); estimated points (from steps) are drawn dashed. */
+  trail: TrailLine;
   spots: readonly Spot[];
   numbers: ReadonlyMap<number, number>;
   selectedId: number | null;
@@ -265,6 +300,10 @@ export type MapProps = {
   carButton: { label: string; onPress: () => void };
   /** Text alternative of the drawing for screen readers. */
   summary: string;
+  /** Long press on the map ("Jestem tutaj"); null = not available now (good GPS). */
+  onLongPress: ((p: LatLon) => void) | null;
+  /** Point chosen by the long press, waiting for confirmation (drawn as a yellow dot). */
+  pending: LatLon | null;
 };
 
 type ControlsProps = {
@@ -372,14 +411,15 @@ function MapControls({ mode, onMode, view, manual, onZoom, onRecenter, carButton
 /**
  * RESPONSIBILITY: Mapa MapLibre: wbudowana mapa Polski (bez sieci), pobrane mapy województw, online OpenTopoMap; ślad drogi, „Ty”, pinezki
  *                 miejscówek i auta; przesuwanie/szczypanie natywne, +/−, „wyśrodkuj”, przełącznik „Ogólna / Szczegóły”
- * INPUTS:         MapProps — położenie (GPS, demo albo z kroków + błąd), ślad, zapisane miejsca z lokalnej bazy, numeracja, zaznaczenie, akcje
+ * INPUTS:         MapProps — położenie (GPS, demo, z kroków albo ręczne + błąd), ślad, zapisane miejsca z lokalnej bazy, numeracja, zaznaczenie, akcje;
+ *                 onLongPress: przytrzymanie palca podaje współrzędne punktu (MapLibre; dotyk użytkownika)
  * OUTPUTS:        widok 340 px + podpis źródła mapy; start: widok dopasowany do punktów w promieniu 20 km od Ciebie
  * AUTHN:          none (internal UI)
  * AUTHZ:          none
  * TOUCHES:        filesystem (pliki map), external-api (tylko tryb „Szczegóły”: kafelki tile.opentopomap.org tam, gdzie brak pobranej mapy)
  * ERRORS:         mapa jeszcze się kopiuje → napis „Przygotowuję mapę…”; brak punktów → widok całej Polski; brak sieci → mapa wbudowana/pobrana
  */
-export function NotebookMap({ me, meEstimate, trail, spots, numbers, selectedId, onSelect, carButton, summary }: MapProps) {
+export function NotebookMap({ me, meEstimate, trail, spots, numbers, selectedId, onSelect, carButton, summary, onLongPress, pending }: MapProps) {
   const { colors, type } = useTheme();
   const s = useStrings(mapStrings);
   const lang = useLang();
@@ -420,6 +460,10 @@ export function NotebookMap({ me, meEstimate, trail, spots, numbers, selectedId,
     setManual(true);
     camera.current?.zoomTo(Math.min(MAX_ZOOM, Math.max(MIN_ZOOM, view.zoom + step)), { duration: 250 });
   };
+  const longPress = (e: NativeSyntheticEvent<PressEvent>) => {
+    const [longitude, latitude] = e.nativeEvent.lngLat;
+    onLongPress?.({ latitude, longitude });
+  };
   const recenter = () => {
     setManual(false);
     if (fit) camera.current?.fitBounds(fit, { padding, duration: 400 });
@@ -437,9 +481,10 @@ export function NotebookMap({ me, meEstimate, trail, spots, numbers, selectedId,
             attribution={false}
             logo={false}
             compass={false}
-            onRegionDidChange={onRegion}>
+            onRegionDidChange={onRegion}
+            onLongPress={onLongPress ? longPress : undefined}>
             <Camera ref={camera} minZoom={MIN_ZOOM} maxZoom={MAX_ZOOM} initialViewState={fit ? { bounds: fit, padding } : { bounds: POLAND, padding }} />
-            <MapOverlays me={me} meEstimate={meEstimate} line={line} colors={colors} />
+            <MapOverlays me={me} meEstimate={meEstimate} line={line} pending={pending} colors={colors} />
             {spots.map((p) => (
               <SpotMarker key={p.id} spot={p} n={numbers.get(p.id)} selected={p.id === selectedId} onSelect={onSelect} colors={colors} />
             ))}

@@ -1,12 +1,13 @@
 // code-guard: intentional-duplicate - local UI identifiers fuzzy-match other files; no logic is duplicated.
 import { Image } from 'expo-image';
 import { useEffect } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Pressable, StyleSheet, Text, View } from 'react-native';
 import Animated, { useAnimatedStyle, useReducedMotion, useSharedValue, withDelay, withSpring, withTiming } from 'react-native-reanimated';
 
 import type { Species } from '@/data/atlas';
 import { collectionStrings } from '@/i18n/collection';
 import { locale, useLang, useStrings } from '@/i18n/i18n';
+import { reportStrings } from '@/i18n/report';
 import { CategoryChip } from '@/ui/category-chip';
 import { useTheme } from '@/ui/theme';
 
@@ -16,7 +17,7 @@ const tiltOf = (id: number) => (((id * 37) % 5) - 2) * 0.75;
 /**
  * RESPONSIBILITY: Karteczka okazu w kolekcji (zdjęcie, taśma, nazwa, data, kategoria); nowy wpis „przykleja się” animacją
  * INPUTS:         id: number (wiersz bazy); photoUri: string (plik w katalogu aplikacji); name, latin: string; createdAt: Date;
- *                 species: Species | null; fresh: boolean — true tylko dla właśnie zapisanego skanu
+ *                 species: Species | null; fresh: boolean — true tylko dla właśnie zapisanego skanu; onReport: otwiera formularz zgłoszenia
  * OUTPUTS:        karta; fresh → spadek z góry z obrotem i sprężyną (~450 ms), potem taśma doklejana (scaleX 0→1, 180 ms);
  *                 przy „ogranicz ruch” — bez animacji
  * AUTHN:          none
@@ -24,9 +25,10 @@ const tiltOf = (id: number) => (((id * 37) % 5) - 2) * 0.75;
  * TOUCHES:        files (odczyt zdjęcia)
  * ERRORS:         none (brak pliku → szare tło zamiast zdjęcia)
  */
-export function StickyNote({ id, photoUri, name, latin, createdAt, species, fresh }: { id: number; photoUri: string; name: string; latin: string; createdAt: Date; species: Species | null; fresh: boolean }) {
+export function StickyNote({ id, photoUri, name, latin, createdAt, species, fresh, onReport }: { id: number; photoUri: string; name: string; latin: string; createdAt: Date; species: Species | null; fresh: boolean; onReport: () => void }) {
   const { colors, type } = useTheme();
   const t = useStrings(collectionStrings);
+  const r = useStrings(reportStrings);
   const date = createdAt.toLocaleDateString(locale(useLang()));
   const reduced = useReducedMotion();
   const tilt = tiltOf(id);
@@ -64,6 +66,9 @@ export function StickyNote({ id, photoUri, name, latin, createdAt, species, fres
           <CategoryChip raw={species.category} protectedSpecies={species.protected} conflict={species.conflict?.category} />
         </View>
       )}
+      <Pressable onPress={onReport} accessibilityRole="button" accessibilityLabel={r.actionA11y(name)} style={note.report}>
+        <Text style={[type.label, { color: colors.ink, textDecorationLine: 'underline' }]}>{r.action}</Text>
+      </Pressable>
     </Animated.View>
   );
 }
@@ -74,4 +79,5 @@ const note = StyleSheet.create({
   tape: { position: 'absolute', alignSelf: 'center', top: -4, width: 44, height: 12 },
   name: { marginTop: 4, minHeight: 50 },
   chip: { marginTop: 4 },
+  report: { minHeight: 44, justifyContent: 'center' },
 });

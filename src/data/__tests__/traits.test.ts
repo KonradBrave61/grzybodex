@@ -109,11 +109,12 @@ describe('cechy do odróżniania (traits.json z content/cechy/cechy.py)', () => 
     for (const l of [...Object.keys(data.species), ...data.pairs.flatMap((p) => p.species)]) expect([l, hasTraits(l)]).toEqual([l, true]);
   });
 
-  it('hasła broszury nie są sklejone: dokładnie jeden początek hasła „(Genus species)” na tekst, bez „Nagłówek NN (”', () => {
-    const data = officialJson as unknown as { species: Record<string, { text: string }> };
-    for (const [latin, v] of Object.entries(data.species)) {
-      expect([latin, (v.text.match(/\(([A-Z]) ?[a-z]+ [a-z]+\)(?= –| Od )/g) ?? []).length]).toEqual([latin, 1]);
-      expect([latin, /\s\d{1,3}\s\([A-Z]/.test(v.text)]).toEqual([latin, false]);
+  it('teksty urzędowe to krótkie cytaty (≤ 450 zn., cytaty.json) bez początku innego hasła broszury („(Genus species) –”, „Nagłówek NN (”)', () => {
+    const data = officialJson as unknown as { species: Record<string, { text: string }>; pairs: { heading: string; text: string }[] };
+    const texts: [string, string][] = [...Object.entries(data.species).map(([l, v]): [string, string] => [l, v.text]), ...data.pairs.map((p): [string, string] => [p.heading, p.text])];
+    for (const [key, text] of texts) {
+      expect([key, text.length <= 450]).toEqual([key, true]);
+      expect([key, /\(([A-Z]) ?[a-z]+ [a-z]+\)(?= –| Od )/.test(text) || /\s\d{1,3}\s\([A-Z]/.test(text)]).toEqual([key, false]);
     }
   });
 

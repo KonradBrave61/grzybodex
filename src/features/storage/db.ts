@@ -3,6 +3,7 @@ import * as SQLite from 'expo-sqlite';
 /**
  * Local, offline database (no accounts, no server). Schema version in PRAGMA user_version.
  * Tables: scans (collection), spots (private "Moje grzybnie" map points), trail_points (the one walking trail, "Ślad drogi").
+ * Migrations are append-only: never edit a shipped entry, add a new one (existing rows must survive).
  */
 const MIGRATIONS: string[] = [
   `CREATE TABLE IF NOT EXISTS scans (
@@ -31,6 +32,8 @@ const MIGRATIONS: string[] = [
      longitude REAL NOT NULL,
      accuracy REAL
    );`,
+  // v3: points guessed from steps + compass (no GPS) are kept but drawn dashed. Existing points are GPS → 0.
+  `ALTER TABLE trail_points ADD COLUMN estimated INTEGER NOT NULL DEFAULT 0;`,
 ];
 
 let dbPromise: Promise<SQLite.SQLiteDatabase> | null = null;

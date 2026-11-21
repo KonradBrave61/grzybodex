@@ -5,7 +5,7 @@ import { defineStrings } from './i18n';
 export const quizStrings = defineStrings({
   pl: {
     title: 'Quiz',
-    intro: 'Zgadnij tajnego grzyba. Po każdej próbie zobaczysz, które cechy się zgadzają.',
+    intro: 'Zgadnij grzyba dnia. Po każdej próbie zobaczysz, które cechy się zgadzają. Nowy grzyb codziennie o północy.',
     placeholder: 'Wpisz nazwę grzyba…',
     noResults: 'Nie ma takiego gatunku w atlasie.',
     attempt: (n: number) => `Próba ${n}`,
@@ -26,13 +26,13 @@ export const quizStrings = defineStrings({
     won: (name: string, n: number) => `Brawo! To ${name}. Odgadnięty w ${n} ${n === 1 ? 'próbie' : 'próbach'}.`,
     gaveUp: (name: string) => `Szukany grzyb to ${name}.`,
     seeInAtlas: 'Zobacz w atlasie',
-    newRound: 'Nowa runda',
+    nextIn: (h: number, m: number) => `Kolejny grzyb za ${h} h ${m} min.`,
     giveUp: 'Poddaję się',
     note: 'Dane o cechach pochodzą z Wikidata, a sezon ze zdjęć z bazy DF20. Dla części gatunków brakuje danych. Zabawa nie służy do rozpoznawania grzybów.',
   },
   en: {
     title: 'Quiz',
-    intro: 'Guess the secret mushroom. After every try you see which traits match.',
+    intro: 'Guess the mushroom of the day. After every try you see which traits match. A new mushroom every day at midnight.',
     placeholder: 'Type a mushroom name…',
     noResults: 'No such species in the atlas.',
     attempt: (n: number) => `Try ${n}`,
@@ -53,7 +53,7 @@ export const quizStrings = defineStrings({
     won: (name: string, n: number) => `Well done! It is ${name}. Guessed in ${n} ${n === 1 ? 'try' : 'tries'}.`,
     gaveUp: (name: string) => `The secret mushroom was ${name}.`,
     seeInAtlas: 'See in the atlas',
-    newRound: 'New round',
+    nextIn: (h: number, m: number) => `Next mushroom in ${h} h ${m} min.`,
     giveUp: 'Give up',
     note: 'Trait data comes from Wikidata and the season from DF20 photos. Some species have no data. This game is not for identifying mushrooms.',
   },

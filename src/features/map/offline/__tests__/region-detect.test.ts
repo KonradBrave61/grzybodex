@@ -1,5 +1,7 @@
 // Expected voivodeships are the official seats (capital cities) from the 1998 act, plus points outside Poland.
-import { voivodeshipAt } from '../region-detect';
+import { VOIVODESHIPS } from '@/features/settings/voivodeships';
+
+import { regionCenter, voivodeshipAt } from '../region-detect';
 
 const SEATS: [string, number, number, string][] = [
   ['Wrocław', 51.1079, 17.0385, 'dolnoslaskie'],
@@ -30,5 +32,18 @@ describe('voivodeshipAt', () => {
     expect(voivodeshipAt({ latitude: 50.0755, longitude: 14.4378 })).toBeNull(); // Praga
     expect(voivodeshipAt({ latitude: 55.2, longitude: 18.0 })).toBeNull(); // Bałtyk
     expect(voivodeshipAt({ latitude: Number.NaN, longitude: 19 })).toBeNull();
+  });
+});
+
+describe('regionCenter (start point while GPS has no fix)', () => {
+  it.each(VOIVODESHIPS.map((v) => v.id))('centre of %s lies inside it', (id) => {
+    expect(voivodeshipAt(regionCenter(id))).toBe(id);
+  });
+
+  it('without a chosen voivodeship uses the centre of Poland (in łódzkie)', () => {
+    const c = regionCenter(null);
+    expect(voivodeshipAt(c)).toBe('lodzkie');
+    expect(c.latitude).toBeCloseTo(52.14, 1);
+    expect(c.longitude).toBeCloseTo(19.39, 1);
   });
 });

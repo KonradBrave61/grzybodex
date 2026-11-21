@@ -104,15 +104,91 @@ export function secretPool(species: Species[]): Species[] {
   return species.filter((s) => s.pl && peakMonth(s.id) !== null && quizCategory(s) !== 'unknown' && (s.features?.filtr_spod_kapelusza?.length ?? 0) > 0);
 }
 
+
 /**
- * RESPONSIBILITY: Wybiera tajny gatunek z puli na podstawie liczby z [0, 1)
- * INPUTS:         pool: Species[] (niepusta); r: number z [0, 1) (np. Math.random())
- * OUTPUTS:        Species z puli
- * AUTHN:          none
+ * RESPONSIBILITY: Numer dnia kalendarzowego wg strefy czasowej telefonu (zmienia się o lokalnej 00:00)
+ * INPUTS:         d: Date (zegar telefonu)
+ * OUTPUTS:        liczba całkowita: dni od 1970-01-01 dla lokalnej daty
+ * AUTHN:          none (pure)
  * AUTHZ:          none
  * TOUCHES:        none
  * ERRORS:         none
  */
-export function pickSecret(pool: Species[], r: number): Species {
-  return pool[Math.min(pool.length - 1, Math.floor(r * pool.length))];
+export function localDayNumber(d: Date): number {
+  return Math.floor(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()) / 86_400_000);
+}
+
+/**
+ * RESPONSIBILITY: Milisekundy do najbliższej lokalnej północy (do odliczania „Kolejny grzyb za…”)
+ * INPUTS:         d: Date (zegar telefonu)
+ * OUTPUTS:        ms > 0
+ * AUTHN:          none (pure)
+ * AUTHZ:          none
+ * TOUCHES:        none
+ * ERRORS:         none
+ */
+export function msUntilNextDay(d: Date): number {
+  return new Date(d.getFullYear(), d.getMonth(), d.getDate() + 1).getTime() - d.getTime();
+}
+
+/** Fixed seed: every phone shuffles the pool the same way, so on a given date everyone gets the same mushroom. */
+const DAILY_SEED = 0x67727a62;
+
+/** mulberry32: small deterministic PRNG, values in [0, 1). */
+function mulberry32(seed: number): () => number {
+  let a = seed >>> 0;
+  return () => {
+    a = (a + 0x6d2b79f5) >>> 0;
+    let t = a;
+    t = Math.imul(t ^ (t >>> 15), t | 1);
+    t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
+/**
+ * RESPONSIBILITY: Grzyb dnia: pula przetasowana stałym ziarnem (Fisher–Yates), dzień wskazuje kolejną pozycję — bez powtórek przez pool.length dni
+ * INPUTS:         pool: Species[] (niepusta, kolejność z bundla); day: localDayNumber
+ * OUTPUTS:        Species z puli; ten sam dla tej samej daty i tej samej puli
+ * AUTHN:          none (pure)
+ * AUTHZ:          none
+ * TOUCHES:        none
+ * ERRORS:         none (ujemny dzień też daje poprawny indeks)
+ */
+export function dailySecret(pool: Species[], day: number): Species {
+  const order = pool.map((_, i) => i);
+  const rand = mulberry32(DAILY_SEED);
+  for (let i = order.length - 1; i > 0; i--) {
+    const j = Math.floor(rand() * (i + 1));
+    [order[i], order[j]] = [order[j], order[i]];
+  }
+  const n = order.length;
+  return pool[order[((day % n) + n) % n]];
+}
+
+export type DailyGame = { day: number; guesses: string[]; gaveUp: boolean };
+
+/**
+ * RESPONSIBILITY: Odczytuje zapisany stan quizu dnia; stan z innego dnia albo uszkodzony → pusta gra na dziś
+ * INPUTS:         raw: string z kv-store (UNTRUSTED — może być uszkodzony); day: dzisiejszy localDayNumber; known: id gatunków z bundla
+ * OUTPUTS:        DailyGame na dziś: tylko znane id, bez duplikatów, w kolejności prób
+ * AUTHN:          none (pure)
+ * AUTHZ:          none
+ * TOUCHES:        none
+ * ERRORS:         zły JSON / zły kształt → pusta gra (bez wyjątku)
+ */
+export function parseDailyGame(raw: string | null, day: number, known: ReadonlySet<string>): DailyGame {
+  const empty: DailyGame = { day, guesses: [], gaveUp: false };
+  if (!raw) return empty;
+  let data: unknown;
+  try {
+    data = JSON.parse(raw);
+  } catch {
+    return empty;
+  }
+  if (typeof data !== 'object' || data === null) return empty;
+  const g = data as Partial<Record<keyof DailyGame, unknown>>;
+  if (g.day !== day || !Array.isArray(g.guesses)) return empty;
+  const guesses = [...new Set(g.guesses.filter((id): id is string => typeof id === 'string' && known.has(id)))];
+  return { day, guesses, gaveUp: g.gaveUp === true };
 }

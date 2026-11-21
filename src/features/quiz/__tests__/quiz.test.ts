@@ -1,7 +1,7 @@
 // code-guard: intentional-duplicate - local fixture names in tests fuzzy-match production identifiers; no logic is duplicated.
 import { SPECIES, speciesById } from '@/data/atlas';
 
-import { compareGuess, peakMonth, pickSecret, quizCategory, secretPool } from '../quiz';
+import { compareGuess, dailySecret, localDayNumber, msUntilNextDay, parseDailyGame, peakMonth, quizCategory, secretPool } from '../quiz';
 
 const byLatin = (latin: string) => SPECIES.find((s) => s.latin === latin)!;
 
@@ -54,10 +54,37 @@ describe('quiz logic on the real atlas data', () => {
     expect(compareGuess(jun, jun).season.hint).toBeUndefined();
   });
 
-  it('pickSecret stays inside the pool for r = 0 and r just below 1', () => {
-    const pool = secretPool(SPECIES);
-    expect(pickSecret(pool, 0)).toBe(pool[0]);
-    expect(pickSecret(pool, 0.999999)).toBe(pool[pool.length - 1]);
-    expect(speciesById(pickSecret(pool, 0.5).id)).toBeDefined();
+});
+
+describe('mushroom of the day', () => {
+  const pool = secretPool(SPECIES);
+
+  it('the day changes at local midnight, not at UTC midnight', () => {
+    const late = new Date(2026, 10, 20, 23, 59, 59);
+    const midnight = new Date(2026, 10, 21, 0, 0, 0);
+    expect(localDayNumber(midnight) - localDayNumber(late)).toBe(1);
+    expect(localDayNumber(new Date(2026, 10, 21, 0, 0, 1))).toBe(localDayNumber(new Date(2026, 10, 21, 23, 59)));
+    expect(msUntilNextDay(late)).toBe(1000);
+    expect(msUntilNextDay(midnight)).toBe(24 * 3600 * 1000);
+  });
+
+  it('is the same all day, changes the next day and repeats only after the whole pool', () => {
+    const day = localDayNumber(new Date(2026, 10, 20, 8));
+    expect(dailySecret(pool, day)).toBe(dailySecret(pool, localDayNumber(new Date(2026, 10, 20, 23, 30))));
+    const cycle = Array.from({ length: pool.length }, (_, i) => dailySecret(pool, day + i).id);
+    expect(new Set(cycle).size).toBe(pool.length);
+    expect(dailySecret(pool, day + pool.length)).toBe(dailySecret(pool, day));
+    expect(speciesById(dailySecret(pool, -3).id)).toBeDefined();
+  });
+
+  it('restores only today’s saved tries and survives broken storage', () => {
+    const known = new Set(pool.map((p) => p.id));
+    const [a, b] = pool;
+    const saved = JSON.stringify({ day: 100, guesses: [a.id, 'nope', b.id, a.id], gaveUp: true });
+    expect(parseDailyGame(saved, 100, known)).toEqual({ day: 100, guesses: [a.id, b.id], gaveUp: true });
+    expect(parseDailyGame(saved, 101, known)).toEqual({ day: 101, guesses: [], gaveUp: false });
+    expect(parseDailyGame('{broken', 100, known).guesses).toEqual([]);
+    expect(parseDailyGame(null, 100, known).guesses).toEqual([]);
+    expect(parseDailyGame('[1,2]', 100, known).guesses).toEqual([]);
   });
 });
