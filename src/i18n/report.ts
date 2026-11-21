@@ -67,6 +67,8 @@ export const reportStrings = defineStrings({
       'Zgadzam się na przetwarzanie moich danych z tego zgłoszenia (w tym adresu e-mail, z którego wyślę wiadomość) w celu sprawdzenia grzyba i ewentualnego dodania go do atlasu. Zgodę mogę cofnąć. Rozumiem, że licencja Creative Commons jest nieodwołalna.',
     // Buttons and states
     send: 'Otwórz pocztę',
+    unavailableTitle: 'Wysyłanie zgłoszeń jeszcze nie działa',
+    unavailableBody: 'Adres, na który trafiałyby zgłoszenia, nie jest jeszcze ustawiony, więc nic nie zostanie wysłane. Formularz możesz obejrzeć, ale przycisk wysyłki jest wyłączony. Zgłoszenia zadziałają w kolejnej wersji aplikacji.',
     preparing: 'Przygotowuję zdjęcia…',
     cancel: 'Anuluj',
     noMail: 'Nie znaleziono aplikacji poczty z kontem. Dodaj konto e-mail w telefonie i spróbuj ponownie.',
@@ -151,6 +153,8 @@ export const reportStrings = defineStrings({
     consent:
       'I agree to the processing of my data from this report (including the e-mail address I will send the message from) in order to check the mushroom and possibly add it to the atlas. I can withdraw consent. I understand that a Creative Commons licence is irrevocable.',
     send: 'Open mail',
+    unavailableTitle: 'Sending reports does not work yet',
+    unavailableBody: 'The address that would receive reports is not set yet, so nothing will be sent. You can look at the form, but the send button is turned off. Reports will work in a later version of the app.',
     preparing: 'Preparing photos…',
     cancel: 'Cancel',
     noMail: 'No mail app with an account was found. Add an e-mail account on the phone and try again.',

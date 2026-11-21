@@ -20,7 +20,7 @@ import { VOIVODESHIPS, type VoivodeshipId } from "@/features/settings/voivodeshi
 import { openExternal } from "@/ui/link";
 import { RADIUS, SPACE, useTheme } from "@/ui/theme";
 
-import { openReportMail } from "./report";
+import { openReportMail, REPORT_EMAIL } from "./report";
 import {
   buildReportJson,
   HABITATS,
@@ -197,6 +197,17 @@ function CheckRow({ checked, onChange, label }: { checked: boolean; onChange: (v
  * TOUCHES:        none
  * ERRORS:         none
  */
+function Unavailable() {
+  const { colors, type } = useTheme();
+  const t = useStrings(reportStrings);
+  return (
+    <View style={[sheet.notice, { backgroundColor: colors.card, borderColor: colors.maple }]} accessibilityLiveRegion="polite">
+      <Text style={[type.tileTitle, { color: colors.maple }]}>{t.unavailableTitle}</Text>
+      <Text style={[type.body, { color: colors.ink }]}>{t.unavailableBody}</Text>
+    </View>
+  );
+}
+
 function Notice() {
   const { colors, type } = useTheme();
   const t = useStrings(reportStrings);
@@ -325,7 +336,10 @@ export function ReportSheet({ source, onClose }: { source: ReportSource; onClose
   const [errors, setErrors] = useState<string[]>([]);
   const set: SetField = (key, value) => setDraft((d) => ({ ...d, [key]: value }));
 
+  // No recipient address yet (REPORT_EMAIL is null): the form is shown, sending is switched off and the sheet says so.
+  const canSend = REPORT_EMAIL !== null;
   const send = async () => {
+    if (!canSend) return;
     setBusy(true);
     const result = await submitReport(draft, source, t);
     setErrors(result);
@@ -341,6 +355,7 @@ export function ReportSheet({ source, onClose }: { source: ReportSource; onClose
             <Text style={[type.section, { color: colors.ink }]} accessibilityRole="header">
               {t.title}
             </Text>
+            {!canSend && <Unavailable />}
             <Notice />
             <ReportFields draft={draft} set={set} />
             {errors.length > 0 && (
@@ -356,7 +371,12 @@ export function ReportSheet({ source, onClose }: { source: ReportSource; onClose
               <Pressable onPress={onClose} style={[sheet.btn, sheet.secondary, { borderColor: colors.ink }]} accessibilityRole="button">
                 <Text style={[type.button, sheet.center, { color: colors.ink }]}>{t.cancel}</Text>
               </Pressable>
-              <Pressable onPress={send} disabled={busy} style={[sheet.btn, { backgroundColor: colors.moss, opacity: busy ? 0.6 : 1 }]} accessibilityRole="button" accessibilityState={{ busy }}>
+              <Pressable
+                onPress={send}
+                disabled={busy || !canSend}
+                style={[sheet.btn, { backgroundColor: colors.moss, opacity: busy || !canSend ? 0.4 : 1 }]}
+                accessibilityRole="button"
+                accessibilityState={{ busy, disabled: !canSend }}>
                 <Text style={[type.button, sheet.center, sheet.onMoss]}>{busy ? t.preparing : t.send}</Text>
               </Pressable>
             </View>
