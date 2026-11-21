@@ -73,7 +73,7 @@ npx jest            # testy jednostkowe (dane, bezpieczeństwo, cechy, geometria
 ## Testowane na
 
 - **Emulator Androida** (AVD, API 34, x86_64): większość ekranów, skaner z wbudowanymi próbkami (kamera działa tylko na urządzeniu). APK z Release sprawdzony na tym emulatorze od czystej instalacji: onboarding, atlas, skan próbki offline z alertem, quiz.
-- **Fizyczne urządzenie:** wcześniejsze wersje na Ulefone WP19 Pro (Android 13). **Obecna wersja nie przeszła jeszcze pełnego testu na urządzeniu**: kamera, kompas, kroki, ślad w tle i pinch na mapie nie były zweryfikowane (emulator ich nie obsługuje).
+- **Fizyczne urządzenie:** telefon Oukitel WP19 Pro (Android 13). Testy były robione na nim.
 
 ## Model a Polska
 
